@@ -84,3 +84,7 @@ export JAVA_HOME=/usr/java/jdk1.7.0_71
 
 # Set up Android
 export PATH=$PATH:/home/andy/bin/android-sdk-linux/tools
+
+if [ -f ~/.bashrc ]; then
+source ~/.bashrc
+fi
