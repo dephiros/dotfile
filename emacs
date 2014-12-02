@@ -64,3 +64,4 @@ Uses `current-date-time-format' for the formatting the date/time."
        )
 
 (global-set-key "\C-c\C-d" 'insert-current-time)
+(define-key org-mode-map "\M-q" 'toggle-truncate-lines)
