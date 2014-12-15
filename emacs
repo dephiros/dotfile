@@ -14,6 +14,8 @@
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
+;; enable xclip-modep-mode. Has to install  xclip in system xclip in system
+(xclip-mode 1)
 
 ;; turn off startup message
 (setq inhibit-startup-message t)
