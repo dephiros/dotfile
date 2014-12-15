@@ -1,5 +1,7 @@
 ;; Add emacs to emacs-lisp-mode
 (add-to-list 'auto-mode-alist '("\\.?emacs\\'" . emacs-lisp-mode))
+(add-to-list 'auto-mode-alist '("\\.?zshrc\\'" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.?pathrc\\'" . sh-mode))
 
 ;; tramp setup
 (require 'tramp)
@@ -16,9 +18,12 @@
 ;; turn off startup message
 (setq inhibit-startup-message t)
 ;; disable menu bar
-;; (tool-bar-mode -1)
+(tool-bar-mode -1)
+;; turn on line number
+(global-linum-mode t)
+;; turn on line wrap by default
 ;; load theme
-(load-theme 'adwaita)
+(load-theme 'deeper-blue)
 
 ;; define offset
 (setq c-basic-offset 2)
