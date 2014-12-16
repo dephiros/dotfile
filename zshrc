@@ -1,3 +1,8 @@
+# this function to include if exist
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -45,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git debian gradle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,12 +84,5 @@ export PATH="/home/andy/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Set up java
-export JAVA_HOME=/usr/java/jdk1.7.0_71
-
-# Set up Android
-export PATH=$PATH:/home/andy/bin/android-sdk-linux/tools
-
-if [ -f ~/.bashrc ]; then
-source ~/.bashrc
-fi
+# set up path in this file
+include "$HOME/.pathrc"
