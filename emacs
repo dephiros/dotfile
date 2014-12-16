@@ -57,7 +57,6 @@ Note the weekly scope of the command's precision.")
   "insert the current date and time into current buffer.
 Uses `current-date-time-format' for the formatting the date/time."
        (interactive)
-       (insert "==========\n")
 ;       (insert (let () (comment-start)))
        (insert (format-time-string current-date-time-format (current-time)))
        (insert "\n")
@@ -71,4 +70,3 @@ Uses `current-date-time-format' for the formatting the date/time."
        )
 
 (global-set-key "\C-c\C-d" 'insert-current-time)
-(define-key org-mode-map "\M-q" 'toggle-truncate-lines)
