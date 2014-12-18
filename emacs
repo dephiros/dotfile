@@ -15,7 +15,11 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
 ;; enable xclip-modep-mode. Has to install  xclip in system xclip in system
-(xclip-mode 1)
+(if (eq system-type 'gnu/linux)
+  ; something for linux if true
+  ; optional something if not
+    (xclip-mode 1)
+)
 
 ;; turn off startup message
 (setq inhibit-startup-message t)
