@@ -25,8 +25,9 @@
 (setq inhibit-startup-message t)
 ;; disable menubar
 (menu-bar-mode -1)
-;; disable toolbar
-(tool-bar-mode -1)
+;; disable toolbar if in terminal mode
+(if (not (display-graphic-p))
+    (tool-bar-mode -1))
 ;; turn on line number
 (global-linum-mode t)
 ;; turn on line wrap by default
