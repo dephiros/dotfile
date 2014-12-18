@@ -23,7 +23,9 @@
 
 ;; turn off startup message
 (setq inhibit-startup-message t)
-;; disable menu bar
+;; disable menubar
+(menu-bar-mode -1)
+;; disable toolbar
 (tool-bar-mode -1)
 ;; turn on line number
 (global-linum-mode t)
