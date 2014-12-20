@@ -86,3 +86,4 @@ export PATH="/home/andy/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
 
 # set up path in this file
 include "$HOME/.pathrc"
+alias ec="emacsclient"
