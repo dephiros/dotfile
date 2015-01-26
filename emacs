@@ -18,8 +18,10 @@
 (if (eq system-type 'gnu/linux)
   ; something for linux if true
   ; optional something if not
-    (xclip-mode 1)
-)
+    (prog
+     (unless (package-installed-p 'xclip-mode)
+       (package-install 'xclip-mode))
+     (xclip-mode 1)))
 
 ;; turn off startup message
 (setq inhibit-startup-message t)
@@ -77,3 +79,6 @@ Uses `current-date-time-format' for the formatting the date/time."
        )
 
 (global-set-key "\C-c\C-d" 'insert-current-time)
+(let ((orgrc (substitute-in-file-name "$HOME/.orgrc")))
+  (if (file-exists-p orgrc)
+      (load orgrc)))
