@@ -88,3 +88,8 @@ export PATH="/home/andy/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
 include "$HOME/.pathrc"
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
+
+# set info for multi-term zsh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color

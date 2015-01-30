@@ -1,4 +1,4 @@
-;; Add emacs to emacs-lisp-mode
+];; Add emacs to emacs-lisp-mode
 (add-to-list 'auto-mode-alist '("\\.?emacs\\'" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.?zshrc\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.?pathrc\\'" . sh-mode))
@@ -82,3 +82,4 @@ Uses `current-date-time-format' for the formatting the date/time."
 (let ((orgrc (substitute-in-file-name "$HOME/.orgrc")))
   (if (file-exists-p orgrc)
       (load orgrc)))
+
