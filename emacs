@@ -1,4 +1,4 @@
-];; Add emacs to emacs-lisp-mode
+;; Add emacs to emacs-lisp-mode
 (add-to-list 'auto-mode-alist '("\\.?emacs\\'" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.?zshrc\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.?pathrc\\'" . sh-mode))
@@ -83,3 +83,23 @@ Uses `current-date-time-format' for the formatting the date/time."
   (if (file-exists-p orgrc)
       (load orgrc)))
 
+(unless (package-installed-p 'magit)
+  (package-install 'magit))
+
+(unless (package-installed-p 'multi-term)
+  (package-install 'multi-term))
+(require 'multi-term)
+(setq multi-term-program "/bin/zsh")
+
+(defun term-toggle-mode ()
+  (interactive)
+  (if (term-in-line-mode) 
+      (term-char-mode)
+      (term-line-mode)))
+(define-key term-mode-map "\C-c\C-j" 'term-toggle-mode)
+
+
+(add-hook 'term-mode-hook
+          (lambda ()
+            (add-to-list 'term-bind-key-alist '("M-[" . multi-term-prev))
+            (add-to-list 'term-bind-key-alist '("M-]" . multi-term-next))))
