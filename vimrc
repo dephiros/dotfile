@@ -2,8 +2,9 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 syntax on
+
+" -------- VUNDLE -------- 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -30,9 +31,12 @@ Plugin 'git://git.wincent.com/command-t.git'
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-" Vim org mode
-Plugin 'jceb/vim-orgmode'
+Plugin 'user/L9', {'name': 'newL9'}
+" org mode for vim
+Plugin  'jceb/vim-orgmode'
+" python autocompletion for vim
+Plugin  'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,5 +50,5 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-
 " Put your non-Plugin stuff after this line
+" -------- VUNDLE -------- 
