@@ -9,8 +9,10 @@ colorscheme desert
 set backspace=indent,eol,start
 " display status line in vim with some options
 set laststatus=2
-set statusline=%{fugitive#statusline()}
-set statusline+=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
+set statusline=%F%m%r%h%w\ 
+set statusline+=%{fugitive#statusline()}\    
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]          
 
 " -------- VUNDLE -------- 
 set nocompatible              " be iMproved, required
