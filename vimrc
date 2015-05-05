@@ -4,6 +4,7 @@ set shiftwidth=2
 set expandtab
 set number
 syntax on
+colorscheme desert
 " fix problem with backspace
 set backspace=indent,eol,start
 " display status line in vim with some options
