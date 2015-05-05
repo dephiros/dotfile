@@ -4,6 +4,12 @@ set shiftwidth=2
 set expandtab
 set number
 syntax on
+" fix problem with backspace
+set backspace=indent,eol,start
+" display status line in vim with some options
+set laststatus=2
+set statusline=%{fugitive#statusline()}
+set statusline+=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 
 " -------- VUNDLE -------- 
 set nocompatible              " be iMproved, required
