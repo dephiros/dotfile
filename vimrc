@@ -1,3 +1,7 @@
+" Customization
+let g:email = "dephiros@gmail.com"
+let g:user = "An Nguyen"
+
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
@@ -48,6 +52,8 @@ Plugin  'jceb/vim-orgmode'
 Plugin 'kien/ctrlp.vim'
 "tmux swithcing
 Plugin 'christoomey/vim-tmux-navigator'
+" template plug in
+Plugin 'aperezdc/vim-template'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
