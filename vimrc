@@ -1,6 +1,7 @@
 " Customization
 let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
+let g:templates_directory = '~/.vim_templates'
 
 filetype plugin indent on
 set tabstop=2
@@ -36,7 +37,7 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" Plugin 'L9'
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -48,12 +49,33 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'user/L9', {'name': 'newL9'}
 " org mode for vim
 Plugin  'jceb/vim-orgmode'
+
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
+
 "tmux swithcing
 Plugin 'christoomey/vim-tmux-navigator'
-" template plug in
-Plugin 'aperezdc/vim-template'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" automatic closing of quotes and such
+Plugin 'Raimondi/delimitMate'
+
+" comment stuff out"
+Plugin 'tpope/vim-commentary'
+
+"surround things"
+Plugin 'tpope/vim-surround'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
