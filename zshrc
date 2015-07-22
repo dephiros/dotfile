@@ -84,6 +84,8 @@ export PATH="/home/andy/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gdiff="git difftool -y"
+alias gdiffc='git difftool -y --cache'
 
 # set up path in this file
 include "$HOME/.pathrc"
