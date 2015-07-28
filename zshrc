@@ -89,6 +89,7 @@ alias gdiffc='git difftool -y --cache'
 
 # set up path in this file
 include "$HOME/.pathrc"
+include "$HOME/.aliasrc"
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
 
