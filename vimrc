@@ -53,6 +53,8 @@ Plugin  'jceb/vim-orgmode'
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+" Type \d in order to toggle the NERDTree
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 "tmux swithcing
 Plugin 'christoomey/vim-tmux-navigator'
