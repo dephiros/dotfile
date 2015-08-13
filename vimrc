@@ -52,6 +52,7 @@ Plugin  'jceb/vim-orgmode'
 
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 
 "tmux swithcing
 Plugin 'christoomey/vim-tmux-navigator'
@@ -74,6 +75,10 @@ Plugin 'tpope/vim-commentary'
 
 "surround things"
 Plugin 'tpope/vim-surround'
+
+"index search"
+Plugin 'akoutmos/vim-indexed-search'
+let g:indexed_search_numbered_only = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
