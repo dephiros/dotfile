@@ -4,6 +4,17 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
+alias gdiff="git difftool -y"
+alias gdiffc='git difftool -y --cache'
+
+alias ec="emacsclient"
+alias eserver="emacs --daemon"
+
+# set info for multi-term zsh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -12,6 +23,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
+# set up path in this file
+include "$HOME/.pathrc"
+include "$HOME/.aliasrc"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
