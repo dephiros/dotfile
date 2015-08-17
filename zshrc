@@ -100,6 +100,7 @@ export PATH="/home/andy/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'
+alias gbr='git rev-parse --abbrev-ref HEAD'
 
 # set up path in this file
 include "$HOME/.pathrc"
