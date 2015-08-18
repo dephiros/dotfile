@@ -1,10 +1,10 @@
 snippet gtc
-${VISUAL}${1} - An Nguyen - `date %y-%m-%d` - `git rev-parse --abbrev-ref HEAD`
+${VISUAL}${1} - An Nguyen - `date +%Y-%m-%d` - `git rev-parse --abbrev-ref HEAD`
 endsnippet
 
 snippet cgtc
 `git rev-parse --abbrev-ref HEAD` - ${1:ticket description}
-`date %y-%m-%d` - An Nguyen
+`date +%Y-%m-%d` - An Nguyen
 ${2:description}
 
 ${3:file changes}
