@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'
 alias gbr='git rev-parse --abbrev-ref HEAD'
+alias cddot='cd ~/dotfiles'
 
 # set up path in this file
 alias ec="emacsclient"
