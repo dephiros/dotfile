@@ -22,10 +22,22 @@ set statusline+=\ [line\ %l\/%L]
 " -------- VUNDLE -------- 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""" Automatically setting up Vundle, taken from
+""" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/ {{{
+let has_vundle=1
+if !filereadable($HOME."/.vim/bundle/Vundle.vim/README.md")
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p $HOME/dotfiles/vim/bundle
+    silent !git clone https://github.com/gmarik/Vundle.vim $HOME/dotfiles/vim/bundle/Vundle.vim
+    let has_vundle=0
+endif
+""" }}}
+""" Initialize Vundle {{{
+filetype off                                " required to init
+set rtp+=$HOME/.vim/bundle/Vundle.vim       " include vundle
+call vundle#begin()                         " init vundle
+""" }}}
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -52,19 +64,22 @@ Plugin  'jceb/vim-orgmode'
 
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+" Type \d in order to toggle the NERDTree
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 "tmux swithcing
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsNoPythonWarning = 1
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+ let g:UltiSnipsExpandTrigger="<tab>"
+ let g:UltiSnipsJumpForwardTrigger="<c-j>"
+ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+ let g:UltiSnipsNoPythonWarning = 1
+ " If you want :UltiSnipsEdit to split your window.
+ let g:UltiSnipsEditSplit="vertical"
 
 " automatic closing of quotes and such
 Plugin 'Raimondi/delimitMate'
@@ -75,8 +90,17 @@ Plugin 'tpope/vim-commentary'
 "surround things"
 Plugin 'tpope/vim-surround'
 
+"index search"
+Plugin 'akoutmos/vim-indexed-search'
+let g:indexed_search_numbered_only = 1
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+" install plugin first time
+if has_vundle == 0
+    :silent! PluginInstall
+    :qa
+endif
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

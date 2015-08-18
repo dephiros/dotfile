@@ -98,3 +98,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gdiff="git difftool -y"
+alias gdiffc='git difftool -y --cached'
+alias gbr='git rev-parse --abbrev-ref HEAD'
+
+# set up path in this file
+include "$HOME/.pathrc"
+alias ec="emacsclient"
+alias eserver="emacs --daemon"
+
+# set info for multi-term zsh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
