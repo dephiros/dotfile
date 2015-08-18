@@ -103,7 +103,6 @@ alias gdiffc='git difftool -y --cached'
 alias gbr='git rev-parse --abbrev-ref HEAD'
 
 # set up path in this file
-include "$HOME/.pathrc"
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
 
@@ -111,3 +110,5 @@ alias eserver="emacs --daemon"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
+# set up localpath
+include "$HOME/.pathrc"
