@@ -80,7 +80,6 @@ Plugin 'SirVer/ultisnips'
  " let g:UltiSnipsNoPythonWarning = 1
  " If you want :UltiSnipsEdit to split your window.
  let g:UltiSnipsEditSplit="vertical"
- let g:UltiSnipsSnippetsDir="~/dotfiles/ultisnips"
 
 " automatic closing of quotes and such
 Plugin 'Raimondi/delimitMate'
