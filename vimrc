@@ -77,9 +77,10 @@ Plugin 'SirVer/ultisnips'
  let g:UltiSnipsExpandTrigger="<tab>"
  let g:UltiSnipsJumpForwardTrigger="<c-j>"
  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" let g:UltiSnipsNoPythonWarning = 1
+ " let g:UltiSnipsNoPythonWarning = 1
  " If you want :UltiSnipsEdit to split your window.
  let g:UltiSnipsEditSplit="vertical"
+ let g:UltiSnipsSnippetsDir="~/dotfiles/ultisnips"
 
 " automatic closing of quotes and such
 Plugin 'Raimondi/delimitMate'
