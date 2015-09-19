@@ -111,5 +111,7 @@ alias eserver="emacs --daemon"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
+export PATH="/usr/local/sbin:$PATH"
 # set up localpath
+export PATH=$PATH:~/bin
 include "$HOME/.pathrc"
