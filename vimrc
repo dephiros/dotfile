@@ -3,6 +3,7 @@ let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
 
+runtime! ftplugin/man.vim " activate vim built in plugin man
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
@@ -18,6 +19,11 @@ set statusline=%F%m%r%h%w\
 set statusline+=%{fugitive#statusline()}\    
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]          
+
+"nvim
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 " -------- VUNDLE -------- 
 set nocompatible              " be iMproved, required

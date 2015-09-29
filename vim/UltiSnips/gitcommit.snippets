@@ -5,8 +5,13 @@ endsnippet
 snippet cgtc
 `git rev-parse --abbrev-ref HEAD` - ${1:ticket description}
 `date +%Y-%m-%d` - An Nguyen
-${2:description}
+${VISUAL}
 
-${3:file changes}
+FILES ADDED
+	${3:/src/gtc/html/current/jscript/mapping/reports/pathreport.js}
+FILES DELETED
+	${4:/src/gtc/html/current/jscript/mapping/reports/pathreport.js}
+FILES AFFECTED
+	${5:/src/gtc/html/current/jscript/mapping/reports/pathreport.js}
 
 endsnippet
