@@ -19,7 +19,9 @@ set statusline=%F%m%r%h%w\
 set statusline+=%{fugitive#statusline()}\    
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]          
-
+" Turn off auto wrapping but enable visual wrap
+set wrap linebreak textwidth=0
+autocmd Syntax gitcommit setlocal textwidth=0
 "nvim
 if !has('nvim')
     set ttymouse=xterm2
