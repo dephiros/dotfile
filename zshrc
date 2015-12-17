@@ -4,10 +4,6 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-alias gdiff="git difftool -y"
-alias gdiffc='git difftool -y --cache'
-alias grreset="git fetch && git reset --hard origin/`gbr`"
-
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
 
@@ -103,6 +99,9 @@ alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'
 alias gbr='git rev-parse --abbrev-ref HEAD'
 alias gbclean='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+alias gdiff="git difftool -y"
+alias gdiffc='git difftool -y --cache'
+alias grreset="git fetch && git reset --hard origin/`gbr`"
 alias cddot='cd ~/dotfiles'
 
 # set up path in this file
