@@ -6,6 +6,7 @@ include () {
 
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cache'
+alias grreset="git fetch && git reset --hard origin/'gbr'"
 
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
