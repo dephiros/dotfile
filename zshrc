@@ -101,7 +101,16 @@ alias gbr='git rev-parse --abbrev-ref HEAD'
 alias gbclean='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cache'
-grreset() { git fetch && git reset --hard origin/`gbr` }
+grreset()
+{
+  git fetch | grep -q `gbr`
+  if [ $? -eq 0 ]; then
+    echo 'Reseting to origin'
+    git reset --hard origin/`gbr`
+  else
+    echo 'No change'
+  fi
+}
 alias cddot='cd ~/dotfiles'
 
 # set up path in this file
