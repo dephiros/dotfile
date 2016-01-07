@@ -69,6 +69,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'user/L9', {'name': 'newL9'}
 " org mode for vim
 Plugin  'jceb/vim-orgmode'
+Plugin  'tpope/vim-speeddating'
 
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
