@@ -1,5 +1,5 @@
 ; Install packages
-(setq package-list '(evil ))
+(setq package-list '(evil nginx-mode))
 
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
@@ -25,6 +25,12 @@
 (evil-mode t)
 
 ; turn on linum
-(global-linum-mode t)
+(require 'linum)
+(line-number-mode 1)
+(column-number-mode 1)  ;; Line numbers on left most column
+(global-linum-mode 1)
 ; turn off tab
 (setq-default indent-tabs-mode nil)
+
+; replace yes no with just y, n
+(fset 'yes-or-no-p 'y-or-n-p)
