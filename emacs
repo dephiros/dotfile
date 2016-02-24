@@ -37,4 +37,7 @@
 ; replace yes no with just y, n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+; set up tramp
+(setq tramp-default-method "sshx")
+
 (server-start)
