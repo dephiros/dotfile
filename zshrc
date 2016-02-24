@@ -115,6 +115,7 @@ alias cddot='cd ~/dotfiles'
 
 # set up path in this file
 alias ec="emacsclient"
+alias et="emacsclient -t"
 alias eserver="emacs --daemon"
 
 # set info for multi-term zsh

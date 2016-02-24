@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc vim zshrc emacs gitignore_global"    # list of files/folders to symlink in homedir
+files="vimrc vim zshrc spacemacs gitignore_global"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -22,6 +22,16 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+# set up space emacs
+if [ ! -d "~/.emacs.d" ]; then
+  rm ~/.emacs #otherwise this will conflict
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
+# set up oh-my-zsh
+if [ ! -d "~/.emacs.d" ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
@@ -31,5 +41,6 @@ for file in $files; do
 done
 
 # link nvimrc with vim
-ln -s $dir/vimrc ~/.nvimrc
-ln -s $dir/vim ~/.nvim
+#ln -s $dir/vimrc ~/.nvimrc
+#ln -s $dir/vim ~/.nvim
+
