@@ -125,3 +125,5 @@ export PATH="/usr/local/sbin:$PATH"
 # set up localpath
 export PATH=$PATH:~/bin
 include "$HOME/.pathrc"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

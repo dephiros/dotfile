@@ -31,6 +31,10 @@
 (global-linum-mode 1)
 ; turn off tab
 (setq-default indent-tabs-mode nil)
+; turn on visual line mode by default
+(global-visual-line-mode 1)
 
 ; replace yes no with just y, n
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(server-start)
