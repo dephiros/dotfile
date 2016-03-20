@@ -9,6 +9,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set number
+" Toggle paste mode with f2
+set pastetoggle=<F2>
 syntax on
 colorscheme desert
 " fix problem with backspace
