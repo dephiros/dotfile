@@ -58,6 +58,19 @@ include "$HOME/.pathrc"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# add key to agent
+if [[ -s "$HOME/ssh-find-agent/ssh-find-agent.sh" ]]; then
+  . $HOME/ssh-find-agent/ssh-find-agent.sh
+  ssh-find-agent -a
+  if [ -z "$SSH_AUTH_SOCK" ]
+  then
+     eval $(ssh-agent) > /dev/null
+     ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+  fi
+ else
+   echo 'WARNING: Could not find ssh-find-agent. Need to run install script!!'
+fi
+
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
