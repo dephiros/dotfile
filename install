@@ -29,6 +29,11 @@ if [ ! -d "$HOME/.zim" ]; then
   done
   chsh -s =zsh
 fi
+# set up ssh-find-agent 
+if [ ! -d "$HOME/ssh-find-agent" ]; then
+  echo 'Pulling ssh-find-agent'
+  git clone https://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
+fi
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
