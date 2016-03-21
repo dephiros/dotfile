@@ -31,6 +31,11 @@ fi
 if [ ! -d "~/.emacs.d" ]; then
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
+# set up ssh-find-agent 
+if [ ! -d "$HOME/ssh-find-agent" ]; then
+  echo 'Pulling ssh-find-agent'
+  git clone https://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
+fi
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
