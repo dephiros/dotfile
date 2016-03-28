@@ -59,7 +59,7 @@ include "$HOME/.pathrc"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Zonar Alias
-alias zsync='ssh dev "\$HOME/sync_branch.sh $(gbr)"'
+alias zsync='ssh dev "\$HOME/dotfiles/scripts/sync_branch.sh $(gbr)"'
 
 # add key to agent
 if [[ -s "$HOME/ssh-find-agent/ssh-find-agent.sh" ]]; then
