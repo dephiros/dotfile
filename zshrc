@@ -1,6 +1,7 @@
 #
 # User configuration sourced by interactive shells
 #
+export DOTHOME=$HOME/dotfiles
 
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
@@ -40,7 +41,7 @@ grreset()
     echo 'No change'
   fi
 }
-alias cddot='cd ~/dotfiles'
+alias cddot="cd $DOTHOME"
 
 # set up path in this file
 alias ec="emacsclient"
@@ -61,20 +62,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Zonar Alias
 alias zsync='ssh dev "\$HOME/dotfiles/scripts/sync_branch.sh $(gbr)"'
 
-# add key to agent
-if [[ -s "$HOME/ssh-find-agent/ssh-find-agent.sh" ]]; then
-  . $HOME/ssh-find-agent/ssh-find-agent.sh
-  ssh-find-agent -a
-  if [ -z "$SSH_AUTH_SOCK" ]
-  then
-     eval $(ssh-agent) > /dev/null
-     ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-  fi
- else
-   echo 'WARNING: Could not find ssh-find-agent. Need to run install script!!'
-fi
-
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
+
+# start ssh agent
+eval $($DOTHOME/zshrc_agent)
