@@ -240,7 +240,9 @@ It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (global-visual-line-mode 1)
-  (setq tramp-default-method "sshx")
+  (tramp-set-completion-function "ssh"
+                                 '((tramp-parse-sconfig "/etc/ssh_config")
+                                   (tramp-parse-sconfig "~/.ssh/config")))
   (server-start)
   )
 
