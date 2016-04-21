@@ -1,4 +1,4 @@
-#
+# -*- mode: sh -*-
 # User configuration sourced by interactive shells
 #
 export DOTHOME=$HOME/dotfiles
