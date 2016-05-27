@@ -29,6 +29,9 @@ if [ ! -d "$HOME/.zim" ]; then
   done
   chsh -s =zsh
 fi
+if [ ! -d "$HOME/.tmux" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 # set up ssh-find-agent 
 if [ ! -d "$HOME/ssh-find-agent" ]; then
   echo 'Pulling ssh-find-agent'
