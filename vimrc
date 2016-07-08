@@ -74,8 +74,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'henrik/vim-indexed-search'
 let g:indexed_search_numbered_only = 1
 
-"github colorscheme
-Plugin 'endel/vim-github-colorscheme'
+" colorscheme
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,7 +118,8 @@ set number
 " Toggle paste mode with f2
 set pastetoggle=<F2>
 syntax on
-colorscheme github
+set background=light
+colorscheme solarized
 " fix problem with backspace
 set backspace=indent,eol,start
 " display status line in vim with some options
