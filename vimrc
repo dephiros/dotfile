@@ -2,6 +2,8 @@
 let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
+" Vimdiff wrap
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 runtime! ftplugin/man.vim " activate vim built in plugin man
 filetype plugin indent on
