@@ -1,37 +1,4 @@
-" Customization
-let g:email = "dephiros@gmail.com"
-let g:user = "An Nguyen"
-let g:templates_directory = '~/.vim_templates'
-" Vimdiff wrap
-autocmd FilterWritePre * if &diff | setlocal wrap< | endif
-
-runtime! ftplugin/man.vim " activate vim built in plugin man
-filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set number
-" Toggle paste mode with f2
-set pastetoggle=<F2>
-syntax on
-colorscheme desert
-" fix problem with backspace
-set backspace=indent,eol,start
-" display status line in vim with some options
-set laststatus=2
-set statusline=%F%m%r%h%w\ 
-set statusline+=%{fugitive#statusline()}\    
-set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
-set statusline+=\ [line\ %l\/%L]          
-" Turn off auto wrapping but enable visual wrap
-set wrap linebreak textwidth=0
-autocmd Syntax gitcommit setlocal textwidth=0
-"nvim
-if !has('nvim')
-    set ttymouse=xterm2
-endif
-
-" -------- VUNDLE -------- 
+" -------- VUNDLE --------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 """ Automatically setting up Vundle, taken from
@@ -104,8 +71,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 
 "index search"
-Plugin 'akoutmos/vim-indexed-search'
+Plugin 'henrik/vim-indexed-search'
 let g:indexed_search_numbered_only = 1
+
+"github colorscheme
+Plugin 'endel/vim-github-colorscheme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -126,8 +96,41 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" -------- VUNDLE -------- 
+" -------- VUNDLE --------
 "
 "
 " ctrp config
 let g:ctrlp_working_path_mode = 'ra'
+
+" Customization
+let g:email = "dephiros@gmail.com"
+let g:user = "An Nguyen"
+let g:templates_directory = '~/.vim_templates'
+" Vimdiff wrap
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+
+runtime! ftplugin/man.vim " activate vim built in plugin man
+filetype plugin indent on
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set number
+" Toggle paste mode with f2
+set pastetoggle=<F2>
+syntax on
+colorscheme github
+" fix problem with backspace
+set backspace=indent,eol,start
+" display status line in vim with some options
+set laststatus=2
+set statusline=%F%m%r%h%w\
+set statusline+=%{fugitive#statusline()}\
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]
+" Turn off auto wrapping but enable visual wrap
+set wrap linebreak textwidth=0
+autocmd Syntax gitcommit setlocal textwidth=0
+"nvim
+if !has('nvim')
+    set ttymouse=xterm2
+endif
