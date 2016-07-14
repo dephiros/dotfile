@@ -39,3 +39,6 @@ tramp
 
 # server auth directory
 /server/
+
+# redis dump ignore
+dump.rdb
