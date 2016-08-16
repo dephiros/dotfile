@@ -54,5 +54,52 @@
              (setq simplenote2-email "dephiros@gmail.com")
              (setq simplenote2-password nil)
              (simplenote2-setup)
-    )
+    (progn
+      (evil-leader/set-key
+        "os" 'helm-simplenote
+        "on/" 'helm-simplenote-ag
+        "onl" 'simplenote2-browse
+        "onc" 'simplenote2-create-note-from-buffer
+        "ons" 'simplenote2-sync-notes
+        "onp" 'simplenote2-push-buffer
+        "onP" 'simplenote2-set-pinned
+        "onM" 'simplenote2-set-markdown
+        "onTa" 'simplenote2-add-tag
+        "onTd" 'simplenote2-delete-tag
+        "ont" 'simplenote2-filter-note-by-tag))
+    :init
+    (defun helm-simplenote-open (note)
+      (simplenote2--open-note (concat simplenote2-directory "notes/" note)))
+
+    (defun simplenote-get-notes-id ()
+      (cddr (directory-files (concat simplenote2-directory "notes/"))))
+
+    (defun simplenote-get-notes ()
+      (mapcar (lambda (note)
+                (with-temp-buffer
+                  (insert-file-contents
+                   (concat simplenote2-directory "notes/" note))
+                  (cons (car (split-string (buffer-string) "\n" t)) note)))
+              (simplenote-get-notes-id)))
+
+    (defun simplenote-get-titles ()
+      (mapcar (lambda (el) (car el)) (simplenote-get-notes)))
+
+    (setq helm-source-simplenote
+          '((name . "Notes")
+            (candidates . simplenote-get-titles)
+            (action . (lambda (candidate)
+                        (helm-simplenote-open (cdr (assoc candidate (simplenote-get-notes))))))))
+
+    (defun helm-simplenote ()
+      (interactive)
+      (helm :sources '(helm-source-simplenote)
+            :buffer "*helm-simplenote*"))
+
+    (defun helm-simplenote-ag ()
+      (interactive)
+      (helm-do-ag (concat simplenote2-directory "notes/")))
+
+    (add-hook 'simplenote2-note-mode-hook 'org-mode)
+  )
 )
