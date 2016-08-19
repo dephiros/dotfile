@@ -135,3 +135,5 @@ autocmd Syntax gitcommit setlocal textwidth=0
 if !has('nvim')
     set ttymouse=xterm2
 endif
+" fix crontab problem
+au FileType crontab setlocal bkc=yes
