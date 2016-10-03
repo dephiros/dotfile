@@ -69,3 +69,11 @@ fi
 
 # start ssh agent
 eval $($DOTHOME/zshrc_agent)
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+###-tns-completion-start-###
+if [ -f /Users/an.nguyen/.tnsrc ]; then 
+    source /Users/an.nguyen/.tnsrc 
+fi
+###-tns-completion-end-###

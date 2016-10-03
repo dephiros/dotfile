@@ -106,6 +106,10 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
+
+" set encryption type
+set cm=blowfish2
+
 " Vimdiff wrap
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
