@@ -108,7 +108,7 @@ let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
 
 " set encryption type
-set cm=blowfish2
+set cm=blowfish
 
 " Vimdiff wrap
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
