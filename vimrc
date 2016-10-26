@@ -113,7 +113,7 @@ let maplocalleader = ','
 :inoremap <F5> <C-R>=strftime("%FT%T%z")<CR>
 
 " set encryption type
-set cm=blowfish
+set cm=blowfish2
 
 " Vimdiff wrap
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
@@ -138,7 +138,7 @@ set statusline+=%{fugitive#statusline()}\
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]
 " Turn off auto wrapping but enable visual wrap
-set wrap linebreak textwidth=0
+autocmd FileType * set wrap | set linebreak | set textwidth=0 | set wrapmargin=0 | set nolist
 autocmd Syntax gitcommit setlocal textwidth=0
 "nvim
 if !has('nvim')
