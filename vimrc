@@ -110,7 +110,7 @@ let g:templates_directory = '~/.vim_templates'
 let maplocalleader = ','
 
 " set encryption type
-set cm=blowfish2
+set cm=blowfish
 
 " Vimdiff wrap
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
