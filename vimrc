@@ -108,6 +108,9 @@ let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
 let maplocalleader = ','
+"" map for current timestamp
+:nnoremap <F5> "=strftime("%FT%T%z")<CR>P
+:inoremap <F5> <C-R>=strftime("%FT%T%z")<CR>
 
 " set encryption type
 set cm=blowfish
