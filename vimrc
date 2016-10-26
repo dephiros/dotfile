@@ -41,6 +41,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " org mode for vim
 Plugin  'jceb/vim-orgmode'
 Plugin  'tpope/vim-speeddating'
+Plugin  'tpope/vim-repeat'
 
 " fuzzy file search
 Plugin 'kien/ctrlp.vim'
@@ -106,6 +107,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:email = "dephiros@gmail.com"
 let g:user = "An Nguyen"
 let g:templates_directory = '~/.vim_templates'
+let maplocalleader = ','
 
 " set encryption type
 set cm=blowfish2
