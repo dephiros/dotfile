@@ -68,7 +68,7 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 # start ssh agent
-eval $($DOTHOME/zshrc_agent) && ssh-add
+eval $($DOTHOME/zshrc_agent)
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
