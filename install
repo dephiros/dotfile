@@ -32,6 +32,7 @@ if [ ! -d "$HOME/.zim" ]; then
            ( print -n "$(<${template_file})\n$(<${user_file})" >! ${user_file} ) 2>/dev/null
   done
   chsh -s =zsh
+  source ${ZDOTDIR:-${HOME}}/.zlogin
 fi
 if [ ! -d "$HOME/.tmux" ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
