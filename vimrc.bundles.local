@@ -1,1 +1,2 @@
 Bundle 'jceb/vim-orgmode'
+Bundle 'tpope/vim-speeddating'
