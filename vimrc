@@ -59,6 +59,14 @@ Plugin 'mattn/gist-vim'
 Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'jceb/vim-orgmode'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-scripts/utl.vim'
+Plugin 'itchyny/calendar.vim'
+Plugin 'tpope/vim-speeddating'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'jamessan/vim-gnupg'
+
 call vundle#end()
 
 runtime macros/matchit.vim
