@@ -1,8 +1,6 @@
 # -*- mode: sh -*-
 # User configuration sourced by interactive shells
 #
-export DOTHOME=$HOME/dotfiles
-
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
@@ -12,11 +10,6 @@ fi
 #
 
 # add comment
-# this function to include if exist
-include () {
-    [[ -f "$1" ]] && source "$1"
-}
-
 alias ec="emacsclient"
 alias eserver="emacs --daemon"
 
@@ -52,25 +45,14 @@ alias eserver="emacs --daemon"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
-export PATH="/usr/local/sbin:$PATH"
-# set up localpath
-export PATH=$PATH:~/bin
-include "$HOME/.pathrc"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Zonar Alias
 alias zsync='ssh dev "\$HOME/dotfiles/scripts/sync_branch.sh $(gbr)"'
 
-# Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
-
 # start ssh agent
 eval $($DOTHOME/zshrc_agent)
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ###-tns-completion-start-###
 if [ -f /Users/an.nguyen/.tnsrc ]; then 
