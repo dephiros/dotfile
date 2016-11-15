@@ -299,6 +299,17 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (defun wg/kludge-gpg-agent
+      ()
+    (if
+        (display-graphic-p)
+        (setenv "DISPLAY"
+                (terminal-name))
+      (setenv "GPG_TTY"
+              (terminal-name))
+      (setenv "DISPLAY")))
+
+  (add-hook 'window-configuration-change-hook 'wg/kludge-gpg-agent)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
