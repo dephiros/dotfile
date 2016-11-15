@@ -9,9 +9,9 @@ fi
 # User configuration sourced by interactive shells
 #
 
-# add comment
-alias ec="emacsclient"
-alias eserver="emacs --daemon"
+# set up emacs
+alias e="emacsclient -t"
+alias ec="emacsclient -c"
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
@@ -35,11 +35,6 @@ grreset()
   fi
 }
 alias cddot="cd $DOTHOME"
-
-# set up path in this file
-alias ec="emacsclient"
-alias et="emacsclient -t"
-alias eserver="emacs --daemon"
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
