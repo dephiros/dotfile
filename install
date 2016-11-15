@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc.local" "gvimrc.local" "vimrc.bundles.local" "zshrc" "spacemacs" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "vim" "zshrc" "spacemacs" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -18,9 +18,6 @@ if [ ! -d "$HOME/.emacs.d" ]; then
   rm ~/.emacs #otherwise this will conflict
   git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 fi
-
-# set up spf13-vim
-sh <(curl https://j.mp/spf13-vim3 -L)
 
 # set up zim
 if [ ! -d "$HOME/.zim" ]; then
