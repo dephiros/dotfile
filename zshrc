@@ -1,10 +1,8 @@
 # -*- mode: sh -*-
 # User configuration sourced by interactive shells
 #
-# Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
+# Source oh-my-zsh
+source $HOME/dotfiles/oh-my-zsh.zsh
 #
 # User configuration sourced by interactive shells
 #
