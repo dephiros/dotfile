@@ -58,6 +58,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'jceb/vim-orgmode'
 call vundle#end()
 
 runtime macros/matchit.vim
@@ -317,6 +318,7 @@ let g:plantuml_executable_script = "$HOME/.vim/plantuml/uml.sh"
 "use space as leader in sensible modes
 nmap <space> <Leader>
 vmap <space> <Leader>
+let maplocalleader = "\\"
 
 "make wrapped lines more intuitive
 noremap <silent> k gk
