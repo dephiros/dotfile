@@ -91,7 +91,8 @@ if v:version >= 703
     set colorcolumn=+1 "mark the ideal max text width
 endif
 
-set directory=~/.vim/swapfiles//
+silent !mkdir ~/.vim/swapfiles > /dev/null 2>&1
+set directory=~/.vim/swapfiles/
 
 "default indent settings
 set shiftwidth=4
