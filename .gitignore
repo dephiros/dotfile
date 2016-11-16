@@ -5,3 +5,4 @@
 *\.swp
 vim/*
 !vim/UltiSnips
+!vim/colors

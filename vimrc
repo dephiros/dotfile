@@ -540,3 +540,6 @@ function! s:scriptnames(re) abort
     let filtered = filter(split(scriptnames, "\n"), "v:val =~ '" . a:re . "'")
     echo join(filtered, "\n")
 endfunction
+
+" set up GPG
+let g:GPGPreferSymmetric = 1
