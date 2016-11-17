@@ -17,41 +17,63 @@ if [ ! -d "$HOME/.emacs.d" ]; then
   echo 'running'
   rm ~/.emacs #otherwise this will conflict
   git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+  echo "\n"
 fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     chsh -s zsh
+    echo "\n"
 fi
 
 if [ ! -d "$HOME/.tmux" ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    echo "\n"
 fi
-# set up ssh-find-agent 
+# set up ssh-find-agent
 if [ ! -d "$HOME/ssh-find-agent" ]; then
   echo 'Pulling ssh-find-agent'
   git clone https://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
+  echo "\n"
 fi
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
-echo "...done"
+echo "...done\n"
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
-echo "...done"
+echo "...done\n"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+echo "Linking dotfiles"
 for file in $dotfiles; do
-   echo $file $dotfiles
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    echo "Moving existing $file from ~ to $olddir"
+    mv ~/.$file ~/dotfiles_old/ 2> /dev/null
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    ln -s $dir/$file ~/.$file 2> /dev/null
 done
+echo "...done\n"
+
+# set up git
+if ! type "git" > /dev/null; then
+    echo "git is not installed, install git and rerun install script"
+else
+    gitEditor="$(which vim)"
+    if ! type "emacsclient" 2> /dev/null; then
+        echo "could not find emacsclient, setting git editor to vim"
+    else
+        gitEditor="$(which emacsclient) -t"
+    fi
+    echo "setting up git"
+    git config --global core.editor "$gitEditor"
+    git config --global core.excludesfile "$HOME/.gitignore_global"
+    git config --global difftool.prompt "true"
+    echo "finished setting up git"
+fi
 
 # link nvimrc with vim
 #ln -s $dir/vimrc ~/.nvimrc
