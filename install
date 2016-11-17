@@ -21,7 +21,8 @@ fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-      sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    chsh -s zsh
 fi
 
 if [ ! -d "$HOME/.tmux" ]; then
