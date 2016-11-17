@@ -10,6 +10,7 @@ source $HOME/dotfiles/oh-my-zsh.zsh
 # set up emacs
 alias e="emacsclient -t"
 alias ec="emacsclient -c"
+export EDITOR="emacsclient -t"
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
