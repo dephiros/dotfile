@@ -1,0 +1,13 @@
+#+TITLE: My own customization of init
+
+* Activate extra starter kit
+
+#+begin_src emacs-lisp
+(starter-kit-load "org")
+(starter-kit-load "js")
+#+end_src
+
+* add more stuffs here later
+#+begin_src emacs-lisp
+(message "***WOOHOO*** user-custom init loaded")
+#+end_src

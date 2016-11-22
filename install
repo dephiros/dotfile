@@ -6,29 +6,29 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc" "vim" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dir=$HOME/dotfiles                    # dotfiles directory
+olddir=$HOME/dotfiles_old             # old dotfiles backup directory
+dotfiles=("vimrc" "vim" "emacs.d" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
 # set up space emacs
-if [ ! -d "$HOME/.emacs.d" ]; then
-  echo 'running'
-  rm ~/.emacs #otherwise this will conflict
-  git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-  echo "\n"
-fi
+#if [ ! -d "$HOME/.emacs.d" ]; then
+#  echo 'running'
+#  rm ~/.emacs #otherwise this will conflict
+#  git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+#  echo "\n"
+#fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
     chsh -s zsh
     echo "\n"
 fi
 
 if [ ! -d "$HOME/.tmux" ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
     echo "\n"
 fi
 # set up ssh-find-agent
@@ -52,9 +52,9 @@ echo "...done\n"
 echo "Linking dotfiles"
 for file in $dotfiles; do
     echo "Moving existing $file from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/ 2> /dev/null
+    mv $HOME/.$file $HOME/dotfiles_old/ 2> /dev/null
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file 2> /dev/null
+    ln -s $dir/$file $HOME/.$file 2> /dev/null
 done
 echo "...done\n"
 
