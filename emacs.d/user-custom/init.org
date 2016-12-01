@@ -5,9 +5,11 @@
 #+begin_src emacs-lisp
 (starter-kit-load "org")
 (starter-kit-load "js")
+(starter-kit-load "python")
 #+end_src
 
-* add more stuffs here later
+* misc
+** replace DAbbrev expand with Hippie expand
 #+begin_src emacs-lisp
-(message "***WOOHOO*** user-custom init loaded")
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
 #+end_src
