@@ -5,7 +5,6 @@
 #+begin_src emacs-lisp
 (starter-kit-load "org")
 (starter-kit-load "js")
-(starter-kit-load "python")
 #+end_src
 
 * misc
