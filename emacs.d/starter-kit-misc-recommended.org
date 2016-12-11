@@ -35,3 +35,10 @@ Set this to whatever browser you use e.g...
 : ;; (setq browse-url-browser-function 'browse-default-w3m)
 : ;; (setq browse-url-browser-function 'browse-url-generic
 : ;;       browse-url-generic-program "conkeror")
+** add [[https://www.masteringemacs.org/article/discoverel-discover-emacs-context-menus][discover mode]]
+#+name: starter-kit-no-menu
+#+begin_src emacs-lisp
+ (starter-kit-install-if-needed 'discover)
+ (require 'discover)
+ (global-discover-mode 1)
+#+end_src

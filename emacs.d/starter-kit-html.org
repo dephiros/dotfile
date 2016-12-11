@@ -1,0 +1,20 @@
+#+TITLE: Starter Kit HTML
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* Starter kit HTML
+
+Add EMMET
+
+** Check Dependencies
+
+#+begin_src emacs-lisp
+ (starter-kit-install-if-needed 'emmet-mode)
+#+end_src
+
+** load emmet and autostart
+#+begin_src emacs-lisp
+ (require 'emmet-mode)
+ (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+ (add-hook 'html-mode-hook 'emmet-mode)
+ (add-hook 'css-mode-hook  'emmet-mode)
+#+end_src

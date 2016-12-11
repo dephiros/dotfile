@@ -143,6 +143,7 @@ it's possible aspell isn't in your path
 
 ** Hippie expand: at times perhaps too hip
 #+begin_src emacs-lisp
+  (global-set-key [remap dabbrev-expand] 'hippie-expand)
   (when (boundp 'hippie-expand-try-functions-list)
     (delete 'try-expand-line hippie-expand-try-functions-list)
     (delete 'try-expand-list hippie-expand-try-functions-list))
