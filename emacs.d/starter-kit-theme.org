@@ -1,0 +1,20 @@
+#+TITLE: Starter Kit Themes
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* Starter kit Themes
+
+Add theme and pick theme
+
+** Check Dependencies
+
+#+begin_src emacs-lisp
+ (starter-kit-install-if-needed 'solarized-theme)
+ (starter-kit-install-if-needed 'zenburn-theme)
+ (starter-kit-install-if-needed 'spacemacs-theme)
+#+end_src
+
+** Pick a theme
+#+begin_src emacs-lisp
+ (load-theme 'solarized-light t)
+#+end_src
+   

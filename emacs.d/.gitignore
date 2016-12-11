@@ -29,6 +29,7 @@ url/*
 ## exported and encrypted files
 *gpg
 *el
+!/init.el
 *elc
 *html
 *tex
