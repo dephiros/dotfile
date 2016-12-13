@@ -8,7 +8,7 @@
 
 dir=$HOME/dotfiles                    # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc" "vim" "emacs.d" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "vim" "emacs.d" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -63,11 +63,11 @@ if ! type "git" > /dev/null; then
     echo "git is not installed, install git and rerun install script"
 else
     gitEditor="$(which vim)"
-#    if ! type "emacsclient" 2> /dev/null; then
-#        echo "could not find emacsclient, setting git editor to vim"
-#    else
-#        gitEditor="$(which emacsclient) -t"
-#    fi
+    if ! type "emacsclient" 2> /dev/null; then
+        echo "could not find emacsclient, setting git editor to vim"
+    else
+        gitEditor="$(which emacsclient) -t"
+    fi
     echo "setting up git"
     git config --global core.editor "$gitEditor"
     git config --global core.excludesfile "$HOME/.gitignore_global"
