@@ -8,17 +8,17 @@
 
 dir=$HOME/dotfiles                    # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc" "vim" "emacs.d" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "vim" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
 # set up space emacs
-#if [ ! -d "$HOME/.emacs.d" ]; then
-#  echo 'running'
-#  rm ~/.emacs #otherwise this will conflict
-#  git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-#  echo "\n"
-#fi
+if [ ! -d "$HOME/.emacs.d" ]; then
+  echo 'could not find emacs.d. installing spacemacs'
+  rm ~/.emacs #otherwise this will conflict
+  git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+  echo "\n"
+fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
