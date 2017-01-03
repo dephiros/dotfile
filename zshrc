@@ -3,6 +3,7 @@
 #
 # Source oh-my-zsh
 source $HOME/dotfiles/oh-my-zsh.zsh
+export DOTHOME=$HOME/dotfiles
 #
 # User configuration sourced by interactive shells
 #
