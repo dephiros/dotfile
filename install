@@ -8,17 +8,17 @@
 
 dir=$HOME/dotfiles                    # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc" "vim" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "vim" "emacs" "emacs.d" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
 # set up space emacs
-if [ ! -d "$HOME/.emacs.d" ]; then
-  echo 'could not find emacs.d. installing spacemacs'
-  rm ~/.emacs #otherwise this will conflict
-  git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-  echo "\n"
-fi
+# if [ ! -d "$HOME/.emacs.d" ]; then
+#   echo 'could not find emacs.d. installing spacemacs'
+#   rm ~/.emacs #otherwise this will conflict
+#   git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+#   echo "\n"
+# fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -62,7 +62,7 @@ echo "...done\n"
 if ! type "git" > /dev/null; then
     echo "git is not installed, install git and rerun install script"
 else
-    gitEditor="$(which vim)"
+    gitEditor="$(which vi)"
     if ! type "emacsclient" 2> /dev/null; then
         echo "could not find emacsclient, setting git editor to vim"
     else
@@ -72,6 +72,7 @@ else
     git config --global core.editor "$gitEditor"
     git config --global core.excludesfile "$HOME/.gitignore_global"
     git config --global difftool.prompt "true"
+    git config --global push.default simple
     echo "finished setting up git"
 fi
 
