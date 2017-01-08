@@ -32,7 +32,8 @@ tramp
 .cask/
 dist/
 
-#smex
+# ido
+ido.last
 smex-items
 
 # Flycheck
@@ -49,3 +50,6 @@ flycheck_*.el
 
 # cache folder
 .cache/
+
+# ignore weird link created by mac
+emacs.d
