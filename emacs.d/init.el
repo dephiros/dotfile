@@ -18,7 +18,7 @@
 ; set up packages
 (require 'package)
 ;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex))
+(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme))
 
 (add-to-list 'package-archives
      '("marmalade" . "https://marmalade-repo.org/packages/") t)
@@ -26,11 +26,11 @@
      '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
-; fetch the list of packages available 
+;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
 
-; install the missing packages
+;; install the missing packages
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
@@ -49,6 +49,9 @@
 ;;;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+; load theme
+(load-theme 'solarized-light t)
+
 ; finally start emacs server
 (require 'server)
 (unless (server-running-p)
@@ -58,7 +61,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (smex magit ido-ubiquitous better-defaults))))
+ '(package-selected-packages (quote (smex magit ido-ubiquitous better-defaults)))
+ '(python-shell-interpreter "python3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
