@@ -5,6 +5,8 @@
 (setq indent-tabs-mode nil)
 ;; add line number by default
 (global-linum-mode t)
+;; save session
+(desktop-save-mode 1)
 ;; enable whitespace mode to highlight tab and trailing space
 (require 'whitespace)
 (setq whitespace-style
@@ -26,7 +28,7 @@
      '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
-;; fetch the list of packages available 
+;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
