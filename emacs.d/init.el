@@ -51,6 +51,9 @@
 ;;;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ; load theme
 (load-theme 'solarized-light t)
 
