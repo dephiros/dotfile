@@ -20,7 +20,7 @@
 ; set up packages
 (require 'package)
 ;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex))
+(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell))
 
 (add-to-list 'package-archives
      '("marmalade" . "https://marmalade-repo.org/packages/") t)
@@ -56,6 +56,10 @@
 
 ; load theme
 (load-theme 'solarized-light t)
+
+; sync emacs path
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ; finally start emacs server
 (require 'server)
