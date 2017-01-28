@@ -20,7 +20,7 @@
 ; set up packages
 (require 'package)
 ;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme))
+(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex))
 
 (add-to-list 'package-archives
      '("marmalade" . "https://marmalade-repo.org/packages/") t)
