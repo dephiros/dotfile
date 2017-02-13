@@ -1,0 +1,2 @@
+DOTFILES_DIRS="$HOME/dotfiles"
+EXCLUDES="README.md Library oh-my-zsh install install.sh git emacs.d/backups emacs.d/elpa emacs.d/ido.last emacs.d/network-security.data emacs.d/smex-items emacs.d.starter-kit.archive #* *# scripts mac"
