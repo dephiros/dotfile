@@ -20,7 +20,7 @@
 ; set up packages
 (require 'package)
 ;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell))
+(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell emmet-mode))
 
 (add-to-list 'package-archives
      '("marmalade" . "https://marmalade-repo.org/packages/") t)
@@ -53,6 +53,10 @@
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; emmet
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 ; load theme
 (load-theme 'solarized-light t)
