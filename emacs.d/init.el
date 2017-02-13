@@ -1,6 +1,7 @@
 ; emacs basic miscellaneous stuffs
 ;; to setup tabs
 (setq c-basic-indent 2)
+(setq js-indent-level 2)
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 ;; add line number by default
@@ -22,7 +23,7 @@
 ; set up packages
 (require 'package)
 ;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell emmet-mode))
+(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell emmet-mode flycheck))
 
 (add-to-list 'package-archives
      '("marmalade" . "https://marmalade-repo.org/packages/") t)
@@ -38,6 +39,9 @@
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; set up flycheck
+(setq flycheck-global-modes '(not LaTeX-mode latex-mode org-mode))
 
 ;; set up ido-ubiquitous
 (ido-mode 1)
