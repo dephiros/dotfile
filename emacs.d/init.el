@@ -5,6 +5,8 @@
 (setq indent-tabs-mode nil)
 ;; add line number by default
 (global-linum-mode t)
+;; turn on visual line mode by default
+(global-visual-line-mode t)
 ;; save session
 (desktop-save-mode 1)
 ;; enable whitespace mode to highlight tab and trailing space
