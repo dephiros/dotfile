@@ -1,7 +1,6 @@
 ; emacs basic miscellaneous stuffs
 ;; to setup tabs
 (setq c-basic-indent 2)
-(setq js-indent-level 2)
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 ;; add line number by default
@@ -20,61 +19,118 @@
        (set-face-attribute 'default nil :font "Source Code Pro-13"))
       ((member "Inconsolata" (font-family-list))
        (set-face-attribute 'default nil :font "Inconsolata-14")))
-; set up packages
+
+;; list of prerequisite packages like use-package
+(defvar my-packages '(use-package))
 (require 'package)
-;; list of packages
-(defvar my-packages '(better-defaults ido-ubiquitous magit smex solarized-theme auctex exec-path-from-shell emmet-mode flycheck))
-
-(add-to-list 'package-archives
-     '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-     '("melpa" . "http://melpa.org/packages/") t)
-
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
 (package-initialize)
 ;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
-
-;; install the missing packages
+;; install the missing packages from above list
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
 
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+;;; make sure package always ensured to be installed from package.el
+(setq use-package-always-ensure t)
+(defvar defer-sec-1 1 "Defer time in sec for level 1.")
+(defvar defer-sec-2 5 "Defer time in sec for level 2.")
+
+;; set up auto-update-package
+(use-package auto-package-update
+  ;; delay 5 seconds before loading this package
+  :defer defer-sec-1
+  :config
+  (auto-package-update-maybe))
+
+;; set up exec path from shell; make sure path is synced in emacs GUI
+(use-package exec-path-from-shell
+  :config
+  ; sync emacs path
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
+
+;; set up better default
+(use-package better-defaults)
+
+;; set up solarized-theme
+(use-package solarized-theme
+  :config
+  ;;; load theme
+  (load-theme 'solarized-light t))
+
+;; set up company mode
+(use-package company
+  :defer 5
+  :config (global-company-mode))
+
+;; set up org mode
+(use-package org
+  :init
+  (add-hook 'org-mode-hook 'visual-line-mode)
+  (add-hook 'org-mode-hook 'org-indent-mode)
+  (add-hook 'org-mode-hook 'flyspell-mode)
+  :defer t)
+
+;; set up auctex
+(use-package auctex
+  :defer t
+  :config
+  (setq TeX-auto-save t))
+
+
 ;; set up flycheck
-(setq flycheck-global-modes '(not LaTeX-mode latex-mode org-mode))
+(use-package flycheck
+  :config
+  (setq flycheck-global-modes '(not LaTeX-mode latex-mode org-mode)))
 
-;; set up ido-ubiquitous
-(ido-mode 1)
-(ido-everywhere 1)
-(require 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
-
-;; smex ido in M-x
-(require 'smex) ; Not needed if you use package.el
-;;; bind M-x to use smex instead of default emacs
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;;;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;; set up ido
+(use-package ido
+  :ensure ido-ubiquitous
+  :ensure smex
+  :config
+  (ido-mode 1)
+  (ido-everywhere 1)
+  (ido-ubiquitous-mode 1)
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  ;;;; This is your old M-x.
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+  )
 
 ;; magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
 
-;; emmet
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; emmet html expansion
+(use-package emmet-mode
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+  (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+  )
 
-; load theme
-(load-theme 'solarized-light t)
-
-; sync emacs path
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+;; js2 mode
+(use-package js2-mode
+  :config
+  (add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
+  (setq js2-basic-offset 2))
 
 ; finally start emacs server
 (require 'server)
 (unless (server-running-p)
-    (server-start))
+  (server-start))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
