@@ -67,7 +67,7 @@
 (use-package solarized-theme
   :config
   ;;; load theme
-  (load-theme 'solarized-light t))
+  (load-theme 'solarized-dark t))
 
 ;; set up company mode
 (use-package company
