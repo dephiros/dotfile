@@ -126,6 +126,19 @@
   (add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
   (setq js2-basic-offset 2))
 
+;; web mode
+(use-package web-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
+
+(use-package typescript-mode)
+
 ; finally start emacs server
 (require 'server)
 (unless (server-running-p)
