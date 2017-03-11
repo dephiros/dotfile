@@ -139,6 +139,8 @@
 
 (use-package typescript-mode)
 
+(use-package ng2-mode)
+
 ; finally start emacs server
 (require 'server)
 (unless (server-running-p)
