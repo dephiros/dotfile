@@ -8,17 +8,24 @@
 
 dir=$HOME/dotfiles                    # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
-dotfiles=("vimrc" "vim" "emacs" "emacs.d" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "vim" "emacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 
 ##########
 
 # set up space emacs
-# if [ ! -d "$HOME/.emacs.d" ]; then
-#   echo 'could not find emacs.d. installing spacemacs'
-#   rm ~/.emacs #otherwise this will conflict
-#   git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-#   echo "\n"
-# fi
+ if [ ! -d "$HOME/.emacs.d" ]; then
+   echo 'could not find emacs.d. installing spacemacs'
+   rm ~/.emacs #otherwise this will conflict
+   git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+   echo "\n"
+fi
+
+# set up pyenv pyenv global python-3
+if hash pyenv 2>/dev/null; then
+   echo 'pyenv global python-3'
+else
+   curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash   
+fi
 
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

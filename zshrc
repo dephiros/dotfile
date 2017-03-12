@@ -54,3 +54,8 @@ if [ -f /Users/an.nguyen/.tnsrc ]; then
     source /Users/an.nguyen/.tnsrc 
 fi
 ###-tns-completion-end-###
+#python
+export PATH="/home/lyle/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
