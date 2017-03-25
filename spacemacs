@@ -320,7 +320,6 @@ you should place your code here."
         desktop-save                t
         desktop-files-not-to-save   "^$" ;reload tramp paths
         desktop-load-locked-desktop nil)
-  (desktop-save-mode 1)
   ; finally start emacs server
   (require 'server)
   (unless (server-running-p)
