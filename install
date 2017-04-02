@@ -70,11 +70,11 @@ if ! type "git" > /dev/null; then
     echo "git is not installed, install git and rerun install script"
 else
     gitEditor="$(which vi)"
-    if ! type "emacsclient" 2> /dev/null; then
-        echo "could not find emacsclient, setting git editor to vim"
-    else
-        gitEditor="$(which emacsclient) -t"
-    fi
+#    if ! type "emacsclient" 2> /dev/null; then
+#        echo "could not find emacsclient, setting git editor to vim"
+#    else
+#        gitEditor="$(which emacsclient) -t"
+#    fi
     echo "setting up git"
     git config --global core.editor "$gitEditor"
     git config --global core.excludesfile "$HOME/.gitignore_global"
