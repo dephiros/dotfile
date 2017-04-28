@@ -17,6 +17,8 @@ export EDITOR="emacsclient -t"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
+# reduce the lag of vi-mode in zsh
+export KEYTIMEOUT=1
 
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'
