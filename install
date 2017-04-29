@@ -7,13 +7,17 @@
 ########## Variables
 
 dir=$HOME/dotfiles                    # dotfiles directory
+configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
+config=$HOME/.config
+oldconfig=$HOME/init_old
 dotfiles=("vimrc" "nvimrc" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+configfiles=("nvim")    # list of files/folders to symlink to .config
 
 ##########
 
 # set up space emacs
- if [ ! -d "$HOME/.emacs.d" ]; then
+if [ ! -d "$HOME/.emacs.d" ]; then
    echo 'could not find emacs.d. installing spacemacs'
    rm ~/.emacs #otherwise this will conflict
    git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
@@ -45,23 +49,32 @@ if [ ! -d "$HOME/ssh-find-agent" ]; then
   echo "\n"
 fi
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+# create dotfiles_old and config_old in homedir
+echo "Creating $olddir and $oldconfig and $config for backup of any existing dotfiles in ~"
 mkdir -p $olddir
-echo "...done\n"
-
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
+mkdir -p $oldconfig
 echo "...done\n"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 echo "Linking dotfiles"
 for file in $dotfiles; do
     echo "Moving existing $file from ~ to $olddir"
-    mv $HOME/.$file $HOME/dotfiles_old/ 2> /dev/null
+    mv $HOME/.$file $olddir 2> /dev/null
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file $HOME/.$file 2> /dev/null
+done
+echo "...done\n"
+
+# move any existing config folder to config_old directory, then create symlinks
+## make sure config folder is created
+echo "make sure to create $config"
+mkdir -p $config
+echo "Linking configfiles"
+for file in $configfiles; do
+    echo "Moving existing $file from ~ to $oldconfig"
+    mv $config/$file $oldconfig 2> /dev/null
+    echo "Creating symlink to $file in config directory."
+    ln -s $configdir/$file $config/$file 2> /dev/null
 done
 echo "...done\n"
 

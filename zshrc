@@ -11,6 +11,11 @@ export DOTHOME=$HOME/dotfiles
 # set up emacs
 alias e="emacsclient -t"
 alias ec="emacsclient -c"
+
+# set up nvim
+alias e="nvim"
+alias vi="nvim"
+alias vim="nvim"
 export EDITOR="emacsclient -t"
 
 # set info for multi-term zsh
