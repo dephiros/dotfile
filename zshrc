@@ -13,10 +13,14 @@ alias e="emacsclient -t"
 alias ec="emacsclient -c"
 
 # set up nvim
-alias e="nvim"
-alias vi="nvim"
-alias vim="nvim"
-export EDITOR="emacsclient -t"
+VIMEDITOR="vim"
+if hash nvim 2>/dev/null; then
+  VIMEDITOR="nvim"
+fi
+alias e=$VIMEDITOR
+alias vi=$VIMEDITOR
+alias vim=$VIMEDITOR
+export EDITOR=$VIMEDITOR
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
@@ -61,8 +65,3 @@ if [ -f /Users/an.nguyen/.tnsrc ]; then
     source /Users/an.nguyen/.tnsrc 
 fi
 ###-tns-completion-end-###
-#python
-export PATH="/home/lyle/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
