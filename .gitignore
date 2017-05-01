@@ -1,11 +1,15 @@
 .*~
 ~*
-#*
+\#*
 *#
 *\.swp
 vim/*
 !vim/UltiSnips
 !vim/colors
+
+# nvim
+config/nvim/*
+!config/nvim/init.vim
 
 # ignore network security file from marmalade
 network-security.data

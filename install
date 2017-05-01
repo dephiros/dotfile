@@ -24,13 +24,6 @@ if [ ! -d "$HOME/.emacs.d" ]; then
    echo "\n"
 fi
 
-# set up pyenv pyenv global python-3
-if hash pyenv 2>/dev/null; then
-   echo 'pyenv global python-3'
-else
-   curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash   
-fi
-
 # set up oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh

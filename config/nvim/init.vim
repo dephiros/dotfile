@@ -15,4 +15,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 call plug#begin('~/.config/nvim/plugged')
+" Make sure you use single quotes
+Plug 'neomake/neomake'
+call plug#end()
+
 
