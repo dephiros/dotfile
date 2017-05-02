@@ -19,6 +19,7 @@ alias ec="emacsclient -c"
 #  alias vi=$VIMEDITOR
 #  alias vim=$VIMEDITOR
 #fi
+alias vi=vim
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8

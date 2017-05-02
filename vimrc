@@ -1,3 +1,5 @@
+" set filetype plugin on
+filetype plugin on
 " Common settings
 " set UTF-8 encoding
 set enc=utf-8

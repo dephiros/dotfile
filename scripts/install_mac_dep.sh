@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source ./util.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/util.sh
 
 have_command brew || {
     echo "installing brew..."
@@ -18,6 +19,7 @@ brew install fzf
 ## install clang, clang-tidy
 echo "installing clang, lang-tidy using brew"
 brew install llvm --with-clang --with-clang-extra-tools
+brew install cppcheck
 ln -s /usr/local/opt/llvm/bin/clang-tidy /usr/local/bin/clang-tidy
 grep "/usr/local/opt/llvm/bin" ~/.pathrc || {
     echo '#LLMV brew path' >> ~/.pathrc && echo 'export CLANG_BIN=/usr/local/opt/llvm/bin' >> ~/.pathrc && echo "" >> ~/.pathrc
