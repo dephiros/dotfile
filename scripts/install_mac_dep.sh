@@ -18,6 +18,7 @@ brew install fzf
 ## install clang, clang-tidy
 echo "installing clang, lang-tidy using brew"
 brew install llvm --with-clang --with-clang-extra-tools
+ln -s /usr/local/opt/llvm/bin/clang-tidy /usr/local/bin/clang-tidy
 grep "/usr/local/opt/llvm/bin" ~/.pathrc || {
     echo '#LLMV brew path' >> ~/.pathrc && echo 'export CLANG_BIN=/usr/local/opt/llvm/bin' >> ~/.pathrc && echo "" >> ~/.pathrc
 }
