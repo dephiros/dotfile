@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("vimrc" "nvimrc" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
+dotfiles=("vimrc" "spacemacs" "zshrc" "zshenv" "gitignore_global" "abcde.conf" "tmux.conf")    # list of files/folders to symlink in homedir
 configfiles=("nvim")    # list of files/folders to symlink to .config
 
 ##########

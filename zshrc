@@ -13,14 +13,12 @@ alias e="emacsclient -t"
 alias ec="emacsclient -c"
 
 # set up nvim
-VIMEDITOR="vim"
-if hash nvim 2>/dev/null; then
-  VIMEDITOR="nvim"
-fi
-alias e=$VIMEDITOR
-alias vi=$VIMEDITOR
-alias vim=$VIMEDITOR
-export EDITOR=$VIMEDITOR
+#if hash nvim 2>/dev/null; then
+#  VIMEDITOR="nvim"
+#  alias e=$VIMEDITOR
+#  alias vi=$VIMEDITOR
+#  alias vim=$VIMEDITOR
+#fi
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
