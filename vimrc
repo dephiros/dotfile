@@ -35,21 +35,16 @@ set showmatch
 
 " auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-  echo "installing vim"
+  echo "installing vim plug\n"
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
+
 call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
-Plug 'vim-syntastic/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_checkers = ['clang_tidy', 'clang_check']
+Plug 'w0rp/ale'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 call plug#end()
 
