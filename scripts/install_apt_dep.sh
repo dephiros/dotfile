@@ -2,9 +2,9 @@
 source ./util.sh
 
 echo "installing neovim"
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:jonathonf/vim
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get install vim
 
 echo "installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
