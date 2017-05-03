@@ -64,3 +64,5 @@ if [ -f /Users/an.nguyen/.tnsrc ]; then
     source /Users/an.nguyen/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

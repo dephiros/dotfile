@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source ./util.sh
+dir="$( cd "$( dirname "${bash_source[0]}" )" && pwd )"
+source $dir/util.sh
 
 echo "installing neovim"
 sudo add-apt-repository ppa:jonathonf/vim
