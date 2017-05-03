@@ -5,6 +5,7 @@ source $dir/util.sh
 echo "installing neovim"
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt-get update
+sudo apt-get install curl -y
 sudo apt-get install vim -y
 
 echo "installing fzf"
