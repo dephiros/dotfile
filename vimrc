@@ -48,6 +48,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'scrooloose/nerdcommenter'
+
 " git stuff
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
