@@ -52,6 +52,8 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'ntpeters/vim-better-whitespace'
+
 " git stuff
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -60,7 +62,6 @@ Plug 'airblade/vim-gitgutter'
 " simple note plugin
 Plug 'mrtazz/simplenote.vim'
 if !empty(glob("~/.simplenoterc"))
-    echo "Loading simplenote settings..."
     source ~/.simplenoterc
 endif
 let g:SimplenoteFiletype = "markdown"
