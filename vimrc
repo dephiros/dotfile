@@ -25,6 +25,8 @@ syntax on
 set number
 " highlight matching braces
 set showmatch
+" fix backspace http://stackoverflow.com/a/3534090
+set backspace=indent,eol,start
 
 " KeyMap
 "" Mapping alt-hjkl to move window
@@ -55,6 +57,8 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" simple note plugin
+Plug 'mrtazz/simplenote.vim'
 call plug#end()
 
 
