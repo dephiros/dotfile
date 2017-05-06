@@ -59,6 +59,15 @@ Plug 'airblade/vim-gitgutter'
 
 " simple note plugin
 Plug 'mrtazz/simplenote.vim'
-call plug#end()
+if !empty(glob("~/.simplenoterc"))
+    echo "Loading simplenote settings..."
+    source ~/.simplenoterc
+endif
+let g:SimplenoteFiletype = "markdown"
 
+" markdown plugin
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+call plug#end()
 
