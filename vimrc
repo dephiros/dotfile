@@ -79,6 +79,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'w0rp/ale'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Add clang, clangtidy to this list once we get it setup
+let g:ale_linters = {
+  \'cpp': ['cppcheck', 'gcc'],
+\}
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -94,7 +98,7 @@ Plug 'airblade/vim-gitgutter'
 " simple note plugin
 Plug 'mrtazz/simplenote.vim'
 if !empty(glob("~/.simplenoterc"))
-    source ~/.simplenoterc
+  source ~/.simplenoterc
 endif
 let g:SimplenoteFiletype = "markdown"
 
