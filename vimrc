@@ -87,7 +87,11 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" elixir
+Plug 'elixir-lang/vim-elixir'
+
 " org mode plugin
+Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode'
 
 " markdown plugin
