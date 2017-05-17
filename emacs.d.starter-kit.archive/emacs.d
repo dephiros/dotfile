@@ -1,1 +1,0 @@
-/Users/an.nguyen/dotfiles/emacs.d
