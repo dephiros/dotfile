@@ -89,8 +89,8 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" elixir
-Plug 'elixir-lang/vim-elixir'
+" language support
+Plug 'sheerun/vim-polyglot'
 
 " org mode plugin
 Plug 'tpope/vim-speeddating'
