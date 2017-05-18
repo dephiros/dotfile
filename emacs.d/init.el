@@ -36,28 +36,24 @@
   (require 'evil)
   (evil-mode t))
 
+(use-package base16-theme
+  :config
+  (load-theme `base16-tomorrow-night t))
+
 (use-package markdown-mode)
 
 (use-package flycheck)
 
-(use-package ivy
-  :diminish ivy-mode
-  :init (setq projectile-completion-system 'ivy)
-  :bind
-  (:map ivy-mode-map ("C-'" . ivy-avy))
+(use-package flx-ido
   :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-height 13)
-  (setq ivy-initial-inputs-alist nil)
-  (setq ivy-count-format "%d/%d ")
-  (setq ivy-virtual-abbreviate 'full) ; Show the full virtual file paths
-  (setq ivy-extra-directories '("./")) ; default value: ("../" "./")
-  (setq ivy-wrap t)
-  (setq ivy-re-builders-alist '((swiper . ivy--regex-plus)
-                (counsel-ag . ivy--regex-plus)
-                (counsel-grep-or-swiper . ivy--regex-plus)
-                (t . ivy--regex-fuzzy))))
+  (require 'flx-ido)
+  (ido-mode 1)
+  (ido-everywhere 1)
+  (flx-ido-mode 1)
+  ;; disable ido faces to see flx highlight
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
+
 (use-package magit)
 
 ;; javascript and stuff
