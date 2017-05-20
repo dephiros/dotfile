@@ -40,9 +40,19 @@
   :config
   (load-theme `base16-tomorrow-night t))
 
-(use-package markdown-mode)
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 
-(use-package flycheck)
+(use-package flycheck-title
+  :config
+  (with-eval-after-load 'flycheck
+    (flycheck-title-mode)))
+
+(use-package flycheck-color-mode-line
+  :config
+  (eval-after-load "flycheck"
+  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
 
 (use-package flx-ido
   :config
@@ -56,9 +66,12 @@
 
 (use-package magit)
 
-;; javascript and stuff
+;; language and stuff
+(use-package elixir-mode)
 (use-package web-mode)
 (use-package vue-mode)
+(use-package markdown-mode)
+
 
 ;; start emacs server
 (require 'server)
