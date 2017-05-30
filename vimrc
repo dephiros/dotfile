@@ -44,6 +44,8 @@ set number
 set showmatch
 
 " KeyMap
+"" remap leader key
+let mapleader=","
 "" Mapping alt-hjkl to move window
 :nnoremap ˙ <C-w>h
 :nnoremap ∆ <C-w>j
@@ -99,6 +101,32 @@ Plug 'jceb/vim-orgmode'
 " markdown plugin
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+
+" vimwiki plugin
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [
+                        \{'path': '~/Google Drive/vimwiki/zonar.wiki'},
+                        \{'path': '~/Google Drive/vimwiki/tech.wiki'}
+                     \]
+au BufRead,BufNewFile *.wiki set filetype=vimwiki
+:autocmd FileType vimwiki map d :VimwikiMakeDiaryNote
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()
+
+" controlp vim
+Plug 'ctrlpvim/ctrlp.vim'
 
 " session management
 Plug 'xolox/vim-session'
