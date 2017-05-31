@@ -107,7 +107,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [
                         \{'path': '~/Google Drive/vimwiki/zonar.wiki', 'syntax': 'markdown', 'ext': '.md'},
-                        \{'path': '~/Google Drive/vimwiki/tech.wiki', 'syntax': 'markdown', 'ext': '.md'}
+                        \{'path': '~/Google Drive/vimwiki/personal.wiki', 'syntax': 'markdown', 'ext': '.md'}
                      \]
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 
