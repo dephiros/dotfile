@@ -95,6 +95,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 
 " org mode plugin
+Plug 'vim-scripts/utl.vim'
 Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode'
 
