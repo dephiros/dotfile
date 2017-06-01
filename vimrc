@@ -33,7 +33,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 set tabstop=2        " tab width is 2 spaces
 set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
-" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
+" no wrap lines
 set textwidth=0
 set wrapmargin=0
 set nowrap
@@ -64,6 +64,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " sensible
 Plug 'tpope/vim-sensible'
+
+" editor config
+Plug 'editorconfig/editorconfig-vim'
 
 " misc utility
 Plug 'xolox/vim-misc'
