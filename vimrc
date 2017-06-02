@@ -33,10 +33,12 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 set tabstop=2        " tab width is 2 spaces
 set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
-" no wrap lines
-set textwidth=0
+" wrap at 120
+set textwidth=120
 set wrapmargin=0
-set nowrap
+set wrap
+set linebreak
+set nolist  " list disables linebreak"
 " turn syntax highlighting on
 " turn line numbers on
 set number
@@ -110,8 +112,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
 let g:vimwiki_list = [
-                        \{'path': '~/Google Drive/vimwiki/zonar.wiki', 'syntax': 'markdown', 'ext': '.md'},
-                        \{'path': '~/Google Drive/vimwiki/personal.wiki', 'syntax': 'markdown', 'ext': '.md'}
+                        \{'path': '~/Google Drive/vimwiki/personal.wiki', 'syntax': 'markdown', 'ext': '.md'},
+                        \{'path': '~/Google Drive/vimwiki/zonar.wiki', 'syntax': 'markdown', 'ext': '.md'}
                      \]
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 
