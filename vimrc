@@ -110,6 +110,7 @@ Plug 'plasticboy/vim-markdown'
 
 " vimwiki plugin
 Plug 'vimwiki/vimwiki'
+Plug 'blindFS/vim-taskwarrior'
 Plug 'tbabej/taskwiki'
 let g:vimwiki_list = [
                         \{'path': '~/Google Drive/vimwiki/personal.wiki', 'syntax': 'markdown', 'ext': '.md'},
