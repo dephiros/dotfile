@@ -55,6 +55,18 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Zonar Alias
 alias zsync='ssh dev "\$HOME/dotfiles/scripts/sync_branch.sh $(gbr)"'
+## borrow from http://danieldvork.in/use-current-directory-as-taskwarrior-project-filter/
+function zt() {
+    project='zonar';
+    tp=( $(task _projects | grep $project) );
+
+    if [[ -n $tp ]]; then
+        task "$@" project:$project;
+    else
+        task "$@"
+    fi
+}
+compdef zt=task
 
 # start ssh agent
 eval $($DOTHOME/zshrc_agent)
