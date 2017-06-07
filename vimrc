@@ -113,9 +113,10 @@ Plug 'vimwiki/vimwiki'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'tbabej/taskwiki'
 let g:vimwiki_list = [
-                        \{'path': '~/Google Drive/vimwiki/personal.wiki', 'syntax': 'markdown', 'ext': '.md'},
-                        \{'path': '~/Google Drive/vimwiki/zonar.wiki', 'syntax': 'markdown', 'ext': '.md'}
+                        \{'path': '~/Google Drive/vimwiki/personal.wiki'},
+                        \{'path': '~/Google Drive/vimwiki/zonar.wiki'}
                      \]
+let g:vimwiki_folding='expr'
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 
 " controlp vim
@@ -127,4 +128,4 @@ Plug 'xolox/vim-session'
 call plug#end()
 
 " not sure why it does not work if put right after Plug color scheme
-colorscheme base16-default-dark
+colorscheme base16-ashes
