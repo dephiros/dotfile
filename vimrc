@@ -34,7 +34,7 @@ set tabstop=2        " tab width is 2 spaces
 set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
 " wrap at 120
-set textwidth=120
+set textwidth=0
 set wrapmargin=0
 set wrap
 set linebreak
@@ -46,8 +46,10 @@ set number
 set showmatch
 
 " KeyMap
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "" remap leader key
-let mapleader=","
+""let mapleader=","
 "" Mapping alt-hjkl to move window
 :nnoremap ˙ <C-w>h
 :nnoremap ∆ <C-w>j
