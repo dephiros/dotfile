@@ -89,6 +89,17 @@ else
     echo "finished setting up git"
 fi
 
+# setting up org symlink
+## make sure dropbox folder is created
+dropbox=$HOME/Dropbox
+org=$HOME/org
+echo "make sure to create dropbox folder"
+mkdir -p $dropbox
+mv $org $org"_old" 2> /dev/null
+echo "Linking org note"
+ln -s $dropbox/org $org 2> /dev/null
+echo "...done\n"
+
 # link nvimrc with vim
 #ln -s $dir/vimrc ~/.nvimrc
 #ln -s $dir/vim ~/.nvim

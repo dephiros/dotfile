@@ -68,11 +68,6 @@
   (server-start))
 #+END_SRC
 
-** org mode setting
-#+BEGIN_SRC emacs-lisp
-(setq org-src-fontify-natively t)
-#+END_SRC
-
 * packages
 ** use-package
 #+BEGIN_SRC emacs-lisp
@@ -92,6 +87,15 @@
   :config (auto-compile-on-load-mode))
 (setq load-prefer-newer t)
 (require 'bind-key)
+#+END_SRC
+
+** org mode setting
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively t)
+
+; set default directory
+(setq org-directory "~/org/")
+(setq org-default-notes-file (concat org-directory "/index.org"))
 #+END_SRC
 
 ** theme
