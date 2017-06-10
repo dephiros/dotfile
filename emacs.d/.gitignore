@@ -11,6 +11,8 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
+*.el
+!init.el
 
 # flymake-mode
 *_flymake.*
@@ -47,3 +49,8 @@ flycheck_*.el
 # bookmark
 bookmarks
 ido*
+
+# el-get
+el-get/
+
+.cache/
