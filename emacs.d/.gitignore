@@ -49,6 +49,7 @@ flycheck_*.el
 # bookmark
 bookmarks
 ido*
+.ido*
 
 # el-get
 el-get/

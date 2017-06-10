@@ -9,6 +9,7 @@
   (require 'ansi-color)
   (require 'recentf)
 #+END_SRC
+
 ** enable IDO
 #+BEGIN_SRC emacs-lisp
 (require 'ido)
@@ -21,19 +22,22 @@
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-x B") 'ibuffer)
 #+END_SRC
+
 ** auto revert mode
 -  whenever an external process changes a file underneath emacs, and there was no unsaved changes in the corresponding buffer, just revert its content to reflect what's on-disk.
 #+BEGIN_SRC emacs-lisp
 (global-auto-revert-mode 1)
 #+END_SRC
+
 ** clipboard
 #+BEGIN_SRC emacs-lisp
 (setq x-select-enable-clipboard t)
 #+END_SRC
+
 ** display settings
 #+BEGIN_SRC emacs-lisp
 ;; on to the visual settings
-(setq inhibit-splash-screen t)		; no splash screen, thanks
+(global-visual-line-mode 1)
 (line-number-mode 1)			; have line numbers and
 (column-number-mode 1)			; column numbers in the mode line
 
@@ -55,76 +59,75 @@
 (when (string-match "apple-darwin" system-configuration)
   (setq mac-allow-anti-aliasing t))
 #+END_SRC
-* set up el-get
-** load el-get if not already loaded
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
-(unless (require 'el-get nil t)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://github.com/dimitri/el-get/raw/master/el-get-install.el")
-    (end-of-buffer)
-    (eval-print-last-sexp)))
-; set recipes path for elget
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-#+END_SRC
-** set list of el-get packages
-#+BEGIN_SRC emacs-lisp
-
-(setq
- el-get-sources
- '((:name buffer-move			; have to add your own keys
-	  :after (progn
-		   (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-		   (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-		   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-		   (global-set-key (kbd "<C-S-right>")  'buf-move-right)))
-
-   (:name smex				; a better (ido like) M-x
-	  :after (progn
-		   (setq smex-save-file "~/.emacs.d/.smex-items")
-		   (global-set-key (kbd "M-x") 'smex)
-		   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
-
-   (:name magit				; git meet emacs, and a binding
-	  :after (progn
-		   (global-set-key (kbd "C-x C-z") 'magit-status)))
-   (:name evil
-	  :after (progn
-                   (require 'evil)
-                   (evil-mode t)))
-
-   (:name evil-org-mode
- 	  :after (progn
-                   (add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
-                   (require 'evil-org)
-                   (add-hook 'org-mode-hook 'evil-org-mode)))
-
-   (:name goto-last-change		; move pointer back to last change
-	  :after (progn
-		   ;; when using AZERTY keyboard, consider C-x C-_
-		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))))
-
-(setq
- my:el-get-packages
- '(el-get
-   evil
-   evil-org-mode
-   magit
-   cedet
-   yasnippet
-   zencoding-mode
-   color-theme
-   base16))
-(el-get 'sync my:el-get-packages)
-#+END_SRC
-
-* start emacs server
+** start emacs server
 #+BEGIN_SRC emacs-lisp
 ;; start emacs server
 (require 'server)
 (unless (server-running-p)
   (server-start))
 #+END_SRC
+
+** org mode setting
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively t)
+#+END_SRC
+
+* packages
+** use-package
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(setq use-package-verbose t)
+(setq use-package-always-ensure t)
+(require 'use-package)
+(use-package auto-compile
+  :config (auto-compile-on-load-mode))
+(setq load-prefer-newer t)
+(require 'bind-key)
+#+END_SRC
+
+** theme
+#+BEGIN_SRC emacs-lisp
+(use-package base16-theme
+  :config
+  (load-theme `base16-tomorrow-night t))
+#+END_SRC
+
+** evil mode
+#+BEGIN_SRC emacs-lisp
+(use-package evil
+  :init
+  :config
+  (require 'evil)
+  (evil-mode t))
+#+END_SRC
+
+*** evil leader
+#+BEGIN_SRC emacs-lisp
+(use-package evil-leader
+  :init
+  :config
+  (require 'evil-leader)
+  (global-evil-leader-mode))
+#+END_SRC
+
+** magit
+#+BEGIN_SRC emacs-lisp
+(use-package magit)
+#+END_SRC
+
+** flycheck
+#+BEGIN_SRC emacs-lisp
+(use-package base16-theme
+  :config
+  (load-theme `base16-tomorrow-night t))
+#+END_SRC
+
