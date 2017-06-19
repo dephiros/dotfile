@@ -82,7 +82,16 @@
 (setq org-todo-keywords
 '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 #+END_SRC
-
+*** org capture
+#+BEGIN_SRC emacs-lisp
+(setq org-capture-templates
+'(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "Tasks")
+	"* TODO %?\n  %i\n  %a" :prepend t)
+("o" "Org Todo" entry (file+headline "~/org/org.org" "Tasks")
+	"* TODO %?\n  %i\n  %a" :prepend t)
+("c" "Zonar Todo" entry (file+headline "~/org/cargo.org" "Tasks")
+	"* TODO %?\n  %i\n  %a" :prepend t)))
+#+END_SRC
 * packages
 ** use-package
 #+BEGIN_SRC emacs-lisp
@@ -134,10 +143,20 @@
 (use-package magit)
 #+END_SRC
 
+** autocomplete
+*** company mode
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :ensure t
+  :init (global-company-mode))
+#+END_SRC
 ** flycheck
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
-  :ensure t
   :init (global-flycheck-mode))
 #+END_SRC
 
+** elixir
+#+BEGIN_SRC emacs-lisp
+(use-package alchemist) 
+#+END_SRC
