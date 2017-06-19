@@ -140,7 +140,8 @@
 
 ** magit
 #+BEGIN_SRC emacs-lisp
-(use-package magit)
+(use-package magit
+  :bind (("C-x g" . magit-status)))
 #+END_SRC
 
 ** autocomplete
