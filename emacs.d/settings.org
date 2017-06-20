@@ -86,11 +86,11 @@
 #+BEGIN_SRC emacs-lisp
 (setq org-capture-templates
 '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "Tasks")
-	"* TODO %?\n  %i\n  %a" :prepend t)
+	"* TODO %?\n" :prepend t)
 ("o" "Org Todo" entry (file+headline "~/org/org.org" "Tasks")
-	"* TODO %?\n  %i\n  %a" :prepend t)
+	"* TODO %?\n" :prepend t)
 ("c" "Zonar Todo" entry (file+headline "~/org/cargo.org" "Tasks")
-	"* TODO %?\n  %i\n  %a" :prepend t)))
+	"* TODO %?\n" :prepend t)))
 #+END_SRC
 * packages
 ** use-package
