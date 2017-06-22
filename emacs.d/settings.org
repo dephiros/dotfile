@@ -117,7 +117,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package spacemacs-theme
  :defer t
- :init (load-theme 'spacemacs-light t))
+ :init (load-theme 'spacemacs-dark t))
 #+END_SRC
 
 ** evil mode
