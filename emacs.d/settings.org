@@ -132,9 +132,6 @@
 (setq org-default-notes-file (concat org-directory "/index.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-ca" 'org-agenda)
-; set todo keyword
-(setq org-todo-keywords
-'((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 #+END_SRC
 *** org capture
 #+BEGIN_SRC emacs-lisp
