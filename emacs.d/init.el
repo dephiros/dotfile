@@ -27,9 +27,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (evil-leader spacemacs-theme web-mode vue-mode use-package markdown-mode magit flycheck-title flycheck-color-mode-line flx-ido evil elixir-mode base16-theme auto-compile))))
+    '(package-selected-packages
+         (quote
+             (evil-leader spacemacs-theme web-mode vue-mode use-package markdown-mode magit flycheck-title flycheck-color-mode-line flx-ido evil elixir-mode base16-theme auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

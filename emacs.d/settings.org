@@ -32,7 +32,6 @@
 #+BEGIN_SRC emacs-lisp
 (setq x-select-enable-clipboard t)
 #+END_SRC
-
 ** display settings
 #+BEGIN_SRC emacs-lisp
 ;; on to the visual settings
@@ -138,12 +137,10 @@
 *** org capture
 #+BEGIN_SRC emacs-lisp
 (setq org-capture-templates
-'(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "Tasks")
-	"* TODO %?" :prepend t)
-("o" "Org Todo" entry (file+headline "~/org/org.org" "Tasks")
-	"* TODO %?" :prepend t)
-("c" "Cargo Todo" entry (file+headline "~/org/cargo.org" "Tasks")
-	"* TODO %?" :prepend t)))
+'(("z" "Zonar Notes" entry (file+headline "~/org/zonar.org" "NOTE")
+	"* %?\nEntered on %U" :prepend t)
+("j" "Journal" entry (file+datetree "~/org/journal.org")
+    "* %?\nEntered on %U\n  %i\n  %a"))
 #+END_SRC
 * packages
 ** use-package
@@ -166,6 +163,11 @@
 (require 'bind-key)
 #+END_SRC
 
+** path
+#+BEGIN_SRC emacs-lisp
+(use-package exec-path-from-shell
+  :init (exec-path-from-shell-initialize))
+#+END_SRC
 ** theme
 #+BEGIN_SRC emacs-lisp
 (use-package spacemacs-theme
