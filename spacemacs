@@ -336,12 +336,10 @@ you should place your code here."
   (define-key global-map "\C-ca" 'org-agenda)
 
   (setq org-capture-templates
-        '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "Tasks")
-           "* TODO %?" :prepend t)
-          ("o" "Org Todo" entry (file+headline "~/org/org.org" "Tasks")
-           "* TODO %?" :prepend t)
-          ("c" "Cargo Todo" entry (file+headline "~/org/cargo.org" "Tasks")
-           "* TODO %?" :prepend t)))
+        '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "INBOX")
+           "* %?\n %i\n %a" :prepend t)
+          ("j" "Journal" entry (file+datetree "~/org/journal.org")
+           "* %?\nEntered on %U\n  %i\n  %a")))
 
   ; finally start emacs server
   (require 'server)
