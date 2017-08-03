@@ -339,6 +339,8 @@ you should place your code here."
   (setq org-capture-templates
         '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "INBOX")
            "* %?\n %i\n %a" :prepend t)
+          ("e" "emacs note" entry (file+headline "~/org/emacs.org" "commands")
+           "* %?\n" :prepend t)
           ("j" "Journal" entry (file+datetree "~/org/journal.org")
            "* %?\nEntered on %U\n  %i\n  %a")))
 
