@@ -78,6 +78,3 @@ fi
 ###-tns-completion-end-###
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# get path for scripts
-export PATH=$PATH:$HOME/dotfiles/scripts

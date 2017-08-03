@@ -15,4 +15,6 @@ export ALTERNATE_EDITOR=""
 # setup go path
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# set up path for script
+export PATH=$PATH:$DOTHOME/scripts
 include "$HOME/.pathrc"
