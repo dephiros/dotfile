@@ -72,9 +72,12 @@ compdef zt=task
 eval $($DOTHOME/zshrc_agent)
 
 ###-tns-completion-start-###
-if [ -f /Users/an.nguyen/.tnsrc ]; then 
-    source /Users/an.nguyen/.tnsrc 
+if [ -f /Users/an.nguyen/.tnsrc ]; then
+    source /Users/an.nguyen/.tnsrc
 fi
 ###-tns-completion-end-###
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# get path for scripts
+export PATH=$PATH:$HOME/dotfiles/scripts
