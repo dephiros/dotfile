@@ -7,6 +7,8 @@ export DOTHOME=$HOME/dotfiles
 #
 # User configuration sourced by interactive shells
 #
+# set bind key to emacs by default, change to vi when needed
+bindkey -e
 
 # set up emacs
 alias e="emacsclient -t"
