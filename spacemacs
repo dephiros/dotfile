@@ -262,7 +262,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -318,8 +318,6 @@ you should place your code here."
   (setq tab-width 2)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (setq indent-tabs-mode nil)
-  ;; add line number by default
-  (global-linum-mode t)
   ;; turn on visual line mode by default
   (global-visual-line-mode t)
   (editorconfig-mode 1) t
