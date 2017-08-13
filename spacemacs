@@ -314,13 +314,27 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ; emacs basic miscellaneous stuffs
   ;; to setup tabs
-  (setq c-basic-indent 2)
   (setq tab-width 2)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (setq indent-tabs-mode nil)
   ;; turn on visual line mode by default
   (global-visual-line-mode t)
   (editorconfig-mode 1) t
+
+  ;; Indenting guide
+  (indent-guide-global-mode)
+
+  (setq-default
+    ;; js2-mode
+    js2-basic-offset 2
+    react-mode-offset 2
+    ;; web-mode
+    css-indent-offset 2
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-attr-indent-offset 2)
+  (setq c-basic-indent 2)
 
   ; org config
   (setq org-src-fontify-natively t)
