@@ -13,3 +13,5 @@ config/nvim/*
 
 # ignore network security file from marmalade
 network-security.data
+
+*.log
