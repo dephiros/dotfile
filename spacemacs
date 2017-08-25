@@ -352,9 +352,11 @@ you should place your code here."
         '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "INBOX")
            "* %?\n %i\n %a" :prepend t)
           ("e" "emacs note" entry (file+headline "~/org/emacs.org" "commands")
-           "* %?\n" :prepend t)
-          ("j" "Journal" entry (file+datetree "~/org/journal.org")
-           "* %?\nEntered on %U\n  %i\n  %a")))
+            "* %?\n" :prepend t)
+          ("d" "dr" entry (file "~/porg/dream.org")
+            "* %?\nEntered on %T\n  %i\n  %a" :prepend t)
+          ("j" "Journal" entry (file+datetree "~/porg/journal.org")
+            "* %?\nEntered on %T\n  %i\n  %a" :prepend t)))
 
   ; finally start emacs server
   (require 'server)
