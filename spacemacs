@@ -372,3 +372,11 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (tern xterm-color which-key web-mode web-beautify use-package unfill toc-org tagedit smeargle slim-mode shell-pop scss-mode sass-mode pug-mode pcre2el orgit org-bullets mwim multi-term mmm-mode markdown-toc magit-gitflow macrostep livid-mode less-css-mode json-mode js2-refactor js-doc indent-guide hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flyspell-correct-helm flycheck-pos-tip exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig disaster coffee-mode cmake-mode clang-format bind-map auto-dictionary auto-compile ace-window ace-jump-helm-line))))
