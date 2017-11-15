@@ -11,23 +11,6 @@ set wildmenu
 " - :b lets you autocomplete any open buffer
 " TAG JUMPING:
 " Create the `tags` file (may need to install ctags first)
-command! MakeTags !ctags -R .
-" NOW WE CAN:
-" - Use ^] to jump to tag under cursor
-" - Use g^] for ambiguous tags
-" - Use ^t to jump back up the tag stack
-
-" netrw for file browsing
-let g:netrw_banner=0 " disable annoying banner
-let g:netrw_browse_split=4 " open in prior window
-let g:netrw_altv=1 " open splits to the right
-let g:netrw_liststyle=3 "tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
-" NOW WE CAN:
-" " - :edit a folder to open a file browser
-" " - <CR>/v/t to open in an h-split/v-split/tab
-" " - check |netrw-browse-maps| for more mappings"
 
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=2        " tab width is 2 spaces
@@ -110,22 +93,11 @@ Plug 'jceb/vim-orgmode'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
-" vimwiki plugin
-Plug 'vimwiki/vimwiki'
-Plug 'blindFS/vim-taskwarrior'
-Plug 'tbabej/taskwiki'
-let g:vimwiki_list = [
-                        \{'path': '~/Google Drive/vimwiki/personal.wiki'},
-                        \{'path': '~/Google Drive/vimwiki/zonar.wiki'}
-                     \]
-let g:vimwiki_folding='expr'
-au BufRead,BufNewFile *.wiki set filetype=vimwiki
-
 " controlp vim
 Plug 'ctrlpvim/ctrlp.vim'
 
 " session management
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 
 call plug#end()
 
