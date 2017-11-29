@@ -68,3 +68,4 @@ fi
 ###-tns-completion-end-###
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+include ~/.local.zsh
