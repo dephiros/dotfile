@@ -6,7 +6,7 @@ include () {
 }
 
 export DOTHOME=$HOME/dotfiles
-export PATH="/usr/local/sbin:/usr/local/bin/:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 # set up localpath
 export PATH=$PATH:~/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
