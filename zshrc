@@ -69,3 +69,5 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 include ~/.local.zsh
+eval "$(direnv hook $SHELL)" || true
+
