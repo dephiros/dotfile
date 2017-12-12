@@ -61,4 +61,4 @@ composer.phar
 # composer.lock
 
 # vscode
-.vscode
+.vscode/
