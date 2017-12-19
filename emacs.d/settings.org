@@ -214,5 +214,5 @@
 
 ** elixir
 #+BEGIN_SRC emacs-lisp
-(use-package alchemist) 
+(use-package alchemist)
 #+END_SRC
