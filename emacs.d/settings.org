@@ -58,61 +58,6 @@
   (setq mac-allow-anti-aliasing t))
 #+END_SRC
 
-** indentation settings
-#+BEGIN_SRC emacs-lisp
-(defun my-setup-indent (n)
-(setq-default
-  indent-tabs-mode nil
-  tab-width n
-  default-tab-width n
-  tab-stop-list (quote (n 4))
-  standard-indent n
-  tab-indent-level n
-
-  ;; A global option would be phenomenal.
-  c-basic-indent n
-  c-basic-offset n
-  c-indent-level n
-  cperl-indent-level n
-  cpython-indent-level n
-  css-indent-level n
-  css-indent-offset n
-  ess-indent-level n
-  html-basic-offset n
-  html-tab-width n
-  java-basic-offset n
-  java-tab-width n
-  jde-basic-offset n
-  jde-tab-width n
-  js-indent-level n
-  lisp-indent-offset n
-  lua-indent-level n
-  perl-indent-level n
-  php-mode-coding-style 'Default
-  py-indent-offset n
-  python-indent-offset n
-  r-indent-level n
-  sgml-basic-offset n
-  sgml-indent-level n
-  sh-basic-offset n
-  sh-tab-width n
-  xml-basic-offset n
-  xml-tab-width n)
-  )
-
-(defun my-office-code-style ()
-  (interactive)
-  (message "4 indentation")
-  ;; indent 4 spaces width
-  (my-setup-indent 4))
-
-(defun my-personal-code-style ()
-  (interactive)
-  (message "2 indentation")
-  ;; indent 4 spaces width
-  (my-setup-indent 4))
-(my-personal-code-style)
-#+END_SRC
 ** start emacs server
 #+BEGIN_SRC emacs-lisp
 ;; start emacs server
@@ -121,27 +66,6 @@
   (server-start))
 #+END_SRC
 
-** org mode setting
-#+BEGIN_SRC emacs-lisp
-(setq org-src-fontify-natively t)
-
-; set default directory
-(setq org-directory "~/org/")
-(setq org-agenda-files '("~/org/"))
-(setq org-default-notes-file (concat org-directory "/index.org"))
-(setq org-use-sub-superscripts '{})
-(setq org-export-with-sub-superscripts '{})
-(define-key global-map "\C-cc" 'org-capture)
-(define-key global-map "\C-ca" 'org-agenda)
-#+END_SRC
-*** org capture
-#+BEGIN_SRC emacs-lisp
-(setq org-capture-templates
-'(("z" "Zonar Notes" entry (file+headline "~/org/zonar.org" "NOTE")
-	"* %?\nEntered on %U" :prepend t)
-("j" "Journal" entry (file+datetree "~/org/journal.org")
-    "* %?\nEntered on %U\n  %i\n  %a"))
-#+END_SRC
 * packages
 ** use-package
 #+BEGIN_SRC emacs-lisp
