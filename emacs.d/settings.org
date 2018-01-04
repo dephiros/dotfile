@@ -92,11 +92,18 @@
 (use-package exec-path-from-shell
   :init (exec-path-from-shell-initialize))
 #+END_SRC
+** search
+*** ag
+(use-package ag
+  :defer t)
+*** projectile
+(use-package projectile
+  :defer t)
 ** theme
 #+BEGIN_SRC emacs-lisp
 (use-package spacemacs-theme
- :defer t
- :init (load-theme 'spacemacs-dark t))
+  :defer t
+  :init (load-theme 'spacemacs-dark t))
 #+END_SRC
 
 ** evil mode
