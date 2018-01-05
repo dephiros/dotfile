@@ -11,8 +11,6 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
-*.el
-!init.el
 
 # flymake-mode
 *_flymake.*
@@ -33,6 +31,10 @@ tramp
 # cask packages
 .cask/
 dist/
+
+# straight
+straight/*
+!straight/versions/*
 
 # Flycheck
 flycheck_*.el
