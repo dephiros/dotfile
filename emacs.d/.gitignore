@@ -57,3 +57,5 @@ ido*
 el-get/
 
 .cache/
+
+projectile*

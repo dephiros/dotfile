@@ -84,6 +84,26 @@
 (use-package magit
   :bind (("C-x g" . magit-status)))
 
+(use-package projectile
+  :init
+  (projectile-global-mode))
+
+;; this package help fuzzy matching
+(use-package flx)
+
+;; ivy replaces ido and configure fuzzy matching that rely on flx for sorting
+;; https://oremacs.com/2016/01/06/ivy-flx/
+(use-package ivy
+  :config
+  (ivy-mode 1)
+  (setq ivy-re-builders-alist
+    '((ivy-switch-buffer . ivy--regex-plus)
+      (t . ivy--regex-fuzzy))))
+
+;; integration between ivy and projectile
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-mode 1))
 
 ;;----------------------------------------------------------------------------
 ;; Org settings
