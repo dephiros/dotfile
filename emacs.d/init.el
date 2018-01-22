@@ -97,13 +97,25 @@
   :config
   (ivy-mode 1)
   (setq ivy-re-builders-alist
-    '((ivy-switch-buffer . ivy--regex-plus)
+    '((swiper . ivy--regex-plus)
       (t . ivy--regex-fuzzy))))
+
+;; this package use ivy as a backend for text search in file
+(use-package swiper
+  :config
+  (global-set-key "\C-s" 'swiper))
 
 ;; integration between ivy and projectile
 (use-package counsel-projectile
   :config
   (counsel-projectile-mode 1))
+
+(use-package ag)
+
+(use-package exec-path-from-shell
+  :init
+  (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize)))
 
 ;;----------------------------------------------------------------------------
 ;; Org settings
@@ -137,3 +149,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'narrow-to-region 'disabled nil)
