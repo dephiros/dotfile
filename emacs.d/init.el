@@ -111,18 +111,36 @@
   (counsel-projectile-mode 1))
 
 (use-package ag)
+(use-package rg)
 
 (use-package exec-path-from-shell
   :init
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
 
+;; org brain for wiki. See https://github.com/Kungsgeten/org-brain
+(use-package org-brain
+  :init
+  (setq org-brain-path "~/org/brain")
+  :config
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+  ; You might want to add information at the end of an entry, without visiting the file. A way to do this is to use a capture template, such as the one presented above.
+  ; (push '("b" "Brain" plain (function org-brain-goto-end)
+  ;         "* %i%?" :empty-lines 1)
+  ;       org-capture-templates)
+  (setq org-brain-visualize-default-choices 'all)
+  ;; For Evil users
+  (setq org-brain-title-max-length 12)
+  (global-set-key "\C-cb" 'org-brain-visualize)
+  (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
+
 ;;----------------------------------------------------------------------------
 ;; Org settings
 ;;----------------------------------------------------------------------------
 (setq org-src-fontify-natively t)
 (define-key global-map "\C-ca" 'org-agenda)
-
+(setq org-directory "~/org")
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
