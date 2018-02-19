@@ -10,7 +10,7 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs-base
+   dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -30,10 +30,7 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-    '(
-     html
-     javascript
-     c-c++
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -41,23 +38,23 @@ values."
      ;; ----------------------------------------------------------------
      helm
      ;; auto-completion
-     better-defaults
+     ;; better-defaults
      emacs-lisp
-     git
-     markdown
-     spacemacs-org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
+     ;; git
+     ;; markdown
+     ;; org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
+     ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(editorconfig indent-guide)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -262,7 +259,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -312,66 +309,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ; emacs basic miscellaneous stuffs
-  ;; to setup tabs
-  (setq tab-width 2)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (setq indent-tabs-mode nil)
-  ;; turn on visual line mode by default
-  (global-visual-line-mode t)
-  (editorconfig-mode 1) t
-
-  ;; Indenting guide
-  (indent-guide-global-mode)
-
-  (setq-default
-    ;; js2-mode
-    js2-basic-offset 2
-    react-mode-offset 2
-    ;; web-mode
-    css-indent-offset 2
-    web-mode-markup-indent-offset 2
-    web-mode-css-indent-offset 2
-    web-mode-code-indent-offset 2
-    web-mode-attr-indent-offset 2)
-  (setq c-basic-indent 2)
-
-  ; org config
-  (setq org-src-fontify-natively t)
-
-                                        ; set default directory
-  (setq org-directory "~/org/")
-  (setq org-agenda-files '("~/org/"))
-  (setq org-default-notes-file (concat org-directory "/index.org"))
-  (setq org-use-sub-superscripts '{})
-  (setq org-export-with-sub-superscripts '{})
-  (define-key global-map "\C-cc" 'org-capture)
-  (define-key global-map "\C-ca" 'org-agenda)
-
-  (setq org-capture-templates
-        '(("z" "Zonar Todo" entry (file+headline "~/org/zonar.org" "INBOX")
-           "* %?\n %i\n %a" :prepend t)
-          ("e" "emacs note" entry (file+headline "~/org/emacs.org" "commands")
-            "* %?\n" :prepend t)
-          ("d" "dr" entry (file "~/porg/dream.org")
-            "* %?\nEntered on %T\n  %i\n  %a" :prepend t)
-          ("j" "Journal" entry (file+datetree "~/porg/journal.org")
-            "* %?\nEntered on %T\n  %i\n  %a" :prepend t)))
-
-  ; finally start emacs server
-  (require 'server)
-  (unless (server-running-p)
-    (server-start))
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -379,4 +320,10 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-plus-contrib markdown-mode skewer-mode simple-httpd json-snatcher json-reformat yasnippet multiple-cursors s js2-mode projectile request flx haml-mode gitignore-mode flyspell-correct pos-tip flycheck pkg-info epl magit magit-popup git-commit ghub let-alist with-editor evil goto-chg undo-tree dash diminish bind-key packed helm avy helm-core popup async tern xterm-color which-key web-mode web-beautify use-package unfill toc-org tagedit smeargle slim-mode shell-pop scss-mode sass-mode pug-mode pcre2el orgit org-bullets mwim multi-term mmm-mode markdown-toc magit-gitflow macrostep livid-mode less-css-mode json-mode js2-refactor js-doc indent-guide hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flyspell-correct-helm flycheck-pos-tip exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig disaster coffee-mode cmake-mode clang-format bind-map auto-dictionary auto-compile ace-window ace-jump-helm-line))))
+    (ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async evil-unimpaired f s dash))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
