@@ -155,7 +155,14 @@
 
   ;; Initialize first org-wiki-directory or default org-wiki 
   (setq org-wiki-location (car org-wiki-location-list))
-)
+  )
+
+;; org rifle for searching through org file
+(use-package dash)
+(use-package f)
+(use-package s)
+(use-package helm-org-rifle
+  :bind (("C-c r" . helm-org-rifle-org-directory)))
 
 ;;----------------------------------------------------------------------------
 ;; Org settings
