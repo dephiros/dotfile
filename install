@@ -99,7 +99,7 @@ else
     git config --global core.excludesfile "$HOME/.gitignore_global"
     git config --global difftool.prompt "true"
     git config --global push.default simple
-    local fancyLog = "log --graph --oneline --decorate"
+    local fancyLog="log --graph --oneline --decorate"
     git config --global alias.l $fancyLog
     git config --global alias.lg $fancyLog
     echo "finished setting up git"
