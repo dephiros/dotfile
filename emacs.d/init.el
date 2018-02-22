@@ -157,6 +157,10 @@
   (setq org-wiki-location (car org-wiki-location-list))
   )
 
+;; this helps with code highlight
+(use-package htmlize)
+(setq org-html-htmlize-output-type 'inline-css)
+
 ;; org rifle for searching through org file
 (use-package dash)
 (use-package f)
