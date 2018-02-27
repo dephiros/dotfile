@@ -135,7 +135,8 @@
 (ido-mode -1) ;; Turn off ido mode in case I enabled it accidentally
 (straight-use-package
  '(helm-rg :type git :host github :repo "microamp/helm-rg"))
-(use-package helm-projectile)
+(use-package helm-projectile
+  :bind(("C-c p p" . helm-projectile-switch-project)))
 
 (use-package exec-path-from-shell
   :init
@@ -155,11 +156,13 @@
 
   ;; Initialize first org-wiki-directory or default org-wiki 
   (setq org-wiki-location (car org-wiki-location-list))
+  (setq org-wiki-server-port "8123") ;; 8000 - default value 
+
   )
 
 ;; this helps with code highlight
 (use-package htmlize)
-(setq org-html-htmlize-output-type 'inline-css)
+(setq org-html-htmlize-output-type 'css)
 
 ;; org rifle for searching through org file
 (use-package dash)
