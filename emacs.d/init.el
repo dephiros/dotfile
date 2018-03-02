@@ -162,7 +162,6 @@
 
 ;; this helps with code highlight
 (use-package htmlize)
-(setq org-html-htmlize-output-type 'css)
 
 ;; org rifle for searching through org file
 (use-package dash)
