@@ -26,6 +26,9 @@
   (setq  mac-option-modifier 'meta)
   (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
 )
+;;; C-x r j e
+(set-register ?i (cons 'file "~/dotfiles/emacs.d/init.el"))
+(set-register ?w (cons 'file "~/org/wiki/index.org"))
 
 
 ;;----------------------------------------------------------------------------
@@ -143,22 +146,22 @@
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
 
-;; org-wiki
-(use-package let-alist)
-(use-package org-wiki
-  :straight (org-wiki :type git :host github :repo "caiorss/org-wiki")
-  :config
-  (require 'org-wiki)
-  (setq org-wiki-location-list
-    '(
-      "~/org/wiki"
-    ))
-
-  ;; Initialize first org-wiki-directory or default org-wiki 
-  (setq org-wiki-location (car org-wiki-location-list))
-  (setq org-wiki-server-port "8123") ;; 8000 - default value 
-
-  )
+;; org-wiki: example to isntall from github
+;; (use-package let-alist)
+;; (use-package org-wiki
+;;   :straight (org-wiki :type git :host github :repo "caiorss/org-wiki")
+;;   :config
+;;   (require 'org-wiki)
+;;   (setq org-wiki-location-list
+;;     '(
+;;       "~/org/wiki"
+;;     ))
+;; 
+;;   ;; Initialize first org-wiki-directory or default org-wiki 
+;;   (setq org-wiki-location (car org-wiki-location-list))
+;;   (setq org-wiki-server-port "8123") ;; 8000 - default value 
+;; 
+;;   )
 
 ;; this helps with code highlight
 (use-package htmlize)
