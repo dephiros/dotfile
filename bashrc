@@ -55,6 +55,8 @@ include () {
 }
 #CUSTOM
 #######
+bash-it enable plugin tmux base history &>/dev/null
+bash-it enable completion tmux docker brew bash-it system docker docker-compose git pip pip3 &>/dev/null
 
 export SHELL=$(which bash)
 export DOTHOME=$HOME/dotfiles
