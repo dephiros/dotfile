@@ -200,6 +200,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/org/note.org")))
  '(org-export-with-sub-superscripts (quote {}))
+ '(org-startup-with-inline-images t)
  '(org-use-sub-superscripts (quote {})))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
