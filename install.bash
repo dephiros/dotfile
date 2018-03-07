@@ -13,7 +13,7 @@ config=$HOME/.config
 oldconfig=$HOME/init_old
 dotfiles=("editorconfig" "vimrc" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "emacs" "emacs.d")    # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
-configfiles=("nvim")    # list of files/folders to symlink to .config
+configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
 
 ##########
 
@@ -32,11 +32,10 @@ configfiles=("nvim")    # list of files/folders to symlink to .config
 #     echo "\n"
 # fi
 
-echo - set up bash_it
-rm -rf ~/.bash_it
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 chsh -s bash
-echo "\n"
+echo - set up liquidprompt
+rm -rf ~/liquidprompt
+git clone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
 
 echo - set up tmux
 if [ ! -d "$HOME/.tmux" ]; then
