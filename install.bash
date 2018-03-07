@@ -21,7 +21,7 @@ configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .
 # if [ ! -d "$HOME/.emacs.d" ]; then
 #    echo 'could not find emacs.d. installing spacemacs'
 #    rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-#    git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+#    git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 #    echo "\n"
 # fi
 
@@ -35,17 +35,17 @@ configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .
 chsh -s bash
 echo - set up liquidprompt
 rm -rf ~/liquidprompt
-git clone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
+git clone git://github.com/nojhan/liquidprompt.git ~/liquidprompt
 
 echo - set up tmux
 if [ ! -d "$HOME/.tmux" ]; then
-    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    git clone git://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
     echo "\n"
 fi
 # set up ssh-find-agent
 if [ ! -d "$HOME/ssh-find-agent" ]; then
   echo 'Pulling ssh-find-agent'
-  git clone https://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
+  git clone git://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
   echo "\n"
 fi
 
