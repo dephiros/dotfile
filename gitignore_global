@@ -3,6 +3,7 @@
 \.idea
 *.swp
 .envrc
+.direnv/
 
 
 # -*- mode: gitignore; -*-
@@ -62,3 +63,6 @@ composer.phar
 
 # vscode
 .vscode/
+
+# temp ignore for testing
+docker-compose.dev.osx.yml
