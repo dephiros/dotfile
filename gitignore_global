@@ -65,4 +65,4 @@ composer.phar
 .vscode/
 
 # temp ignore for testing
-docker-compose.dev.osx.yml
+docker-compose.dev.osxfs.yml
