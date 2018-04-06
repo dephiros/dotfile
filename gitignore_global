@@ -66,3 +66,4 @@ composer.phar
 
 # temp ignore for testing
 docker-compose.dev.osxfs.yml
+dev_first_run_osxfs.sh

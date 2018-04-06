@@ -199,6 +199,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/org/wiki/index.org")))
+ '(org-export-backends (quote (ascii beamer html icalendar latex md confluence)))
  '(org-export-with-sub-superscripts (quote {}))
  '(org-startup-with-inline-images t)
  '(org-use-sub-superscripts (quote {})))
