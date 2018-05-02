@@ -11,19 +11,19 @@ configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "vimrc" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "emacs" "emacs.d")    # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "SpaceVim.d")    # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
 
 ##########
 
-# set up space emacs
-# if [ ! -d "$HOME/.emacs.d" ]; then
-#    echo 'could not find emacs.d. installing spacemacs'
-#    rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-#    git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-#    echo "\n"
-# fi
+set up space emacs
+if [ ! -d "$HOME/.emacs.d" ]; then
+   echo 'could not find emacs.d. installing spacemacs'
+   rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
+   git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+   echo "\n"
+fi
 
 # echo - set up oh-my-zsh
 # if [ ! -d "$HOME/.oh-my-zsh" ]; then

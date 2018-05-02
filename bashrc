@@ -72,3 +72,5 @@ export TERM=xterm-256color
 include ~/.local.bash
 eval "$(direnv hook $SHELL)" || true
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
