@@ -54,7 +54,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(editorconfig indent-guide)
+   dotspacemacs-additional-packages '(editorconfig indent-guide deft)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -331,6 +331,13 @@ you should place your code here."
   (define-key global-map "\C-cc" 'org-capture)
   (define-key global-map "\C-ca" 'org-agenda)
 
+  (global-set-key [f8] 'deft)
+  (evil-set-initial-state 'deft-mode 'emacs)
+
+
+
+
+
   ; finally start emacs server
   (require 'server)
   (unless (server-running-p)
@@ -344,7 +351,13 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(deft-auto-save-interval 0)
+ '(deft-directory "~/org/notes")
+ '(deft-extensions (quote ("org" "txt" "text" "md" "markdown")))
+ '(deft-recursive t)
+  '(package-selected-packages
+     (quote
+       (deft ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org spaceline smex smeargle restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree mwim move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

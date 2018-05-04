@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc")    # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc" "gvimrc")    # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
 
@@ -25,9 +25,13 @@ if is_mac; then
   brew tap caskroom/fonts
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus
+  brew install emacs-plus git bash vim
   brew cask install font-source-code-pro
   brew cask install font-m-plus
+  brew cask install font-fantasque-sans-mono
+  brew cask install iterm2
+  brew cask install dropbox
+  brew cask install google-drive
 fi
 
 set up space emacs
