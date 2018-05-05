@@ -25,7 +25,7 @@ if is_mac; then
   brew tap caskroom/fonts
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus git bash vim
+  brew install emacs-plus git bash vim tmux
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
