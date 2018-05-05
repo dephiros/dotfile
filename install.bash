@@ -31,7 +31,8 @@ if is_mac; then
   brew cask install font-fantasque-sans-mono
   brew cask install iterm2
   brew cask install dropbox
-  brew cask install google-drive
+  brew cask install google-drive-file-stream
+  brew cask install docker
 fi
 
 set up space emacs
