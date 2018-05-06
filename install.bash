@@ -33,6 +33,7 @@ if is_mac; then
   brew cask install dropbox
   brew cask install google-drive-file-stream
   brew cask install docker
+  brew cask install todoist
 fi
 
 set up space emacs

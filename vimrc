@@ -94,6 +94,9 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
+"" markdown config
+""" treat txt file as markdown
+autocmd BufRead *.txt set filetype=markdown
 
 " controlp vim
 Plug 'ctrlpvim/ctrlp.vim'
