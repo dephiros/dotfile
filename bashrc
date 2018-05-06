@@ -20,6 +20,10 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # set up path for script
 export PATH=$PATH:$DOTHOME/scripts
+
+# alias
+alias dc="docker-compose"
+
 include "$HOME/.localenv.bash"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 export DOTHOME=$HOME/dotfiles
