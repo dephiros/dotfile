@@ -19,8 +19,8 @@ configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .
 source $dir/scripts/utils.sh
 
 ##########
-echo "* Installing stuffs for mac"
 if is_mac; then
+echo "* Installing stuffs for mac"
   mac_brew_install_if_exist
   brew tap caskroom/fonts
   brew tap d12frosted/emacs-plus
@@ -33,6 +33,9 @@ if is_mac; then
   brew cask install dropbox
   brew cask install google-drive-file-stream
   brew cask install docker
+elif command_exist apt-get; then
+echo "* Installing stuffs with apt-get"
+  sudo apt-get install git curl fonts-mplus
 fi
 
 set up space emacs
