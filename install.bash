@@ -35,7 +35,7 @@ echo "* Installing stuffs for mac"
   brew cask install docker
 elif command_exist apt-get; then
 echo "* Installing stuffs with apt-get"
-  sudo apt-get install git curl fonts-mplus
+  sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv
 fi
 
 set up space emacs
