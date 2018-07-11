@@ -15,3 +15,7 @@ mac_brew_install_if_exist() {
 command_exist() {
   command -v $1 >/dev/null 2>&1
 }
+
+include () {
+    [[ -f "$1" ]] && source "$1"
+}

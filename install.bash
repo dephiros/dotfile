@@ -118,8 +118,8 @@ else
         echo "could not find vim, setting git editor to vi"
     else
         gitEditor="vim"
-	git config --global merge.tool vimdiff
-	git config --global merge.conflictstyle diff3
+        git config --global merge.tool vimdiff
+        git config --global merge.conflictstyle diff3
     fi
     echo "setting up git"
     git config --global core.editor "$gitEditor"

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # this function to include if exist
-include () {
-    [[ -f "$1" ]] && source "$1"
-}
+source ./scripts/utils.sh
 export SHELL=$(which bash)
 # Only load in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/dotfiles/sensible.bash
@@ -41,6 +39,7 @@ alias ec="emacsclient -c"
 #  alias vim=$VIMEDITOR
 #fi
 alias vi=vim
+export EDITOR=vim
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
