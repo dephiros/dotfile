@@ -26,6 +26,7 @@ echo "* Installing stuffs for mac"
   brew tap d12frosted/emacs-plus
   brew update
   brew install emacs-plus git bash vim tmux entr fzf peco
+  brew install emacs-plus git bash vim tmux entr direnv
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
