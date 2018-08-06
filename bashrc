@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # this function to include if exist
-source ./scripts/utils.sh
+dir=$HOME/dotfiles                    # dotfiles directory
+source $dir/scripts/utils.sh
 export SHELL=$(which bash)
 # Only load in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/dotfiles/sensible.bash
