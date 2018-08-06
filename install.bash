@@ -38,7 +38,10 @@ echo "* Installing stuffs with apt-get"
   sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv
 fi
 
-set up space emacs
+# set up asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+# set up space emacs
 if [ ! -d "$HOME/.emacs.d" ]; then
    echo 'could not find emacs.d. installing spacemacs'
    rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
