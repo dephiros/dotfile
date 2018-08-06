@@ -25,7 +25,7 @@ echo "* Installing stuffs for mac"
   brew tap caskroom/fonts
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus git bash vim tmux entr
+  brew install emacs-plus git bash vim tmux entr fzf peco
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
@@ -33,6 +33,7 @@ echo "* Installing stuffs for mac"
   brew cask install dropbox
   brew cask install google-drive-file-stream
   brew cask install docker
+  brew tap sachaos/todoist && brew install todoist
 elif command_exist apt-get; then
 echo "* Installing stuffs with apt-get"
   sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv
