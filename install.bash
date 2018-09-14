@@ -116,12 +116,16 @@ if ! type "git" > /dev/null; then
     echo "git is not installed, install git and rerun install script"
 else
     gitEditor="$(which vi)"
-    if ! type "vim" 2> /dev/null; then
-        echo "could not find vim, setting git editor to vi"
-    else
+    if command_exist nvim; then
+      gitEditor="nvim"
+      git config --global merge.tool vimdiff
+      git config --global merge.conflictstyle diff3
+    if command_exist vim; then
         gitEditor="vim"
         git config --global merge.tool vimdiff
         git config --global merge.conflictstyle diff3
+    else
+        echo "could not find vim, setting git editor to vi"
     fi
     echo "setting up git"
     git config --global core.editor "$gitEditor"
