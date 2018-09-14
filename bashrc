@@ -78,6 +78,13 @@ eval "$(direnv hook $SHELL)" || true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# asdf extensible env manager
+if [ ! -d "$HOME/.asdf" ]; then
+   echo 'could not find asdf. installing asdf'
+   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.1
+   echo "\n"
+fi
+
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
