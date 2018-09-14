@@ -33,12 +33,12 @@ alias e="emacsclient -t"
 alias ec="emacsclient -c"
 
 # set up nvim
-#if hash nvim 2>/dev/null; then
-#  VIMEDITOR="nvim"
-#  alias e=$VIMEDITOR
-#  alias vi=$VIMEDITOR
-#  alias vim=$VIMEDITOR
-#fi
+if command_exist nvim; then
+  VIMEDITOR="nvim"
+  alias e=$VIMEDITOR
+  alias vi=$VIMEDITOR
+  alias vim=$VIMEDITOR
+fi
 alias vi=vim
 export EDITOR=vim
 
