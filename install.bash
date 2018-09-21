@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc" "gvimrc")    # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc" "gvimrc" "direnvrc")    # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
 
@@ -112,7 +112,7 @@ done
 echo "...done\n"
 
 # set up git
-if ! type "git" > /dev/null; then
+if ! command_exist git; then
     echo "git is not installed, install git and rerun install script"
 else
     gitEditor="$(which vi)"
@@ -120,7 +120,7 @@ else
       gitEditor="nvim"
       git config --global merge.tool vimdiff
       git config --global merge.conflictstyle diff3
-    if command_exist vim; then
+    elif command_exist vim; then
         gitEditor="vim"
         git config --global merge.tool vimdiff
         git config --global merge.conflictstyle diff3
