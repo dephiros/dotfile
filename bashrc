@@ -85,10 +85,13 @@ if [ ! -d "$HOME/.asdf" ]; then
    echo "\n"
 fi
 
-. $HOME/.asdf/asdf.sh
+include $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+include $HOME/.asdf/completions/asdf.bash
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+include "$NVM_DIR/nvm.sh"  # This loads nvm
+include "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
