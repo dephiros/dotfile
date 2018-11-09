@@ -31,7 +31,7 @@ echo "* Installing stuffs for mac"
   brew cask install font-fantasque-sans-mono
   brew cask install iterm2
   brew cask install dropbox
-  brew cask install google-drive-file-stream
+  brew cask install google-backup-and-sync
   brew cask install docker
 elif command_exist apt-get; then
 echo "* Installing stuffs with apt-get"
