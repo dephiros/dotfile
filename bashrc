@@ -19,6 +19,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # set up path for script
 export PATH=$PATH:$DOTHOME/scripts
+export PATH=$HOME/.local/bin:$PATH
 
 # alias
 alias dc="docker-compose"
