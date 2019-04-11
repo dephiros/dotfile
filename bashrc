@@ -2,7 +2,7 @@
 # this function to include if exist
 dir=$HOME/dotfiles                    # dotfiles directory
 source $dir/scripts/utils.sh
-export SHELL=$(which bash)
+export SHELL=$(type -p bash)
 # Only load in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/dotfiles/sensible.bash
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
