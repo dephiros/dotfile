@@ -24,7 +24,7 @@ export PATH=$HOME/.local/bin:$PATH
 # alias
 alias dc="docker-compose"
 
-include "$HOME/.localenv.bash"
+include "$HOME/.localenv.bash" || true
 export DOTHOME=$HOME/dotfiles
 #
 # User configuration sourced by interactive shells
@@ -73,7 +73,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
-include ~/.local.bash
+include ~/.local.bash || true
 eval "$(direnv hook $SHELL)" || true
 
 
