@@ -3,9 +3,11 @@
 \#*
 *#
 *\.swp
-vim/*
-!vim/UltiSnips
-!vim/colors
+# Ignore Vim plugins
+vim/plugins/
+vim/.netrwhist
+# !vim/UltiSnips
+# !vim/colors
 
 # nvim
 config/nvim/*
