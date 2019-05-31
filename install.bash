@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config       # dotfiles/config directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc" "gvimrc" "direnvrc")    # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vimrc" "gvimrc" "direnvrc" "zshrc" "zshenv" "oh-my-zsh")    # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
 
@@ -22,10 +22,9 @@ source $dir/scripts/utils.sh
 if is_mac; then
 echo "* Installing stuffs for mac"
   mac_brew_install_if_exist
-  brew tap caskroom/fonts
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus git bash vim neovim tmux entr direnv fzf peco
+  brew install emacs-plus git bash zsh vim neovim tmux entr direnv fzf peco ripgrep
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
@@ -37,7 +36,7 @@ elif command_exist apt-get; then
 echo "* Installing stuffs with apt-get"
   sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update
-  sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv vim neovim
+  sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv vim neovim zsh
 fi
 
 # set up space emacs
@@ -48,14 +47,13 @@ if [ ! -d "$HOME/.emacs.d" ]; then
    echo "\n"
 fi
 
-# echo - set up oh-my-zsh
-# if [ ! -d "$HOME/.oh-my-zsh" ]; then
-#     git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-#     chsh -s zsh
-#     echo "\n"
-# fi
+echo - set up oh-my-zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+    chsh -s zsh
+    echo "\n"
+fi
 
-chsh -s bash
 echo - set up liquidprompt
 rm -rf ~/liquidprompt
 git clone git://github.com/nojhan/liquidprompt.git ~/liquidprompt
