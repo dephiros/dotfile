@@ -35,6 +35,9 @@ fi
 alias vi=vim
 export EDITOR=vim
 
+# vscode to vscode-insiders
+alias code=code-insiders
+
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -48,12 +51,11 @@ alias gbr='git rev-parse --abbrev-ref HEAD'
 alias gbclean='git branch --merged origin/master | grep -v "\*" | xargs -n 1 git branch -d'
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cache'
-grreset()
-{
-  git fetch | grep -q `gbr`
+grreset() {
+  git fetch | grep -q $(gbr)
   if [ $? -eq 0 ]; then
     echo 'Reseting to origin'
-    git reset --hard origin/`gbr`
+    git reset --hard origin/$(gbr)
   else
     echo 'No change'
   fi
@@ -68,12 +70,11 @@ export TERM=xterm-256color
 include ~/.local.bash || true
 eval "$(direnv hook $SHELL)" || true
 
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-include "$NVM_DIR/nvm.sh"  # This loads nvm
-include "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+include "$NVM_DIR/nvm.sh"          # This loads nvm
+include "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
