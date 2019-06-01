@@ -24,7 +24,7 @@ if is_mac; then
   mac_brew_install_if_exist
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus git bash zsh vim neovim tmux entr direnv fzf peco ripgrep
+  brew install emacs-plus git bash zsh vim neovim tmux entr direnv fzf peco ripgrep tree
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
@@ -36,7 +36,7 @@ elif command_exist apt-get; then
   echo "* Installing stuffs with apt-get"
   sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update
-  sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv vim neovim zsh
+  sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv vim neovim zsh tree ripgrep
 fi
 
 # set up space emacs
