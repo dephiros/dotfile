@@ -6,3 +6,5 @@ export SHELL=$(type -p bash)
 [[ $- == *i* ]] && source ~/dotfiles/sensible.bash
 [[ $- == *i* ]] && source ~/liquidprompt/liquidprompt
 source $DOTHOME/shellrc.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
