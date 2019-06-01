@@ -6,21 +6,21 @@
 
 ########## Variables
 
-dir=$HOME/dotfiles                    # dotfiles directory
-configdir=$HOME/dotfiles/config       # dotfiles/config directory
-olddir=$HOME/dotfiles_old             # old dotfiles backup directory
+dir=$HOME/dotfiles              # dotfiles directory
+configdir=$HOME/dotfiles/config # dotfiles/config directory
+olddir=$HOME/dotfiles_old       # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vim" "vimrc" "gvimrc" "direnvrc" "zshrc" "zshenv" "oh-my-zsh")    # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vim" "vimrc" "gvimrc" "direnvrc" "zshrc" "zshenv" "oh-my-zsh") # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
-configfiles=("nvim" "liquidpromptrc")    # list of files/folders to symlink to .config
+configfiles=("nvim" "liquidpromptrc") # list of files/folders to symlink to .config
 
 ##########
 source $dir/scripts/utils.sh
 
 ##########
 if is_mac; then
-echo "* Installing stuffs for mac"
+  echo "* Installing stuffs for mac"
   mac_brew_install_if_exist
   brew tap d12frosted/emacs-plus
   brew update
@@ -33,7 +33,7 @@ echo "* Installing stuffs for mac"
   brew cask install google-backup-and-sync
   brew cask install docker
 elif command_exist apt-get; then
-echo "* Installing stuffs with apt-get"
+  echo "* Installing stuffs with apt-get"
   sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update
   sudo apt-get install git curl fonts-mplus gnome-tweak-tool direnv vim neovim zsh
@@ -41,18 +41,17 @@ fi
 
 # set up space emacs
 if [ ! -d "$HOME/.emacs.d" ]; then
-   echo 'could not find emacs.d. installing spacemacs'
-   rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-   git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-   echo "\n"
+  echo 'could not find emacs.d. installing spacemacs'
+  rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
+  git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+  echo "\n"
 fi
 
 echo - set up oh-my-zsh
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-    chsh -s zsh
-    echo "\n"
-fi
+rm -rf $HOME/.oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+chsh -s zsh
+echo "\n"
 
 echo - set up liquidprompt
 rm -rf ~/liquidprompt
@@ -60,8 +59,8 @@ git clone git://github.com/nojhan/liquidprompt.git ~/liquidprompt
 
 echo - set up tmux
 if [ ! -d "$HOME/.tmux" ]; then
-    git clone git://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-    echo "\n"
+  git clone git://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+  echo "\n"
 fi
 # set up ssh-find-agent
 if [ ! -d "$HOME/ssh-find-agent" ]; then
@@ -79,20 +78,20 @@ echo "...done\n"
 #
 echo "Linking normal files"
 for file in ${files[@]}; do
-    echo "Moving existing $file from ~ to $olddir"
-    mv $HOME/.$file $olddir 2> /dev/null
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file $HOME/$file 2> /dev/null
+  echo "Moving existing $file from ~ to $olddir"
+  mv $HOME/.$file $olddir 2>/dev/null
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file $HOME/$file 2>/dev/null
 done
 echo "...done\n"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Linking dotfiles"
 for file in ${dotfiles[@]}; do
-    echo "Moving existing $file from ~ to $olddir"
-    mv $HOME/.$file $olddir 2> /dev/null
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file $HOME/.$file 2> /dev/null
+  echo "Moving existing $file from ~ to $olddir"
+  mv $HOME/.$file $olddir 2>/dev/null
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file $HOME/.$file 2>/dev/null
 done
 echo "...done\n"
 
@@ -102,35 +101,35 @@ echo "make sure to create $config"
 mkdir -p $config
 echo "Linking configfiles"
 for file in ${configfiles[@]}; do
-    echo "Moving existing $file from ~ to $oldconfig"
-    mv $config/$file $oldconfig 2> /dev/null
-    echo "Creating symlink to $file in config directory."
-    ln -s $configdir/$file $config/$file 2> /dev/null
+  echo "Moving existing $file from ~ to $oldconfig"
+  mv $config/$file $oldconfig 2>/dev/null
+  echo "Creating symlink to $file in config directory."
+  ln -s $configdir/$file $config/$file 2>/dev/null
 done
 echo "...done\n"
 
 # set up git
 if ! command_exist git; then
-    echo "git is not installed, install git and rerun install script"
+  echo "git is not installed, install git and rerun install script"
 else
-    gitEditor="$(which vi)"
-    if command_exist nvim; then
-      gitEditor="nvim"
-      git config --global merge.tool vimdiff
-      git config --global merge.conflictstyle diff3
-    elif command_exist vim; then
-        gitEditor="vim"
-        git config --global merge.tool vimdiff
-        git config --global merge.conflictstyle diff3
-    else
-        echo "could not find vim, setting git editor to vi"
-    fi
-    echo "setting up git"
-    git config --global core.editor "$gitEditor"
-    git config --global core.excludesfile "$HOME/.gitignore_global"
-    git config --global difftool.prompt "true"
-    git config --global push.default simple
-    echo "finished setting up git"
+  gitEditor="$(which vi)"
+  if command_exist nvim; then
+    gitEditor="nvim"
+    git config --global merge.tool vimdiff
+    git config --global merge.conflictstyle diff3
+  elif command_exist vim; then
+    gitEditor="vim"
+    git config --global merge.tool vimdiff
+    git config --global merge.conflictstyle diff3
+  else
+    echo "could not find vim, setting git editor to vi"
+  fi
+  echo "setting up git"
+  git config --global core.editor "$gitEditor"
+  git config --global core.excludesfile "$HOME/.gitignore_global"
+  git config --global difftool.prompt "true"
+  git config --global push.default simple
+  echo "finished setting up git"
 fi
 
 echo "...done\n"
