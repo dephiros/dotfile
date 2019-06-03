@@ -1,3 +1,5 @@
+# select default shell
+export SHELL=$(type -p zsh)
 export DOTHOME=$HOME/dotfiles
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 source $DOTHOME/scripts/utils.sh
