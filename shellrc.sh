@@ -70,7 +70,6 @@ export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
 include ~/.local.bash || true
-eval "$(direnv hook $SHELL)" || true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
