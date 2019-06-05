@@ -3,6 +3,7 @@
 #
 # Source oh-my-zsh
 source $HOME/dotfiles/oh-my-zsh.zsh
+bindkey -e
 export DOTHOME=$HOME/dotfiles
 export SHELL=$(type -p bash)
 source $DOTHOME/shellrc.sh
