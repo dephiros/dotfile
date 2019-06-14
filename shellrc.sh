@@ -80,7 +80,7 @@ include "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export NOTION_HOME="$HOME/.notion"
-[ -s "$NOTION_HOME/load.sh" ] && \. "$NOTION_HOME/load.sh"
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 
-export PATH="${NOTION_HOME}/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"

@@ -10,3 +10,4 @@ export SHELL=$(type -p bash)
 source $DOTHOME/shellrc.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
