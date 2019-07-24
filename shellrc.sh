@@ -17,6 +17,18 @@ export PATH=$HOME/.local/bin:$PATH
 
 # alias
 alias dc="docker-compose"
+## Taskfile
+## From https://github.com/adriancooney/Taskfile
+TASKFILE="Taskfile"
+alias run="./$TASKFILE"
+function run-init {
+  if [ -e "./Taskfile" ]; then
+    echo "$TASKFILE already exists. Please remove it first"
+    return 1
+  fi
+  cp $DOTHOME/$TASKFILE.template ./$TASKFILE
+  echo "Taskfile initialized!"
+}
 
 include "$HOME/.localenv.bash" || true
 export DOTHOME=$HOME/dotfiles
