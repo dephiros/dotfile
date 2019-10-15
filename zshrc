@@ -8,6 +8,9 @@ bindkey -e
 export DOTHOME=$HOME/dotfiles
 export SHELL=$(type -p bash)
 source $DOTHOME/shellrc.sh
+# load autocomplete
+autoload -Uz compinit
+compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
