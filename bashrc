@@ -7,3 +7,4 @@ export DOTHOME=$HOME/dotfiles # dotfiles directory
 source $DOTHOME/shellrc.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(starship init bash)"

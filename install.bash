@@ -24,7 +24,7 @@ if is_mac; then
   mac_brew_install_if_exist
   brew tap d12frosted/emacs-plus
   brew update
-  brew install emacs-plus git bash zsh vim neovim tmux entr direnv fzf peco ripgrep tree
+  brew install emacs-plus git bash zsh vim neovim tmux entr direnv fzf peco ripgrep tree starship
   brew cask install font-source-code-pro
   brew cask install font-m-plus
   brew cask install font-fantasque-sans-mono
