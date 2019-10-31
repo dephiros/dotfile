@@ -147,3 +147,6 @@ if !exists('*s:goyo_leave')
   endfunction
 endif
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+"syntax mapping
+au BufRead,BufNewFile *.txt set filetype=markdown
