@@ -5,6 +5,7 @@
 *\.swp
 # Ignore Vim plugins
 vim/plugins/
+vim/plugged/
 vim/.netrwhist
 # !vim/UltiSnips
 # !vim/colors
