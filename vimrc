@@ -56,7 +56,7 @@ let mapleader="\<Space>"
 nmap <leader>q :nohlsearch<CR>
 
 "fzf
-nnoremap <C-p> :Files<CR>
+nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <leader>o :Lines<cr>
