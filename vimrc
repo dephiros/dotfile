@@ -41,21 +41,7 @@ colorscheme kuroi
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
 
-"The Leader
-let mapleader="\<Space>"
-
-"remove search highlight
-nmap <leader>q :nohlsearch<CR>
-
-"fzf
-nnoremap <C-p> :Files<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <leader>o :Lines<cr>
-nnoremap <Leader>t :BTags<CR>
-nnoremap <leader>T :Tags<cr>
-
-"Ale
+" *ALE*
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
@@ -70,3 +56,22 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_tsserver_autoimport = 1
+
+" *KEY MAP*
+"The Leader
+let mapleader="\<Space>"
+
+"remove search highlight
+nmap <leader>q :nohlsearch<CR>
+
+"fzf
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :History<CR>
+nnoremap <leader>o :Lines<cr>
+nnoremap <Leader>t :BTags<CR>
+nnoremap <leader>T :Tags<cr>
+
+" Ale
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
