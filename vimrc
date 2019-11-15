@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'  "fuzzy search support c-p plus tag
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
-Plug 'plasticboy/vim-markdown' " addtional support for markdown in vim
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'mattn/emmet-vim'  "
@@ -12,6 +12,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
 
 call plug#end()
 
+" .............................................................................
+" basic
+" .............................................................................
 set lazyredraw                                     "lazily redraw screen while executing macros, and other commands
 set ttyfast                                        "more characters will be sent to the screen for redrawing
 set ttimeout                                       "time waited for key press(es) to complete...
@@ -46,7 +49,9 @@ colorscheme kuroi
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
 
-" *ALE*
+" .............................................................................
+" dense-analysis/ale
+" .............................................................................
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
@@ -62,7 +67,9 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 0 " use coc
 let g:ale_completion_tsserver_autoimport = 0 " use coc
 
-" *COC*
+" .............................................................................
+" neoclide/coc.nvim
+" .............................................................................
 let g:coc_global_extensions = [
 \ 'coc-snippets',
 \ 'coc-json',
@@ -77,7 +84,10 @@ let g:coc_global_extensions = [
 \ 'coc-vimlsp',
 \ ]
 
-" *MARKDOWN* "
+" .............................................................................
+" plasticboy/vim-markdown
+" .............................................................................
+
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
@@ -90,7 +100,9 @@ let g:vim_markdown_autowrite = 1
 let g:vim_markdown_auto_extension_ext = 'txt'
 
 
-" *FILE MAP*
+" .............................................................................
+" FILE MAP
+" .............................................................................
 " allow jsonc format
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
