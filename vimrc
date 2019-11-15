@@ -6,7 +6,10 @@ Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It show
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
-Plug 'dense-analysis/ale'  " support linting, autcompletion
+Plug 'SirVer/ultisnips' " snippet support
+Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
+
 call plug#end()
 
 set lazyredraw                                     "lazily redraw screen while executing macros, and other commands
@@ -31,6 +34,9 @@ set incsearch                                      "incremental search highlight
 set ignorecase                                     "searches are case insensitive...
 set smartcase                                      " ..unless they contain at least one capital letter
 set hlsearch                                       "highlight search patterns
+" See https://github.com/dense-analysis/ale/issues/1700
+" :h ale-completion-completeopt-bug
+set completeopt=menu,menuone,preview,noselect,noinsert
 
 
 set t_Co=256                        "enable 256 colors
@@ -52,10 +58,25 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_tsserver_autoimport = 1
-set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled = 0 " use coc
+let g:ale_completion_tsserver_autoimport = 0 " use coc
+
+" *COC*
+let g:coc_global_extensions = [
+\ 'coc-snippets',
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-html',
+\ 'coc-css',
+\ 'coc-yaml',
+\ 'coc-highlight',
+\ 'coc-yank',
+\ 'coc-tailwindcss',
+\ 'coc-emmet',
+\ 'coc-vimlsp',
+\ ]
+
 
 " *KEY MAP*
 "The Leader
