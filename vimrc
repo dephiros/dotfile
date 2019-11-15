@@ -16,7 +16,6 @@ set ttimeoutlen=50                                 " ...makes for a faster key r
 set backspace=indent,eol,start                     "make backspace behave properly in insert mode
 set wildmenu                                       "better menu with completion in command mode
 set wildmode=longest:full,full
-set completeopt=longest,menuone,preview            "better insert mode completions
 set scrolloff=2                                    "always show 2 lines above/below the cursor
 set showcmd                                        "display incomplet coc
 set cmdheight=2  " Better display for messages
@@ -56,6 +55,7 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_tsserver_autoimport = 1
+set completeopt=menu,menuone,preview,noselect,noinsert
 
 " *KEY MAP*
 "The Leader
