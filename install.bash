@@ -26,7 +26,7 @@ if is_mac; then
   brew update
   brew install bash direnv emacs-plus entr fzf git jq neovim ripgrep starship tmux tree vim zsh
   brew cask install font-source-code-pro
-  brew cask install font-m-plus
+  brew cask install font-m-plus font-hack
   brew cask install font-fantasque-sans-mono
   brew cask install iterm2
   brew cask install dropbox
@@ -36,7 +36,7 @@ elif command_exist apt-get; then
   echo "* Installing stuffs with apt-get"
   sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update
-  sudo apt-get install curl direnv entr fonts-mplus fzf git jq neovim ripgrep starship tmux tree vim zsh
+  sudo apt-get install curl direnv entr fonts-hack-ttf fonts-mplus fzf git jq neovim ripgrep starship tmux tree vim zsh
 fi
 
 # set up space emacs
