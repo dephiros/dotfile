@@ -2,11 +2,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'  "fuzzy search support c-p plus tag
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
+Plug 'plasticboy/vim-markdown' " addtional support for markdown in vim
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
-Plug 'SirVer/ultisnips' " snippet support
 Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
 
@@ -77,8 +77,25 @@ let g:coc_global_extensions = [
 \ 'coc-vimlsp',
 \ ]
 
+" *MARKDOWN* "
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
+" If you want to have a link like this [link text](link-url) and follow it for editing in vim using the ge command, but have it open the file 'link-url.md' instead of the file 'link-url', then use this option:
+let g:vim_markdown_no_extensions_in_markdown = 1
+" If you follow a link like this [link text](link-url) using the ge shortcut, this option will automatically save any edits you made before moving you:
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_auto_extension_ext = 'txt'
+
+
+" *FILE MAP*
+" allow jsonc format
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " *KEY MAP*
+
 "The Leader
 let mapleader="\<Space>"
 
