@@ -16,6 +16,8 @@ export PATH=$PATH:$DOTHOME/scripts
 export PATH=$HOME/.local/bin:$PATH
 # python homebrew path
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# linux homebrew path
+export PATH="/home/linuxbrew/.linuxbrew/bin/:$PATH"
 
 # alias
 alias dc="docker-compose"
