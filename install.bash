@@ -33,13 +33,13 @@ if is_mac; then
   brew cask install google-backup-and-sync
   brew cask install docker
 elif command_exist apt-get; then
+  echo "* Installing stuffs with apt-get"
+  sudo apt-add-repository ppa:neovim-ppa/stable
+  sudo apt-get update -y
+  sudo apt-get install -y curl direnv entr fonts-hack-ttf fonts-mplus git jq neovim tmux tree vim zsh build-essential
   echo "* Install brew for linux"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" -y
   brew install starship fzf ripgrep
-  echo "* Installing stuffs with apt-get"
-  sudo apt-add-repository ppa:neovim-ppa/stable
-  sudo apt-get update
-  sudo apt-get install curl direnv entr fonts-hack-ttf fonts-mplus fzf git jq neovim tmux tree vim zsh
 fi
 
 # set up space emacs
