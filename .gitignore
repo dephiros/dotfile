@@ -5,15 +5,11 @@
 *\.swp
 # Ignore Vim plugins
 vim/plugins/
-<<<<<<< HEAD
 vim/plugged/
-||||||| merged common ancestors
-=======
-vim/plugged
->>>>>>> nvim use vimrc. revamp vimrc to simplify code
 vim/.netrwhist
-# !vim/UltiSnips
-# !vim/colors
+!vim/UltiSnips
+!vim/colors
+vim/vim
 
 # nvim
 config/nvim/*

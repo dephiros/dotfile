@@ -1,14 +1,15 @@
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'  "fuzzy search support c-p plus tag
-Plug 'tpope/vim-fugitive'  "a git wrapper for vim
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
-Plug 'mattn/emmet-vim'  "
-Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'  "fuzzy search support c-p plus tag
+Plug 'mattn/emmet-vim'  "
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
+Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
+Plug 'tpope/vim-fugitive'  "a git wrapper for vim
+Plug 'tpope/vim-vinegar' " enhance netrw, vim built-in file manager. - to open file drawer
 
 call plug#end()
 
