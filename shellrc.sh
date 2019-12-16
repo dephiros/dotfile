@@ -35,6 +35,7 @@ function run-init {
 }
 
 include "$HOME/.localenv.bash" || true
+echo included localenv
 export DOTHOME=$HOME/dotfiles
 #
 # User configuration sourced by interactive shells
@@ -45,7 +46,8 @@ alias ec="emacsclient -c"
 
 # set up nvim
 if command_exist nvim; then
-  VIMEDITOR="nvim"
+  # VIMEDITOR="nvim"
+  VIMEDITOR="vim"
   alias e=$VIMEDITOR
   alias vi=$VIMEDITOR
   alias vim=$VIMEDITOR

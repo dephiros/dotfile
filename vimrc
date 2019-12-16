@@ -1,13 +1,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
-Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'  "fuzzy search support c-p plus tag
 Plug 'mattn/emmet-vim'  "
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
+" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-vinegar' " enhance netrw, vim built-in file manager. - to open file drawer
 
@@ -41,6 +40,10 @@ set hlsearch                                       "highlight search patterns
 " See https://github.com/dense-analysis/ale/issues/1700
 " :h ale-completion-completeopt-bug
 set completeopt=menu,menuone,preview,noselect,noinsert
+" The length of time Vim waits after you stop typing before it triggers the
+"plugin is governed by the setting updatetime. Default is 4000 which is very
+"long
+set updatetime=740
 
 
 set t_Co=256                        "enable 256 colors
@@ -64,7 +67,6 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
-set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 0 " use coc
 let g:ale_completion_tsserver_autoimport = 0 " use coc
 
@@ -80,11 +82,17 @@ let g:coc_global_extensions = [
 \ 'coc-yaml',
 \ 'coc-highlight',
 \ 'coc-yank',
-\ 'coc-tailwindcss',
 \ 'coc-emmet',
 \ 'coc-vimlsp',
 \ ]
 
+augroup CocGroup
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	" Update signature help on jump placeholder
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 " .............................................................................
 " plasticboy/vim-markdown
 " .............................................................................
