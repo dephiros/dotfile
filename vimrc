@@ -52,6 +52,7 @@ colorscheme kuroi
 
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
+let g:netrw_browsex_viewer="open"
 
 " .............................................................................
 " dense-analysis/ale
