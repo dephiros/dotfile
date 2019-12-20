@@ -1,12 +1,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
+Plug 'junegunn/fzf.vim' " Install vim support
 Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
-" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete
+Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " better autocomplete but
+" cause delay on load
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-vinegar' " enhance netrw, vim built-in file manager. - to open file drawer
 
@@ -68,32 +71,32 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 0 " use coc
-let g:ale_completion_tsserver_autoimport = 0 " use coc
+let g:ale_completion_enabled = 1 " use coc
+let g:ale_completion_tsserver_autoimport = 1 " use coc
 
 " .............................................................................
 " neoclide/coc.nvim
 " .............................................................................
-let g:coc_global_extensions = [
-\ 'coc-snippets',
-\ 'coc-json',
-\ 'coc-tsserver',
-\ 'coc-html',
-\ 'coc-css',
-\ 'coc-yaml',
-\ 'coc-highlight',
-\ 'coc-yank',
-\ 'coc-emmet',
-\ 'coc-vimlsp',
-\ ]
-
-augroup CocGroup
-	autocmd!
-	" Setup formatexpr specified filetype(s).
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	" Update signature help on jump placeholder
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+" let g:coc_global_extensions = [
+" \ 'coc-snippets',
+" \ 'coc-json',
+" \ 'coc-tsserver',
+" \ 'coc-html',
+" \ 'coc-css',
+" \ 'coc-yaml',
+" \ 'coc-highlight',
+" \ 'coc-yank',
+" \ 'coc-emmet',
+" \ 'coc-vimlsp',
+" \ ]
+"
+" augroup CocGroup
+" 	autocmd!
+" 	" Setup formatexpr specified filetype(s).
+" 	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+" 	" Update signature help on jump placeholder
+" 	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" augroup end
 " .............................................................................
 " plasticboy/vim-markdown
 " .............................................................................
