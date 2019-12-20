@@ -10,6 +10,7 @@ vim/.netrwhist
 !vim/UltiSnips
 !vim/colors
 vim/vim
+vim/autoload/plug.vim.old
 
 # nvim
 config/nvim/*
