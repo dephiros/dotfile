@@ -69,7 +69,7 @@ fh() {
 }
 
 # vscode to vscode-insiders
-alias code=code-insiders
+# alias code=code-insiders
 
 # set info for multi-term zsh
 export LANG=en_US.UTF-8
