@@ -8,6 +8,7 @@ Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
+Plug 'tpope/vim-vinegar'  "netr enhancement - for going to netr
 
 call plug#end()
 
@@ -64,8 +65,15 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'markdown': ['prettier'],
 \}
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+let g:ale_linters = {
+\   'javascript': ['eslint', 'flow-language-server'],
+\}
+let g:ale_linters_ignore = {
+\   'javascript': ['tsserver'],
+\}
+let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1 " use coc
 let g:ale_completion_tsserver_autoimport = 1 " use coc
