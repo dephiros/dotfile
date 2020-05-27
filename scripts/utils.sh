@@ -17,5 +17,8 @@ command_exist() {
 }
 
 include () {
-    [[ -f "$1" ]] && source "$1"
+  start=`date +%s`
+  [[ -f "$1" ]] && source "$1"
+  end=`date +%s`
+  # echo "Source $1 in $((end-start))s"
 }

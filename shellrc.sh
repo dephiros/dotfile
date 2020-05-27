@@ -105,15 +105,11 @@ include ~/.local.bash || true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-include "$NVM_DIR/nvm.sh"          # This loads nvm
-include "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export VOLTA_HOME="$HOME/.volta"
-[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
+include "$VOLTA_HOME/load.sh"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:$HOME/lib/flutter/bin/

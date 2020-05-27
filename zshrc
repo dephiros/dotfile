@@ -2,11 +2,19 @@
 # User configuration sourced by interactive shells
 #
 # Source oh-my-zsh
+
+# uncomment below to start profiling
+# zmodload zsh/zprof
+
 export ZSH_DISABLE_COMPFIX=true
-source $HOME/dotfiles/oh-my-zsh.zsh
+
+# Make ZSH load faster https://github.com/ohmyzsh/ohmyzsh/issues/5569
+## DISABLE_MAGIC_FUNCTIONS=true
+## source $HOME/dotfiles/oh-my-zsh.zsh
 bindkey -e
 export DOTHOME=$HOME/dotfiles
 source $DOTHOME/shellrc.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# include is available from shellrc.sh
+include ~/.fzf.zsh
 eval "$(starship init zsh)"
