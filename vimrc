@@ -71,12 +71,20 @@ let g:ale_linters = {
 let g:ale_linters_ignore = {
 \   'javascript': ['tsserver'],
 \}
+let g:ale_linters_explicit = 1
 let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1 " use coc
 let g:ale_completion_tsserver_autoimport = 1 " use coc
+let g:ale_javascript_eslint_executable = 'yarn'
+let g:ale_javascript_eslint_options = 'run eslint'
+" ale should set filetype for jsx filetype
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 " .............................................................................
 " plasticboy/vim-markdown

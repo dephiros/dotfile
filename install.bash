@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config # dotfiles/config directory
 olddir=$HOME/dotfiles_old       # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "spacemacs" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig") # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig") # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc") # list of files/folders to symlink to .config
 
@@ -44,9 +44,10 @@ fi
 
 # set up space emacs
 if [ ! -d "$HOME/.emacs.d" ]; then
-  echo 'could not find emacs.d. installing spacemacs'
+  echo 'could not find emacs.d. installing doom'
   rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-  git clone git://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install
   echo "\n"
 fi
 
