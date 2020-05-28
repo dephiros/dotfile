@@ -8,7 +8,8 @@ Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
-Plug 'tpope/vim-vinegar'  "netr enhancement - for going to netr
+Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
+Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
 
 call plug#end()
 
