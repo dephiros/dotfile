@@ -13,7 +13,7 @@ config=$HOME/.config
 oldconfig=$HOME/init_old
 dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig") # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
-configfiles=("nvim" "liquidpromptrc") # list of files/folders to symlink to .config
+configfiles=("nvim" "liquidpromptrc" "ranger") # list of files/folders to symlink to .config
 
 ##########
 source $dir/scripts/utils.sh
@@ -24,7 +24,7 @@ if is_mac; then
   mac_brew_install_if_exist
   brew tap d12frosted/emacs-plus
   brew update
-  brew install bash direnv emacs-plus entr fzf git jq neovim ripgrep starship tmux tree vim zsh
+  brew install bash direnv emacs-plus entr fzf git jq neovim ripgrep starship tmux tree vim zsh ranger
   brew cask install font-source-code-pro
   brew cask install font-m-plus font-hack
   brew cask install font-fantasque-sans-mono
@@ -36,7 +36,7 @@ elif command_exist apt-get; then
   echo "* Installing stuffs with apt-get"
   sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update -y
-  sudo apt-get install -y curl direnv entr fonts-hack-ttf fonts-mplus git jq neovim tmux tree vim zsh build-essential
+  sudo apt-get install -y curl direnv entr fonts-hack-ttf fonts-mplus git jq neovim tmux tree vim zsh build-essential ranger
   echo "* Install brew for linux"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" -y
   brew install starship fzf ripgrep
@@ -119,8 +119,11 @@ else
   gitEditor="$(which vi)"
   if command_exist nvim; then
     gitEditor="nvim"
-    git config --global merge.tool vimdiff
     git config --global merge.conflictstyle diff3
+    git config --global diff.tool vimdiff3
+    git config --global difftool.vimdiff3.path nvim
+    git config --global merge.tool vimdiff3
+    git config --global mergetool.vimdiff3.path
   elif command_exist vim; then
     gitEditor="vim"
     git config --global merge.tool vimdiff

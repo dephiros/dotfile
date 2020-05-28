@@ -45,14 +45,14 @@ alias e="emacsclient -t"
 alias ec="emacsclient -c"
 
 # set up nvim
+VIMEDITOR="vim"
 if command_exist nvim; then
   VIMEDITOR="nvim"
-  alias e=$VIMEDITOR
-  alias vi=$VIMEDITOR
-  alias vim=$VIMEDITOR
+  alias e="$VIMEDITOR"
+  alias vi="$VIMEDITOR"
+  alias vim="$VIMEDITOR"
 fi
-alias vi=vim
-export EDITOR=vim
+export EDITOR="$VIMEDITOR"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
