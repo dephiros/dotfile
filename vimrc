@@ -52,6 +52,11 @@ colorscheme kuroi
 
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
+
+" .............................................................................
+" netrw
+" .............................................................................
+let g:netrw_liststyle = 3  " Use the tree view as default. Hit i to change view
 let g:netrw_browsex_viewer="open"
 
 " .............................................................................
