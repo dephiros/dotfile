@@ -113,3 +113,10 @@ include "$VOLTA_HOME/load.sh"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:$HOME/lib/flutter/bin/
+
+# GPG
+export GPG_TTY=`tty`
+
+# pyenv just slow everything down
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"

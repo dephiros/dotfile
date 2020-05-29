@@ -4,7 +4,7 @@
 # Source oh-my-zsh
 
 # uncomment below to start profiling
-# zmodload zsh/zprof
+zmodload zsh/zprof
 
 export ZSH_DISABLE_COMPFIX=true
 
@@ -19,3 +19,7 @@ source "$DOTHOME/shellrc.sh"
 # include is available from shellrc.sh
 include ~/.fzf.zsh
 eval "$(starship init zsh)"
+
+# Enable auto completion
+autoload -Uz compinit
+compinit

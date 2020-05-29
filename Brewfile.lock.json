@@ -8,13 +8,13 @@
         "revision": "57766654f0a9adacb2f1dc6e0b7687673d49284e"
       },
       "homebrew/cask": {
-        "revision": "ab9a2539fd8ed4a7ae3e0870111558bd2a999434"
+        "revision": "20355b779968b874ec6e11ef575d6eaa1cde015c"
       },
       "homebrew/cask-fonts": {
-        "revision": "898fcbba7e60af5f66e37e9f58d05ab7913f04ce"
+        "revision": "6eb6e91304c84ee060b41636f49d58c5a7ae6091"
       },
       "homebrew/core": {
-        "revision": "051c129736b6d76eacb8e1860589dd738da20ef3"
+        "revision": "0d11a3098a91bd03a62976ae2a3dcc0b82718f38"
       }
     },
     "brew": {
@@ -380,6 +380,10 @@
             }
           }
         }
+      },
+      "pyenv-virtualenv": {
+        "version": "1.1.5",
+        "bottle": false
       }
     },
     "cask": {
@@ -454,6 +458,12 @@
         "options": {
           "full_name": "brave-browser"
         }
+      },
+      "pycharm": {
+        "version": "2020.1.1,201.7223.92",
+        "options": {
+          "full_name": "pycharm"
+        }
       }
     },
     "mas": {
@@ -484,10 +494,10 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.17",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "051c129736b6d76eacb8e1860589dd738da20ef3",
-        "CLT": "11.5.0.0.1.1588476445",
+        "Homebrew/homebrew-core": "0d11a3098a91bd03a62976ae2a3dcc0b82718f38",
+        "CLT": "1103.0.32.62",
         "Xcode": "11.5",
-        "macOS": "10.15.2"
+        "macOS": "10.15.5"
       }
     }
   }

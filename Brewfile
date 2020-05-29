@@ -3,7 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 brew "bash"
-brew "direnv"
 brew "entr"
 brew "fzf"
 brew "git"
@@ -11,6 +10,7 @@ brew "gnupg"
 brew "jq"
 brew "mas"
 brew "pinentry-mac" if OS.mac?
+brew "pyenv-virtualenv"
 brew "neovim"
 brew "ranger"
 brew "ripgrep"
@@ -31,6 +31,7 @@ cask "google-backup-and-sync"
 cask "iterm2"
 cask "keybase"
 cask "notion"
+cask "pycharm"
 mas "1Password 7", id: 1333542190
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
