@@ -21,39 +21,28 @@ source $dir/scripts/utils.sh
 ##########
 if is_mac; then
   echo "* Installing stuffs for mac"
-  mac_brew_install_if_exist
-  brew tap d12frosted/emacs-plus
-  brew update
-  brew install bash direnv emacs-plus entr fzf git jq neovim ripgrep starship tmux tree vim zsh ranger
-  brew cask install font-source-code-pro
-  brew cask install font-m-plus font-hack
-  brew cask install font-fantasque-sans-mono
-  brew cask install iterm2
-  brew cask install dropbox
-  brew cask install google-backup-and-sync
-  brew cask install docker
 elif command_exist apt-get; then
   echo "* Installing stuffs with apt-get"
-  sudo apt-add-repository ppa:neovim-ppa/stable
   sudo apt-get update -y
-  sudo apt-get install -y curl direnv entr fonts-hack-ttf fonts-mplus git jq neovim tmux tree vim zsh build-essential ranger
-  echo "* Install brew for linux"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" -y
-  brew install starship fzf ripgrep
+  sudo apt-get install -y build-essential curl file git
 fi
+echo "\n* Install brew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew bundle
 
-# set up space emacs
-if [ ! -d "$HOME/.emacs.d" ]; then
-  echo 'could not find emacs.d. installing doom'
-  rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-  ~/.emacs.d/bin/doom install
-  echo "\n"
-fi
+# set up doom emacs. Currently disable since we are using vim
+## if [ ! -d "$HOME/.emacs.d" ]; then
+##   echo 'could not find emacs.d. installing doom'
+##   rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
+##   git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+##   ~/.emacs.d/bin/doom install -y
+##   echo "\n"
+## fi
 
-echo - set up oh-my-zsh
-rm -rf $HOME/.oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+# echo - set up oh-my-zsh
+# rm -rf $HOME/.oh-my-zsh
+# git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+
 chsh -s zsh
 echo "\n"
 
