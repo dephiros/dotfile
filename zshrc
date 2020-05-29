@@ -12,8 +12,9 @@ export ZSH_DISABLE_COMPFIX=true
 ## DISABLE_MAGIC_FUNCTIONS=true
 ## source $HOME/dotfiles/oh-my-zsh.zsh
 bindkey -e
-export DOTHOME=$HOME/dotfiles
-source $DOTHOME/shellrc.sh
+export DOTHOME="$HOME/dotfiles"
+source "$DOTHOME/scripts/history.zsh"
+source "$DOTHOME/shellrc.sh"
 
 # include is available from shellrc.sh
 include ~/.fzf.zsh

@@ -448,6 +448,12 @@
         "options": {
           "full_name": "notion"
         }
+      },
+      "brave-browser": {
+        "version": "81.1.9.72,109.72",
+        "options": {
+          "full_name": "brave-browser"
+        }
       }
     },
     "mas": {

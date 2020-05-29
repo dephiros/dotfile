@@ -30,6 +30,9 @@ echo "\n* Install brew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew bundle
 
+echo "* Installing volta"
+curl https://get.volta.sh | bash
+
 # set up doom emacs. Currently disable since we are using vim
 ## if [ ! -d "$HOME/.emacs.d" ]; then
 ##   echo 'could not find emacs.d. installing doom'
@@ -121,6 +124,7 @@ else
     echo "could not find vim, setting git editor to vi"
   fi
   echo "setting up git"
+  git config --global gpg.program gpg
   git config --global core.editor "$gitEditor"
   git config --global core.excludesfile "$HOME/.gitignore_global"
   git config --global difftool.prompt "true"
