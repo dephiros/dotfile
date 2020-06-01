@@ -10,6 +10,7 @@ Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplet
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
+Plug 'tpope/vim-abolish'  " allow case sensitive replace and abbreviation
 
 call plug#end()
 
