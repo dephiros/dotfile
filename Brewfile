@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "homebrew/cask-versions"
 brew "bash"
 brew "entr"
 brew "fzf"
@@ -32,6 +33,7 @@ cask "iterm2"
 cask "keybase"
 cask "notion"
 cask "pycharm"
+cask "visual-studio-code-insiders"
 mas "1Password 7", id: 1333542190
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
