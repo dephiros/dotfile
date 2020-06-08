@@ -1,5 +1,10 @@
-# select default shell
-export SHELL=$(command -v zsh)
+# set info for multi-term zsh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+# reduce the lag of vi-mode in zsh
+export KEYTIMEOUT=1
+
 export DOTHOME=$HOME/dotfiles
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 source $DOTHOME/scripts/utils.sh
@@ -70,14 +75,7 @@ fh() {
 }
 
 # vscode to vscode-insiders
-# alias code=code-insiders
-
-# set info for multi-term zsh
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export TERM=xterm-256color
-# reduce the lag of vi-mode in zsh
-export KEYTIMEOUT=1
+alias code=code-insiders
 
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'

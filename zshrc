@@ -8,6 +8,9 @@ zmodload zsh/zprof
 
 export ZSH_DISABLE_COMPFIX=true
 
+# select default shell
+export SHELL=$(command -v zsh)
+
 # Make ZSH load faster https://github.com/ohmyzsh/ohmyzsh/issues/5569
 ## DISABLE_MAGIC_FUNCTIONS=true
 ## source $HOME/dotfiles/oh-my-zsh.zsh
