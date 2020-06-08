@@ -55,6 +55,10 @@ colorscheme kuroi
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
 
+" Turn on omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " .............................................................................
 " netrw
 " .............................................................................
