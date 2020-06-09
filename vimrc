@@ -6,7 +6,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install bina
 Plug 'junegunn/fzf.vim' " Install vim support
 Plug 'mattn/emmet-vim'  "
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
-Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html'
+Plug 'amiralies/coc-flow'
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-prettier'
+Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-yaml'
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
@@ -46,6 +54,18 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 "plugin is governed by the setting updatetime. Default is 4000 which is very
 "long
 set updatetime=740
+set hidden " needed for coc since text edit might fail
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 
 set t_Co=256                        "enable 256 colors
@@ -70,31 +90,64 @@ let g:netrw_altv=1  " if in a netwr view and open a file with v, open to the rig
 let g:netrw_alto=1  " if in a netwr view and open a file with o, open to the bottom instead of top
 
 " .............................................................................
+" COC
+" .............................................................................
+" Configuration can be done inside vimrc. See :h coc#config()
+" For workspace configuration, add .vim/coc-settings.json
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()lug 'neoclide/coc-json'
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" To get correct comment highlighting in jsonc which is the configuration for
+" coc
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+
+" .............................................................................
 " dense-analysis/ale
 " .............................................................................
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\   'typescript': ['prettier', 'eslint'],
-\   'typescriptreact': ['prettier', 'eslint'],
-\   'css': ['prettier'],
-\   'markdown': ['prettier'],
-\}
-let g:ale_linters = {
-\   'javascript': ['eslint', 'flow-language-server'],
-\}
-let g:ale_linters_ignore = {
-\   'javascript': ['tsserver'],
-\}
-let g:ale_linters_explicit = 1
-let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1 " use coc
-let g:ale_completion_tsserver_autoimport = 1 " use coc
-let g:ale_javascript_eslint_executable = 'yarn'
-let g:ale_javascript_eslint_options = 'run eslint'
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['prettier', 'eslint'],
+" \   'typescript': ['prettier', 'eslint'],
+" \   'typescriptreact': ['prettier', 'eslint'],
+" \   'css': ['prettier'],
+" \   'markdown': ['prettier'],
+" \}
+" let g:ale_linters = {
+" \   'javascript': ['eslint', 'flow-language-server'],
+" \}
+" let g:ale_linters_ignore = {
+" \   'javascript': ['tsserver'],
+" \}
+" let g:ale_linters_explicit = 1
+" let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '.'
+" let g:ale_fix_on_save = 1
+" let g:ale_completion_enabled = 1 " use coc
+" let g:ale_completion_tsserver_autoimport = 1 " use coc
+" let g:ale_javascript_eslint_executable = 'yarn'
+" let g:ale_javascript_eslint_options = 'run eslint'
 " ale should set filetype for jsx filetype
 augroup FiletypeGroup
     autocmd!
