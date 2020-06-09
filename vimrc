@@ -92,7 +92,7 @@ let g:netrw_alto=1  " if in a netwr view and open a file with o, open to the bot
 " .............................................................................
 " COC
 " .............................................................................
-" Configuration can be done inside vimrc. See :h coc#config()
+" Configuration can be done inside vimrc. See :h g:coc_user_config
 " For workspace configuration, add .vim/coc-settings.json
 
 " Use <c-space> to trigger completion.
@@ -120,6 +120,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " To get correct comment highlighting in jsonc which is the configuration for
 " coc
 autocmd FileType json syntax match Comment +\/\/.\+$+
+let g:coc_user_config = {
+\ 'tsserver': {
+  \ 'enableJavascript': v:false
+\ }
+\}
 
 
 " .............................................................................
@@ -157,6 +162,14 @@ augroup END
 " .............................................................................
 " plasticboy/vim-markdown
 " .............................................................................
+" zr: reduces fold level throughout the buffer
+" zR: opens all folds
+" zm: increases fold level throughout the buffer
+" zM: folds everything all the way
+" za: open a fold your cursor is on
+" zA: open a fold your cursor is on recursively
+" zc: close a fold your cursor is on
+" zC: close a fold your cursor is on recursively
 
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
