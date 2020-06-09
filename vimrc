@@ -38,7 +38,7 @@ set cmdheight=2  " Better display for messages
 set laststatus=2                                   "always display the status bar
 set number                                         "display line numbers
 set cursorline                                     "highlight current line
-set colorcolumn=81                                 "display text width column
+set colorcolumn=121                                 "display text width column
 " indentation
 set autoindent                                     "always set autoindenting on
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab "use two spaces for indentation
