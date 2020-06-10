@@ -194,8 +194,9 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " *KEY MAP*
 
-"The Leader
-let mapleader="\<Space>"
+" Space is now another leader key
+map <Space> <Leader>
+
 
 "remove search highlight
 nmap <leader>q :nohlsearch<CR>
@@ -207,6 +208,11 @@ nnoremap <Leader>h :History<CR>
 nnoremap <leader>o :Lines<cr>
 nnoremap <Leader>t :BTags<CR>
 nnoremap <leader>T :Tags<cr>
+
+" fugitive
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gf :diffget //3<CR>
+nnoremap <leader>gj :diffget //2<CR>
 
 " :Find to grep for files
 " --column: Show column number
@@ -234,5 +240,5 @@ set grepprg=rg\ --vimgrep
 
 
 " Ale
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
