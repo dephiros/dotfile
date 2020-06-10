@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
+Plug 'morhetz/gruvbox' " retro theme
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
 Plug 'junegunn/fzf.vim' " Install vim support
@@ -19,6 +20,7 @@ Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
 Plug 'tpope/vim-abolish'  " allow case sensitive replace and abbreviation
+Plug 'vim-airline/vim-airline'  " upgrade the existing status bar at the bottom
 
 call plug#end()
 
@@ -70,7 +72,8 @@ endif
 
 set t_Co=256                        "enable 256 colors
 set background=dark
-colorscheme kuroi
+let g:gruvbox_italic=1 
+colorscheme gruvbox
 
 "status line: modifiedflag, charcount, filepercent, filepath
 set statusline=%=%m\ %c\ %P\ %f
