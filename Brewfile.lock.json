@@ -473,6 +473,18 @@
         "options": {
           "full_name": "visual-studio-code-insiders"
         }
+      },
+      "google-chrome": {
+        "version": "83.0.4103.61",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      },
+      "firefox-developer-edition": {
+        "version": "latest",
+        "options": {
+          "full_name": "firefox-developer-edition"
+        }
       }
     },
     "mas": {

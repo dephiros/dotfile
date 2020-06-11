@@ -203,16 +203,31 @@ nmap <leader>q :nohlsearch<CR>
 
 "fzf
 nnoremap <C-p> :Files<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <leader>o :Lines<cr>
-nnoremap <Leader>t :BTags<CR>
-nnoremap <leader>T :Tags<cr>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fc :Colors<CR>
+nnoremap <Leader>fm :Marks<CR>
+nnoremap <Leader>fk :Maps<CR>
+nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fs :History/<CR>
+nnoremap <Leader>fg :GFiles<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>f/ :Rg<CR>
+nnoremap <Leader>fc :Commands<CR>
+nnoremap <leader>fL :Lines<cr>
+nnoremap <leader>fl :BLines<cr>
+nnoremap <Leader>ft :BTags<CR>
+nnoremap <leader>fT :Tags<cr>
+nnoremap <leader>fh :Helptags<cr>
 
 " fugitive
 nnoremap <leader>gs :G<CR>
-nnoremap <leader>gf :diffget //3<CR>
-nnoremap <leader>gj :diffget //2<CR>
+nnoremap <leader>gc :BCommits<CR>
+nnoremap <leader>gC :Commits<CR>
+nnoremap <leader>gp :Git pull<CR>
+nnoremap <leader>gf :Git fetch<CR>
+nnoremap <leader>gP :Git push<CR>
+nnoremap <leader>ga :diffget //3<cr>
+nnoremap <leader>g; :diffget //2<cr>
 
 " :Find to grep for files
 " --column: Show column number
