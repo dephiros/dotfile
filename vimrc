@@ -208,26 +208,29 @@ nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fm :Marks<CR>
 nnoremap <Leader>fk :Maps<CR>
 nnoremap <Leader>fh :History<CR>
-nnoremap <Leader>fs :History/<CR>
+" search in file
+nnoremap <Leader>f/ :BLines<CR>
+" search in all opened files
+nnoremap <leader>fs :Lines<cr>
+" search history
+nnoremap <Leader>fS :History/<CR>
 nnoremap <Leader>fg :GFiles<CR>
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>f/ :Rg<CR>
+nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fc :Commands<CR>
-nnoremap <leader>fL :Lines<cr>
-nnoremap <leader>fl :BLines<cr>
 nnoremap <Leader>ft :BTags<CR>
 nnoremap <leader>fT :Tags<cr>
 nnoremap <leader>fh :Helptags<cr>
 
 " fugitive
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>ga :Gw<CR>
 nnoremap <leader>gc :BCommits<CR>
-nnoremap <leader>gC :Commits<CR>
+nnoremap <leader>gl :Commits<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gf :Git fetch<CR>
 nnoremap <leader>gP :Git push<CR>
-nnoremap <leader>ga :diffget //3<cr>
-nnoremap <leader>g; :diffget //2<cr>
+nnoremap <leader>g3 :diffget //3<cr>
+nnoremap <leader>g2 :diffget //2<cr>
 
 " :Find to grep for files
 " --column: Show column number

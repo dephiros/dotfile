@@ -27,3 +27,5 @@
 	tool = vimdiff3
 [difftool "vimdiff3"]
 	path = nvim
+[pull]
+	rebase = false
