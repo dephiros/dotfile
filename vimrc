@@ -2,27 +2,30 @@
 " if has('nvim')
 " endif
 call plug#begin('~/.vim/plugged')
+" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
+Plug 'amiralies/coc-flow'
 Plug 'aonemd/kuroi.vim'  "a dark theme
-Plug 'morhetz/gruvbox' " retro theme
-Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
 Plug 'junegunn/fzf.vim' " Install vim support
-Plug 'mattn/emmet-vim'  "
-Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
-" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html'
-Plug 'amiralies/coc-flow'
-Plug 'neoclide/coc-eslint'
-Plug 'neoclide/coc-prettier'
-Plug 'neoclide/coc-json'
-Plug 'neoclide/coc-yaml'
-Plug 'tpope/vim-fugitive'  "a git wrapper for vim
-Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
+Plug 'mattn/emmet-vim'  "
+Plug 'morhetz/gruvbox' " retro theme
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-html'
+Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-prettier'
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'plasticboy/vim-markdown'
+Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
+Plug 'tpope/vim-repeat'  " enhance vim repeat
+Plug 'tpope/vim-unimpaired'  " add pair mapping [b to last buffer, ]b to next buffer
 Plug 'tpope/vim-abolish'  " allow case sensitive replace and abbreviation
+Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
+Plug 'tpope/vim-fugitive'  "a git wrapper for vim
+Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
 Plug 'vim-airline/vim-airline'  " upgrade the existing status bar at the bottom
 
 call plug#end()
@@ -204,6 +207,29 @@ map <Space> <Leader>
 "remove search highlight
 nmap <leader>q :nohlsearch<CR>
 
+" window
+"" Terminal mode:
+tnoremap <M-h> <c-\><c-n><c-w>h
+tnoremap <M-j> <c-\><c-n><c-w>j
+tnoremap <M-k> <c-\><c-n><c-w>k
+tnoremap <M-l> <c-\><c-n><c-w>l
+"" Insert mode:
+inoremap <M-h> <Esc><c-w>h
+inoremap <M-j> <Esc><c-w>j
+inoremap <M-k> <Esc><c-w>k
+inoremap <M-l> <Esc><c-w>l
+"" Visual mode:
+vnoremap <M-h> <Esc><c-w>h
+vnoremap <M-j> <Esc><c-w>j
+vnoremap <M-k> <Esc><c-w>k
+vnoremap <M-l> <Esc><c-w>l
+"" Normal mode:
+nnoremap <M-h> <c-w>h
+nnoremap <M-j> <c-w>j
+nnoremap <M-k> <c-w>k
+nnoremap <M-l> <c-w>l
+
+
 "fzf
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
@@ -237,23 +263,7 @@ nnoremap <leader>g2 :diffget //2<cr>
 
 " terminal
 tnoremap <Esc> <C-\><C-n>
-tnoremap <A-[> <Esc>
-" Insert mode:
-inoremap <M-h> <Esc><c-w>h
-inoremap <M-j> <Esc><c-w>j
-inoremap <M-k> <Esc><c-w>k
-inoremap <M-l> <Esc><c-w>l
-" Visual mode:
-vnoremap <M-h> <Esc><c-w>h
-vnoremap <M-j> <Esc><c-w>j
-vnoremap <M-k> <Esc><c-w>k
-vnoremap <M-l> <Esc><c-w>l
-" Normal mode:
-nnoremap <M-h> <c-w>h
-nnoremap <M-j> <c-w>j
-nnoremap <M-k> <c-w>k
-nnoremap <M-l> <c-w>l
-
+tnoremap <M-[> <Esc>
 " :Find to grep for files
 " --column: Show column number
 "
