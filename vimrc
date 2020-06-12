@@ -1,3 +1,6 @@
+" for nvim specific do
+" if has('nvim')
+" endif
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
@@ -235,6 +238,21 @@ nnoremap <leader>g2 :diffget //2<cr>
 " terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-[> <Esc>
+" Insert mode:
+inoremap <M-h> <Esc><c-w>h
+inoremap <M-j> <Esc><c-w>j
+inoremap <M-k> <Esc><c-w>k
+inoremap <M-l> <Esc><c-w>l
+" Visual mode:
+vnoremap <M-h> <Esc><c-w>h
+vnoremap <M-j> <Esc><c-w>j
+vnoremap <M-k> <Esc><c-w>k
+vnoremap <M-l> <Esc><c-w>l
+" Normal mode:
+nnoremap <M-h> <c-w>h
+nnoremap <M-j> <c-w>j
+nnoremap <M-k> <c-w>k
+nnoremap <M-l> <c-w>l
 
 " :Find to grep for files
 " --column: Show column number
