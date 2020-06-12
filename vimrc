@@ -232,6 +232,10 @@ nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>g3 :diffget //3<cr>
 nnoremap <leader>g2 :diffget //2<cr>
 
+" terminal
+tnoremap <Esc> <C-\><C-n>
+tnoremap <A-[> <Esc>
+
 " :Find to grep for files
 " --column: Show column number
 "
