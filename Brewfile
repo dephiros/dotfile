@@ -41,3 +41,4 @@ mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
 mas "Todoist", id: 585829637
 mas "Xcode", id: 497799835
+mas "Microsoft OneNote", id: 784801555

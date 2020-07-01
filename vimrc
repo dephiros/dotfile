@@ -229,6 +229,8 @@ nnoremap <M-j> <c-w>j
 nnoremap <M-k> <c-w>k
 nnoremap <M-l> <c-w>l
 
+" buffer
+nnoremap <Leader>bb :b#<CR>
 
 "fzf
 nnoremap <C-p> :Files<CR>
@@ -260,6 +262,10 @@ nnoremap <leader>gf :Git fetch<CR>
 nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>g3 :diffget //3<cr>
 nnoremap <leader>g2 :diffget //2<cr>
+
+" coc
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 
 " terminal
 tnoremap <Esc> <C-\><C-n>
