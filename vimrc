@@ -47,6 +47,7 @@ set laststatus=2                                   "always display the status ba
 set number                                         "display line numbers
 set cursorline                                     "highlight current line
 set colorcolumn=121                                 "display text width column
+set autoread  " when running external command with vim, autoreload buffer
 " indentation
 set autoindent                                     "always set autoindenting on
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab "use two spaces for indentation
