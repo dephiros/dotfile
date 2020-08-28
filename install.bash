@@ -11,7 +11,7 @@ configdir=$HOME/dotfiles/config # dotfiles/config directory
 olddir=$HOME/dotfiles_old       # old dotfiles backup directory
 config=$HOME/.config
 oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig") # list of files/folders to symlink in homedir with added dot
+dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig" "ideavimrc") # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
 configfiles=("nvim" "liquidpromptrc" "ranger") # list of files/folders to symlink to .config
 

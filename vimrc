@@ -8,7 +8,6 @@ Plug 'amiralies/coc-flow'
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
 Plug 'junegunn/fzf.vim' " Install vim support
-Plug 'justinmk/vim-dirvish'  " similar to vim-vinegar but not based on netrw and allow :Shdo command after modifying the buffer
 Plug 'mattn/emmet-vim'  "
 Plug 'morhetz/gruvbox' " retro theme
 Plug 'neoclide/coc-eslint'
@@ -26,6 +25,14 @@ Plug 'tpope/vim-abolish'  " allow case sensitive replace and abbreviation
 Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
+Plug 'tpope/vim-commentary' " allow to comment things out with gc or gcc(line)
+" add convenience on top of netrw for file navigation. '-' to go up. 
+" disable info bar on top. 'I' to reenabled
+" suffix sort order instead of C biased
+" . on a file to prepopulate command line
+" 'y.' to yank absolute path
+" ~ to go home
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'  " upgrade the existing status bar at the bottom
 
 call plug#end()
