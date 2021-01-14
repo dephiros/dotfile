@@ -101,7 +101,7 @@ set omnifunc=syntaxcomplete#Complete
 " .............................................................................
 let g:netrw_liststyle = 3  " Use the tree view as default. Hit i to change view
 let g:netrw_browsex_viewer="open"
-let g:netrw_browse_split = 2  " Open netrw by default in a vertical split
+let g:netrw_browse_split = 0  " Open netrw by default in the same window
 let g:netrw_winsize = 25  " Use 25% of the window width
 let g:netrw_altv=1  " if in a netwr view and open a file with v, open to the right instead of left
 let g:netrw_alto=1  " if in a netwr view and open a file with o, open to the bottom instead of top
