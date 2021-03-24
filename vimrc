@@ -21,11 +21,12 @@ Plug 'plasticboy/vim-markdown'
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'tpope/vim-repeat'  " enhance vim repeat
 Plug 'tpope/vim-unimpaired'  " add pair mapping [b to last buffer, ]b to next buffer
+
 Plug 'tpope/vim-abolish'  " allow case sensitive replace and abbreviation
 Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :SudoEdit :Wall
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
-Plug 'tpope/vim-commentary' " allow to comment things out with gc or gcc(line)
+Plug 'tomtom/tcomment_vim' " allow to comment things out with gc or gcc(line)
 " add convenience on top of netrw for file navigation. '-' to go up. 
 " disable info bar on top. 'I' to reenabled
 " suffix sort order instead of C biased
@@ -306,3 +307,8 @@ set grepprg=rg\ --vimgrep
 " Ale
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"
+" JS
+autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+autocmd FileType vue set formatprg=prettier-eslint\ --stdin
+

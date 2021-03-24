@@ -29,3 +29,8 @@
 	path = nvim
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
+[maintenance]
+	repo = /Users/annguyen/anp/lyanvoyages
+	repo = /Users/annguyen/projects/web

@@ -24,6 +24,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # linux homebrew path
 export PATH="/home/linuxbrew/.linuxbrew/bin/:$PATH"
+# node_modules
+PATH="node_modules/.bin:$PATH"
 
 # alias
 alias dc="docker-compose"
@@ -105,7 +107,7 @@ include ~/.local.bash || true
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # rust
-export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 
 export VOLTA_HOME="$HOME/.volta"
 include "$VOLTA_HOME/load.sh"
