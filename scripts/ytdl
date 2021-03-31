@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
 
-youtube-dl --add-metadata --write-description --write-info-json  --write-annotations  --all-subs "$@"
+youtube-dl \
+  --download-archive ./DOWNLOADED.txt
+  --continue \
+  --no-overwrites \
+  --ignore-errors \
+  --add-metadata \
+  --write-description \
+  --write-info-json \
+  --write-annotations \
+  --all-subs \
+  "$@"
