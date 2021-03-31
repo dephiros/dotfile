@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 youtube-dl \
-  --download-archive ./DOWNLOADED.txt
+  --download-archive ./DOWNLOADED.txt \
   --continue \
   --no-overwrites \
   --ignore-errors \
