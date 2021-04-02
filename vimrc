@@ -264,7 +264,6 @@ nnoremap <leader>fh :Helptags<cr>
 " fugitive
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>ga :Gw<CR>
-nnoremap <leader>gc :BCommits<CR>
 nnoremap <leader>gl :Commits<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gf :Git fetch<CR>

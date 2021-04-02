@@ -13,7 +13,7 @@ config=$HOME/.config
 oldconfig=$HOME/init_old
 dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig" "ideavimrc") # list of files/folders to symlink in homedir with added dot
 files=("docker-compose.yml")
-configfiles=("nvim" "liquidpromptrc" "ranger") # list of files/folders to symlink to .config
+configfiles=("nvim" "liquidpromptrc" "ranger", "doom") # list of files/folders to symlink to .config
 
 ##########
 source $dir/scripts/utils.sh
@@ -34,13 +34,13 @@ echo "* Installing volta"
 curl https://get.volta.sh | bash
 
 # set up doom emacs. Currently disable since we are using vim
-## if [ ! -d "$HOME/.emacs.d" ]; then
-##   echo 'could not find emacs.d. installing doom'
-##   rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-##   git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-##   ~/.emacs.d/bin/doom install -y
-##   echo "\n"
-## fi
+if [ ! -d "$HOME/.emacs.d" ]; then
+  echo 'could not find emacs.d. installing doom'
+  rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
+  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install -y
+  echo "\n"
+fi
 
 # echo - set up oh-my-zsh
 # rm -rf $HOME/.oh-my-zsh

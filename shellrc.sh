@@ -13,7 +13,7 @@ export PATH=$PATH:~/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # this is for setting up emacs
 export ALTERNATE_EDITOR=""
-export PATH=$PATH:$HOME/emacs.d/bin
+export PATH=$PATH:$HOME/.emacs.d/bin
 # setup go path
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
