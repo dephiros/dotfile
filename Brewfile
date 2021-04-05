@@ -2,6 +2,7 @@ brew "bash"
 brew "coreutils" if OS.mac?
 brew "emacs" if OS.linux?
 brew "entr"
+brew "cmake"
 brew "fd"
 brew "fzf"
 brew "git"
