@@ -243,7 +243,7 @@ nnoremap <Leader>bb :b#<CR>
 
 "fzf
 nnoremap <C-p> :Files<CR>
-nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>f, :Buffers<CR>
 nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fm :Marks<CR>
 nnoremap <Leader>fk :Maps<CR>
@@ -254,8 +254,8 @@ nnoremap <Leader>f/ :BLines<CR>
 nnoremap <leader>fs :Lines<cr>
 " search history
 nnoremap <Leader>fS :History/<CR>
-nnoremap <Leader>fg :GFiles<CR>
-nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>f<Space> :GFiles<CR>
+nnoremap <Leader>f. :Files<CR>
 nnoremap <Leader>fc :Commands<CR>
 nnoremap <Leader>ft :BTags<CR>
 nnoremap <leader>fT :Tags<cr>
