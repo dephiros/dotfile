@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/annguyen/projects/web/src/frontend/utilities'
+let g:netrw_dirhist_4='/Users/annguyen/projects/web/src/frontend/cli/prompts/typechecking'
+let g:netrw_dirhist_3='/Users/annguyen/projects/web/src/frontend/cli/prompts'
+let g:netrw_dirhist_2='/Users/annguyen/projects/web/src/frontend/cli/actions/typechecking'
+let g:netrw_dirhist_1='/Users/annguyen/anp/lyanvoyages/src/routes/blog'
+let g:netrw_dirhist_0='/Users/annguyen/anp/lyanvoyages/src/routes/blog/page'
+let g:netrw_dirhist_9='/Users/annguyen/projects/web/src/frontend/reactNativeApp/src/bridges'
+let g:netrw_dirhist_8='/Users/annguyen/projects/web/src/frontend/reactNativeApp'
+let g:netrw_dirhist_7='/Users/annguyen/projects/web/src/frontend/reactNativeApp/src/bridges'
+let g:netrw_dirhist_6='/Users/annguyen/projects/web/src/frontend'

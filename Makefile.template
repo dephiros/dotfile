@@ -1,0 +1,13 @@
+SHELL := /usr/bin/env bash
+
+all: help
+
+.PHONY: hello
+## hello: echoing hello world
+hello:
+	@echo hello world
+
+
+.PHONY: help
+help: Makefile
+	@sed -n 's/^##//p' $<

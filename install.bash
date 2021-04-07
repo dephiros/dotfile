@@ -7,16 +7,9 @@
 ########## Variables
 
 dir=$HOME/dotfiles              # dotfiles directory
-configdir=$HOME/dotfiles/config # dotfiles/config directory
-olddir=$HOME/dotfiles_old       # old dotfiles backup directory
-config=$HOME/.config
-oldconfig=$HOME/init_old
-dotfiles=("editorconfig" "bashrc" "bash_profile" "gitignore_global" "abcde.conf" "tmux.conf" "vim" "vimrc" "gvimrc" "direnvrc" "zlogin" "zshrc" "zshenv" "oh-my-zsh" "gitconfig" "ideavimrc") # list of files/folders to symlink in homedir with added dot
-files=("docker-compose.yml")
-configfiles=("nvim" "liquidpromptrc" "ranger", "doom") # list of files/folders to symlink to .config
 
 ##########
-source $dir/scripts/utils.sh
+source "${dir}/scripts/utils.sh"
 
 ##########
 if is_mac; then
@@ -26,83 +19,16 @@ elif command_exist apt-get; then
   sudo apt-get update -y
   sudo apt-get install -y build-essential curl file git
 fi
-echo "\n* Install brew"
+printf "\n* Install brew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew bundle
 
 echo "* Installing volta"
 curl https://get.volta.sh | bash
 
-# set up doom emacs. Currently disable since we are using vim
-if [ ! -d "$HOME/.emacs.d" ]; then
-  echo 'could not find emacs.d. installing doom'
-  rm -rf ~/.emacs ~/.emacs.d #otherwise this will conflict
-  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-  ~/.emacs.d/bin/doom install -y
-  echo "\n"
-fi
-
-# echo - set up oh-my-zsh
-# rm -rf $HOME/.oh-my-zsh
-# git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-
+printf "\n Change default shell to zsh"
 chsh -s zsh
-echo "\n"
-
-echo - set up liquidprompt
-rm -rf ~/liquidprompt
-git clone git://github.com/nojhan/liquidprompt.git ~/liquidprompt
-
-echo - set up tmux
-if [ ! -d "$HOME/.tmux" ]; then
-  git clone git://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-  echo "\n"
-fi
-# set up ssh-find-agent
-if [ ! -d "$HOME/ssh-find-agent" ]; then
-  echo 'Pulling ssh-find-agent'
-  git clone git://github.com/wwalker/ssh-find-agent.git "$HOME/ssh-find-agent"
-  echo "\n"
-fi
-
-# create dotfiles_old and config_old in homedir
-echo "Creating $olddir and $oldconfig and $config for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-mkdir -p $oldconfig
-echo "...done\n"
-
-#
-echo "Linking normal files"
-for file in ${files[@]}; do
-  echo "Moving existing $file from ~ to $olddir"
-  mv $HOME/.$file $olddir 2>/dev/null
-  echo "Creating symlink to $file in home directory."
-  ln -s $dir/$file $HOME/$file 2>/dev/null
-done
-echo "...done\n"
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-echo "Linking dotfiles"
-for file in ${dotfiles[@]}; do
-  echo "Moving existing $file from ~ to $olddir"
-  mv $HOME/.$file $olddir 2>/dev/null
-  echo "Creating symlink to $file in home directory."
-  ln -s $dir/$file $HOME/.$file 2>/dev/null
-done
-echo "...done\n"
-
-# move any existing config folder to config_old directory, then create symlinks
-## make sure config folder is created
-echo "make sure to create $config"
-mkdir -p $config
-echo "Linking configfiles"
-for file in ${configfiles[@]}; do
-  echo "Moving existing $file from ~ to $oldconfig"
-  mv $config/$file $oldconfig 2>/dev/null
-  echo "Creating symlink to $file in config directory."
-  ln -s $configdir/$file $config/$file 2>/dev/null
-done
-echo "...done\n"
+printf "\n"
 
 # set up git
 if ! command_exist git; then
@@ -132,7 +58,7 @@ else
   echo "finished setting up git"
 fi
 
-echo "...done\n"
+printf "...done\n"
 
 # link nvimrc with vim
 #ln -s $dir/vimrc ~/.nvimrc

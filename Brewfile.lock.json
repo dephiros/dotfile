@@ -5,19 +5,19 @@
         "revision": "b422ccfc820b542e1a8d505710566c1a03aa872c"
       },
       "homebrew/bundle": {
-        "revision": "c4cf96857c050dfa4f65f52109862dc68e55f60a"
+        "revision": "0df097ca87d3bcf762d0f8cbe30eed8c37c35786"
       },
       "homebrew/cask": {
-        "revision": "4b8eb60600d44c0be848857132d7cd9db99a7167"
+        "revision": "3c8095208a4d7a1595690a91b3e86408ac8be6cb"
       },
       "homebrew/cask-fonts": {
-        "revision": "2dbe0b6c17d36e43b78916ede9de0155b614851d"
+        "revision": "7e14df701ef677f5af5cb21bd59ba8aadfebbad9"
       },
       "homebrew/core": {
-        "revision": "4ba9527e5d7d031699635f7cf8b75a55b325c365"
+        "revision": "d9e5b822a86b65b708d21f25d579ec0d804f8c97"
       },
       "homebrew/cask-versions": {
-        "revision": "2ff2ac796e183f862cfc3f1904b9dd2c59fac5f5"
+        "revision": "e9d6774337ad5710d29aae407d0430436d5e9736"
       },
       "railwaycat/emacsmacport": {
         "revision": "6d894b5cae7150d175019715991627126f57ce58"
@@ -100,7 +100,7 @@
         }
       },
       "fzf": {
-        "version": "0.26.0",
+        "version": "0.27.0",
         "bottle": {
           "rebuild": 0,
           "cellar": ":any_skip_relocation",
@@ -108,20 +108,20 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/fzf-0.26.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "c6301bb126f9d1d0858408ed428a368a95d61b65e310a9083cca3be66ec9aeac"
+              "url": "https://homebrew.bintray.com/bottles/fzf-0.27.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "ccc3f270e04389a9cc44d37c8d91a2b7cea3eba1d43c37e89a6cabc66898e2bc"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/fzf-0.26.0.big_sur.bottle.tar.gz",
-              "sha256": "b711f6a7672111cfe55bdf2ff56182eece3362a34745700bf37082e6fdc43e46"
+              "url": "https://homebrew.bintray.com/bottles/fzf-0.27.0.big_sur.bottle.tar.gz",
+              "sha256": "7b0ca0f1f3bfbdfa55c4d7b7f0c3e11b07dd52db46f1862b54b742761c59c0e3"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/fzf-0.26.0.catalina.bottle.tar.gz",
-              "sha256": "99d6ed82769c08f345b286a676d6354b5a983699773b3c0878726291d093ceb3"
+              "url": "https://homebrew.bintray.com/bottles/fzf-0.27.0.catalina.bottle.tar.gz",
+              "sha256": "6a204ecb17beb7375a73569dba8c6ea1a097fa16a42b38a8fa456d205d107e7b"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/fzf-0.26.0.mojave.bottle.tar.gz",
-              "sha256": "ed36a1cfa7de25cbeb08b9fa37c1d6663dfa22218e65843dd1530605ba37d04b"
+              "url": "https://homebrew.bintray.com/bottles/fzf-0.27.0.mojave.bottle.tar.gz",
+              "sha256": "398c27f1750bec0973e9763b56194779915c2428fc6f7506392b2d30e16edb15"
             }
           }
         }
@@ -367,7 +367,7 @@
         }
       },
       "vim": {
-        "version": "8.2.2650",
+        "version": "8.2.2725_1",
         "bottle": {
           "rebuild": 0,
           "cellar": "/usr/local/Cellar",
@@ -375,20 +375,20 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2650.arm64_big_sur.bottle.tar.gz",
-              "sha256": "dcffc10013bbe1dea44820444a04cbad8d4be4475f2997114dd0f3c12880d03c"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2725_1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "ad0f72aa627d2c919482fd0ca8e9da68b54e61d3ffc07d0b553b72649d643d0c"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2650.big_sur.bottle.tar.gz",
-              "sha256": "3a263f47258ea4f73b1f340172fa5b43eb2db2df26dcd9b9c716e10e6316e080"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2725_1.big_sur.bottle.tar.gz",
+              "sha256": "c60b5c2a291944db1eef8ae7b7560b40bd96f2622ee7e49af780315e6de6d72b"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2650.catalina.bottle.tar.gz",
-              "sha256": "e7b4d38dc82325540a4ab51bab2afec9b1ba3a45bb6ef2aa8f417d5fec14cef3"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2725_1.catalina.bottle.tar.gz",
+              "sha256": "09495cfc92c99f521341f99aa5df7a93c8d0d102ecac615a4133740be51cb7ae"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2650.mojave.bottle.tar.gz",
-              "sha256": "f54c421a35334dd678e7cdea6c37eb964e414e962abb5b0e332f637d14edaae0"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.2725_1.mojave.bottle.tar.gz",
+              "sha256": "04851f5c6270b6934dbc13c4f0b9580ca13d0453bef18f2d8d7348272b1d3151"
             }
           }
         }
@@ -668,19 +668,19 @@
         }
       },
       "pycharm": {
-        "version": "2020.3.5,203.7717.81",
+        "version": "2021.1,211.6693.115",
         "options": {
           "full_name": "pycharm"
         }
       },
       "visual-studio-code-insiders": {
-        "version": "1.56.0,550035808407c15252e581e8abe1b820b9d311ee",
+        "version": "1.56.0,bb90ba3d5a5f8d114045b045f3bbe1ebc404f54a",
         "options": {
           "full_name": "visual-studio-code-insiders"
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.114,4389.114",
+        "version": "89.0.4389.114",
         "options": {
           "full_name": "google-chrome"
         }
@@ -701,6 +701,12 @@
         "version": "3.2.0",
         "options": {
           "full_name": "persepolis-download-manager"
+        }
+      },
+      "spotify": {
+        "version": "1.1.56.595.g2d2da0de,1.1.56.595.g2d2da0de-24",
+        "options": {
+          "full_name": "spotify"
         }
       }
     },
@@ -742,9 +748,9 @@
         "macOS": "10.15.6"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.10",
+        "HOMEBREW_VERSION": "3.0.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4ba9527e5d7d031699635f7cf8b75a55b325c365",
+        "Homebrew/homebrew-core": "d9e5b822a86b65b708d21f25d579ec0d804f8c97",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "11.2.3"

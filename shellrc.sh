@@ -33,13 +33,24 @@ alias dc="docker-compose"
 ## From https://github.com/adriancooney/Taskfile
 TASKFILE="Taskfile"
 alias run="./$TASKFILE"
-function run-init {
-  if [ -e "./Taskfile" ]; then
+
+taskfile() {
+  if [ -e "./$TASKFILE" ]; then
     echo "$TASKFILE already exists. Please remove it first"
     return 1
   fi
   cp $DOTHOME/$TASKFILE.template ./$TASKFILE
   echo "Taskfile initialized!"
+}
+
+
+makefile() {
+  if [ -e "./Makefile" ]; then
+    echo "Makefile already exists. Please remove it first"
+    return 1
+  fi
+  cp ${DOTHOME}/Makefile.template ./Makefile
+  echo "Makefile initialized!"
 }
 
 include "$HOME/.localenv.bash" || true
@@ -66,7 +77,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--bind ctrl-a:select-all'
 # fd - cd to selected directory
-fd() {
+fd () {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
