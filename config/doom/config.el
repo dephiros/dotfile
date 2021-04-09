@@ -25,6 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+(setq doom-font (font-spec :family "Hack" :size 14 :weight 'semi-light))
 (setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -56,3 +57,7 @@
 (map!
   :map ivy-minibuffer-map
   "M-RET" #'ivy-immediate-done)
+
+
+;; make sure flycheck does not stop us from navigating compilatione error
+(setq flycheck-standard-error-navigation nil)
