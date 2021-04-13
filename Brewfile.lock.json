@@ -752,6 +752,12 @@
         "options": {
           "full_name": "font-fira-code"
         }
+      },
+      "font-input": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-input"
+        }
       }
     },
     "mas": {
