@@ -66,7 +66,6 @@ alias ec="emacsclient -c"
 VIMEDITOR="vim"
 if command_exist nvim; then
   VIMEDITOR="nvim"
-  alias e="$VIMEDITOR"
   alias vi="$VIMEDITOR"
   alias vim="$VIMEDITOR"
 fi

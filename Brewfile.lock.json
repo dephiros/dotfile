@@ -8,16 +8,16 @@
         "revision": "0df097ca87d3bcf762d0f8cbe30eed8c37c35786"
       },
       "homebrew/cask": {
-        "revision": "0b0b23cfea038568d09fe06da5c6155ef33c35e2"
+        "revision": "a1c778f5c095931480bf77fae16b114a299088b0"
       },
       "homebrew/cask-fonts": {
-        "revision": "18934178b335c24ae06c02a55b062efa2b47a1a7"
+        "revision": "d3d0c80bd76a6fb8c3d37638174584dfe9248b08"
       },
       "homebrew/core": {
-        "revision": "25c6129329017e5571beb988d18bd491ade3c9f3"
+        "revision": "55b346433c4a2681ab37167f76be5bb15584ac7c"
       },
       "homebrew/cask-versions": {
-        "revision": "b2263fdd600b497340b63ebb3520ab087e642000"
+        "revision": "f3d5dbf678e2c7a7f0b9315d226c18011d483bd8"
       },
       "railwaycat/emacsmacport": {
         "revision": "6d894b5cae7150d175019715991627126f57ce58"
@@ -646,7 +646,7 @@
         }
       },
       "dropbox": {
-        "version": "119.4.1772",
+        "version": "120.4.4598",
         "options": {
           "full_name": "dropbox"
         }
@@ -712,13 +712,13 @@
         }
       },
       "visual-studio-code-insiders": {
-        "version": "1.56.0,48387dfc3d691558404cff1ea2582e3862a40080",
+        "version": "1.56.0,94d369e27d19f598228961e9feb0413f2edabe5d",
         "options": {
           "full_name": "visual-studio-code-insiders"
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.114",
+        "version": "89.0.4389.128",
         "options": {
           "full_name": "google-chrome"
         }
@@ -758,6 +758,36 @@
         "options": {
           "full_name": "font-input"
         }
+      },
+      "font-fantasque-sans-mono-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-fantasque-sans-mono-nerd-font"
+        }
+      },
+      "font-hack-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-hack-nerd-font"
+        }
+      },
+      "font-mplus-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-mplus-nerd-font"
+        }
+      },
+      "font-sauce-code-pro-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-sauce-code-pro-nerd-font"
+        }
+      },
+      "font-fira-code-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-fira-code-nerd-font"
+        }
       }
     },
     "mas": {
@@ -775,7 +805,7 @@
       },
       "Todoist": {
         "id": "585829637",
-        "version": "7.5"
+        "version": "7.6"
       },
       "Xcode": {
         "id": "497799835",
@@ -783,7 +813,7 @@
       },
       "Microsoft OneNote": {
         "id": "784801555",
-        "version": "16.47"
+        "version": "16.48"
       }
     }
   },
@@ -798,9 +828,9 @@
         "macOS": "10.15.6"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.1",
+        "HOMEBREW_VERSION": "3.1.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "25c6129329017e5571beb988d18bd491ade3c9f3",
+        "Homebrew/homebrew-core": "55b346433c4a2681ab37167f76be5bb15584ac7c",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "11.2.3"
