@@ -60,7 +60,7 @@ export DOTHOME=$HOME/dotfiles
 
 # set up emacs
 alias e="emacsclient -t"
-alias ec="emacsclient -c"
+alias ec="emacsclient -c -n"
 
 # set up nvim
 VIMEDITOR="vim"

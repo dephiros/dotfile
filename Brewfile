@@ -22,8 +22,7 @@ brew "zsh"
 cask "android-studio"
 cask "brave-browser"
 cask "docker"
-# cask "emacs-mac" if OS.mac?
-brew "emacs-plus", args: ["with-ctags", "with-dbus", "with-debug", "with-mailutils", "with-no-titlebar", "with-elrumo2-icon"], restart_service: :changed if OS.mac?
+cask "emacs-mac" if OS.mac?
 cask "firefox-developer-edition"
 cask "font-fantasque-sans-mono-nerd-font"
 cask "font-hack-nerd-font"
