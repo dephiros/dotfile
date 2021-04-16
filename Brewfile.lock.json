@@ -2,22 +2,22 @@
   "entries": {
     "tap": {
       "d12frosted/emacs-plus": {
-        "revision": "b422ccfc820b542e1a8d505710566c1a03aa872c"
+        "revision": "108e12d389606efb809ffa2bef2683673e2347a1"
       },
       "homebrew/bundle": {
         "revision": "0df097ca87d3bcf762d0f8cbe30eed8c37c35786"
       },
       "homebrew/cask": {
-        "revision": "a1c778f5c095931480bf77fae16b114a299088b0"
+        "revision": "4ccdfaa898d7848b09e2589df3f08d530373b4ff"
       },
       "homebrew/cask-fonts": {
         "revision": "d3d0c80bd76a6fb8c3d37638174584dfe9248b08"
       },
       "homebrew/core": {
-        "revision": "55b346433c4a2681ab37167f76be5bb15584ac7c"
+        "revision": "afe060cd04697e943a388d3fb941728ae091af47"
       },
       "homebrew/cask-versions": {
-        "revision": "f3d5dbf678e2c7a7f0b9315d226c18011d483bd8"
+        "revision": "ab5e3505751d25e217720bc3a2adcc48f7309ab3"
       },
       "railwaycat/emacsmacport": {
         "revision": "6d894b5cae7150d175019715991627126f57ce58"
@@ -225,7 +225,7 @@
         }
       },
       "neovim": {
-        "version": "0.4.4_2",
+        "version": "HEAD-b8c0fac_2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -251,6 +251,11 @@
               "sha256": "e6e9437addbf446ed88518784f461a0bdb9c578b6779f3353e066a4491b52465"
             }
           }
+        },
+        "options": {
+          "args": [
+            "HEAD"
+          ]
         }
       },
       "ranger": {
@@ -630,6 +635,21 @@
             }
           }
         }
+      },
+      "emacs-plus": {
+        "version": "27.2",
+        "bottle": false,
+        "options": {
+          "args": [
+            "with-ctags",
+            "with-dbus",
+            "with-debug",
+            "with-mailutils",
+            "with-no-titlebar",
+            "with-elrumo2-icon"
+          ],
+          "restart_service": "changed"
+        }
       }
     },
     "cask": {
@@ -688,7 +708,7 @@
         }
       },
       "keybase": {
-        "version": "5.6.2-20210202191343,d72cc00cd3",
+        "version": "5.6.2,20210202191343:d72cc00cd3",
         "options": {
           "full_name": "keybase"
         }
@@ -700,7 +720,7 @@
         }
       },
       "brave-browser": {
-        "version": "89.1.22.71,122.71",
+        "version": "90.1.23.71,123.71",
         "options": {
           "full_name": "brave-browser"
         }
@@ -788,20 +808,26 @@
         "options": {
           "full_name": "font-fira-code-nerd-font"
         }
+      },
+      "visual-studio-code": {
+        "version": "1.55.2",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
       }
     },
     "mas": {
       "1Password 7": {
         "id": "1333542190",
-        "version": "7.8"
+        "version": "7.8.1"
       },
       "Magnet": {
         "id": "441258766",
-        "version": "2.5.0"
+        "version": "2.6.0"
       },
       "Spark": {
         "id": "1176895641",
-        "version": "2.9.18"
+        "version": "2.9.19"
       },
       "Todoist": {
         "id": "585829637",
@@ -830,7 +856,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "55b346433c4a2681ab37167f76be5bb15584ac7c",
+        "Homebrew/homebrew-core": "afe060cd04697e943a388d3fb941728ae091af47",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "11.2.3"
