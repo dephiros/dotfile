@@ -53,6 +53,7 @@ set showcmd                                        "display incomplet coc
 set cmdheight=2  " Better display for messages
 set laststatus=2                                   "always display the status bar
 set number                                         "display line numbers
+set relativenumber
 set cursorline                                     "highlight current line
 set colorcolumn=121                                 "display text width column
 set autoread  " when running external command with vim, autoreload buffer
@@ -242,8 +243,8 @@ nnoremap <M-l> <c-w>l
 nnoremap <Leader>bb :b#<CR>
 
 "fzf
-nnoremap <C-p> :Files<CR>
-nnoremap <Leader>f, :Buffers<CR>
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader><space> :Buffers<CR>
 nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fm :Marks<CR>
 nnoremap <Leader>fk :Maps<CR>
@@ -254,15 +255,14 @@ nnoremap <Leader>f/ :BLines<CR>
 nnoremap <leader>fs :Lines<cr>
 " search history
 nnoremap <Leader>fS :History/<CR>
-nnoremap <Leader>f<Space> :GFiles<CR>
-nnoremap <Leader>f. :Files<CR>
+nnoremap <Leader><Space> :GFiles<CR>
 nnoremap <Leader>fc :Commands<CR>
 nnoremap <Leader>ft :BTags<CR>
 nnoremap <leader>fT :Tags<cr>
 nnoremap <leader>fh :Helptags<cr>
 
 " fugitive
-nnoremap <leader>gs :G<CR>
+nnoremap <leader>gg :G<CR>
 nnoremap <leader>ga :Gw<CR>
 nnoremap <leader>gl :Commits<CR>
 nnoremap <leader>gp :Git pull<CR>
@@ -311,3 +311,4 @@ set grepprg=rg\ --vimgrep
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 autocmd FileType vue set formatprg=prettier-eslint\ --stdin
 
+echo ">^.^<"

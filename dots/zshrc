@@ -4,7 +4,7 @@
 # Source oh-my-zsh
 
 # uncomment below to start profiling
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 export ZSH_DISABLE_COMPFIX=true
 
