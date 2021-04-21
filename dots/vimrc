@@ -4,19 +4,11 @@
 call plug#begin('~/.vim/plugged')
 " Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
-Plug 'amiralies/coc-flow'
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
 Plug 'junegunn/fzf.vim' " Install vim support
 Plug 'mattn/emmet-vim'  "
 Plug 'morhetz/gruvbox' " retro theme
-Plug 'neoclide/coc-eslint'
-Plug 'neoclide/coc-html'
-Plug 'neoclide/coc-json'
-Plug 'neoclide/coc-prettier'
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yaml'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'tpope/vim-repeat'  " enhance vim repeat
@@ -27,6 +19,8 @@ Plug 'tpope/vim-eunuch'  " Add helpful unix command :Delete :Move :Chmod :Sudo :
 Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
 Plug 'tomtom/tcomment_vim' " allow to comment things out with gc or gcc(line)
+Plug 'editorconfig/editorconfig-vim' "allow vim to use editorconfig
+
 " add convenience on top of netrw for file navigation. '-' to go up. 
 " disable info bar on top. 'I' to reenabled
 " suffix sort order instead of C biased
@@ -59,8 +53,8 @@ set colorcolumn=121                                 "display text width column
 set autoread  " when running external command with vim, autoreload buffer
 " indentation
 set autoindent                                     "always set autoindenting on
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab "use two spaces for indentation
-autocmd! FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+set smartindent
+set tabstop=8 shiftwidth=2 softtabstop=2 "use two spaces for indentation
 set incsearch                                      "incremental search highlight
 set ignorecase                                     "searches are case insensitive...
 set smartcase                                      " ..unless they contain at least one capital letter
@@ -108,71 +102,34 @@ let g:netrw_winsize = 25  " Use 25% of the window width
 let g:netrw_altv=1  " if in a netwr view and open a file with v, open to the right instead of left
 let g:netrw_alto=1  " if in a netwr view and open a file with o, open to the bottom instead of top
 
-" .............................................................................
-" COC
-" .............................................................................
-" Configuration can be done inside vimrc. See :h g:coc_user_config
-" For workspace configuration, add .vim/coc-settings.json
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()lug 'neoclide/coc-json'
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" To get correct comment highlighting in jsonc which is the configuration for
-" coc
-autocmd FileType json syntax match Comment +\/\/.\+$+
-let g:coc_user_config = {
-\ 'tsserver': {
-  \ 'enableJavascript': v:false
-\ }
-\}
-
 
 " .............................................................................
 " dense-analysis/ale
 " .............................................................................
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['prettier', 'eslint'],
-" \   'typescript': ['prettier', 'eslint'],
-" \   'typescriptreact': ['prettier', 'eslint'],
-" \   'css': ['prettier'],
-" \   'markdown': ['prettier'],
-" \}
-" let g:ale_linters = {
-" \   'javascript': ['eslint', 'flow-language-server'],
-" \}
-" let g:ale_linters_ignore = {
-" \   'javascript': ['tsserver'],
-" \}
-" let g:ale_linters_explicit = 1
-" let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
-" let g:ale_sign_error = '●'
-" let g:ale_sign_warning = '.'
-" let g:ale_fix_on_save = 1
-" let g:ale_completion_enabled = 1 " use coc
-" let g:ale_completion_tsserver_autoimport = 1 " use coc
-" let g:ale_javascript_eslint_executable = 'yarn'
-" let g:ale_javascript_eslint_options = 'run eslint'
-" ale should set filetype for jsx filetype
+ let g:ale_fixers = {
+ \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+ \   'javascript': ['prettier', 'eslint'],
+ \   'typescript': ['prettier', 'eslint'],
+ \   'typescriptreact': ['prettier', 'eslint'],
+ \   'css': ['prettier'],
+ \   'markdown': ['prettier'],
+ \}
+ let g:ale_linters = {
+ \   'javascript': ['eslint', 'flow-language-server'],
+ \}
+ let g:ale_linters_ignore = {
+ \   'javascript': ['tsserver'],
+ \}
+ let g:ale_linters_explicit = 1
+ let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
+ let g:ale_sign_error = '●'
+ let g:ale_sign_warning = '.'
+ let g:ale_fix_on_save = 1
+ let g:ale_completion_enabled = 1 " use coc
+ let g:ale_completion_tsserver_autoimport = 1 " use coc
+ let g:ale_javascript_eslint_executable = 'yarn'
+ let g:ale_javascript_eslint_options = 'run eslint'
+ " ale should set filetype for jsx filetype
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
