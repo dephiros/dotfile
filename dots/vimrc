@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
 Plug 'tomtom/tcomment_vim' " allow to comment things out with gc or gcc(line)
 Plug 'editorconfig/editorconfig-vim' "allow vim to use editorconfig
+Plug 'mbbill/undotree'  " undo tree to visualize vim undo tree
 
 " add convenience on top of netrw for file navigation. '-' to go up. 
 " disable info bar on top. 'I' to reenabled
@@ -43,7 +44,7 @@ set ttimeoutlen=50                                 " ...makes for a faster key r
 set backspace=indent,eol,start                     "make backspace behave properly in insert mode
 set wildmenu                                       "better menu with completion in command mode
 set wildmode=longest:full,full
-set scrolloff=2                                    "always show 2 lines above/below the cursor
+set scrolloff=8                                    "always show n lines above/below the cursor
 set showcmd                                        "display incomplet coc
 set cmdheight=2  " Better display for messages
 set laststatus=2                                   "always display the status bar
@@ -80,6 +81,12 @@ else
   set signcolumn=yes
 endif
 set noerrorbells
+
+"" bakcup and history
+set noswapfile
+set nobackup
+set undodir="~/.vim/undodir"
+set undofile " vim persist undo to a file in undodir
 
 
 set t_Co=256                        "enable 256 colors
@@ -230,9 +237,9 @@ nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>g3 :diffget //3<cr>
 nnoremap <leader>g2 :diffget //2<cr>
 
-" coc
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
+" undo tree
+nnoremap <leader>uu :u<CR>
+nnoremap <leader>ut :UndotreeToggle<CR>
 
 " terminal
 tnoremap <Esc> <C-\><C-n>

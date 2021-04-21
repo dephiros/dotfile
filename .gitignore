@@ -12,6 +12,7 @@ dots/!vim/colors
 dots/vim/vim
 dots/vim/pack
 dots/vim/autoload/plug.vim.old
+dots/vim/undodir
 
 # nvim
 config/nvim/*
