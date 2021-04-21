@@ -79,6 +79,7 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+set noerrorbells
 
 
 set t_Co=256                        "enable 256 colors
