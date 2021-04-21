@@ -2,14 +2,14 @@
 " if has('nvim')
 " endif
 call plug#begin('~/.vim/plugged')
-" Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+ Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
 Plug 'junegunn/fzf.vim' " Install vim support
 Plug 'mattn/emmet-vim'  "
 Plug 'morhetz/gruvbox' " retro theme
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown' " markdown support
 Plug 'sheerun/vim-polyglot'  "support over 100 languages and load them on demand
 Plug 'tpope/vim-repeat'  " enhance vim repeat
 Plug 'tpope/vim-unimpaired'  " add pair mapping [b to last buffer, ]b to next buffer
@@ -61,6 +61,7 @@ set incsearch                                      "incremental search highlight
 set ignorecase                                     "searches are case insensitive...
 set smartcase                                      " ..unless they contain at least one capital letter
 set hlsearch                                       "highlight search patterns
+set textwidth=0 wrapmargin=0
 " See https://github.com/dense-analysis/ale/issues/1700
 " :h ale-completion-completeopt-bug
 set completeopt=menu,menuone,preview,noselect,noinsert
@@ -209,6 +210,18 @@ nnoremap <M-l> <c-w>l
 nnoremap <Leader>bb :b#<CR>
 
 "fzf
+"" implementation that restart rg for each new key in query instead of only
+"" first query
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader><space> :Buffers<CR>
 nnoremap <Leader>fc :Colors<CR>
@@ -270,8 +283,8 @@ set grepprg=rg\ --vimgrep
 
 
 " Ale
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "
 " JS
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
