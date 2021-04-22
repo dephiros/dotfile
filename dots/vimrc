@@ -228,6 +228,8 @@ nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fm :Marks<CR>
 nnoremap <Leader>fk :Maps<CR>
 nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fv :vsplit ~/dotfiles/dots/vimrc<cr>
+nnoremap <Leader>sv :source $MYVIMRC<cr>
 " search in file
 nnoremap <Leader>f/ :BLines<CR>
 " search in all opened files
