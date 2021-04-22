@@ -282,10 +282,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 set grepprg=rg\ --vimgrep
 
 
-" Ale
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-"
 " JS
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 autocmd FileType vue set formatprg=prettier-eslint\ --stdin
