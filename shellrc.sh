@@ -87,9 +87,6 @@ fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-# vscode to vscode-insiders
-alias code=code-insiders
-
 alias gdiff="git difftool -y"
 alias gdiffc='git difftool -y --cached'
 alias gbr='git rev-parse --abbrev-ref HEAD'
