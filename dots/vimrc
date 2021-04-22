@@ -207,7 +207,7 @@ nnoremap <M-k> <c-w>k
 nnoremap <M-l> <c-w>l
 
 " buffer
-nnoremap <Leader>bb :b#<CR>
+nnoremap <Leader>, :b#<CR>
 
 "fzf
 "" implementation that restart rg for each new key in query instead of only
@@ -223,7 +223,7 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader><space> :Buffers<CR>
+nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader>fm :Marks<CR>
 nnoremap <Leader>fk :Maps<CR>
