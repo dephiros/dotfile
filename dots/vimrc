@@ -236,7 +236,7 @@ nnoremap <Leader>f/ :BLines<CR>
 nnoremap <leader>fs :Lines<cr>
 " search history
 nnoremap <Leader>fS :History/<CR>
-nnoremap <Leader><Space> :GFiles<CR>
+nnoremap <Leader><Leader> :GFiles<CR>
 nnoremap <Leader>fc :Commands<CR>
 nnoremap <Leader>ft :BTags<CR>
 nnoremap <leader>fT :Tags<cr>
