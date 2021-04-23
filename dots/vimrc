@@ -288,4 +288,8 @@ set grepprg=rg\ --vimgrep
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 autocmd FileType vue set formatprg=prettier-eslint\ --stdin
 
+" abbrv
+iabbrev tmorrow tomorrow
+iabbrev tmrrow tomorrow
+
 echo ">^.^<"
