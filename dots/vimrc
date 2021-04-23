@@ -244,7 +244,7 @@ nnoremap <leader>fh :Helptags<cr>
 
 " fugitive
 nnoremap <leader>gg :G<CR>
-nnoremap <leader>ga :Gw<CR>
+nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>gl :Commits<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gf :Git fetch<CR>
@@ -263,7 +263,6 @@ tnoremap <M-[> <Esc>
 " jk for exiting normal mode
 tnoremap jk <C-\><C-n>
 inoremap jk <esc>
-
 
 " Move line up or down using option j/k
 nnoremap <c-j> :m .+1<CR>==
