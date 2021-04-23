@@ -260,6 +260,11 @@ nnoremap <leader>ut :UndotreeToggle<CR>
 tnoremap <Esc> <C-\><C-n>
 tnoremap <M-[> <Esc>
 
+" jk for exiting normal mode
+tnoremap jk <C-\><C-n>
+inoremap jk <esc>
+
+
 " Move line up or down using option j/k
 nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
