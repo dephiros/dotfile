@@ -2,7 +2,7 @@
 " if has('nvim')
 " endif
 call plug#begin('~/.vim/plugged')
- Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
+Plug 'dense-analysis/ale'  " support linting, jump to definition and autocomplete
 Plug 'airblade/vim-gitgutter'  " git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
 Plug 'aonemd/kuroi.vim'  "a dark theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Install binary
@@ -20,7 +20,8 @@ Plug 'tpope/vim-fugitive'  "a git wrapper for vim
 Plug 'tpope/vim-surround'  " allow to treat do thing like cs'<q> to change ' to <q> surrounding a text
 Plug 'tomtom/tcomment_vim' " allow to comment things out with gc or gcc(line)
 Plug 'editorconfig/editorconfig-vim' "allow vim to use editorconfig
-Plug 'mbbill/undotree'  " undo tree to visualize vim undo tree
+Plug 'mbbill/undotree', { 'on': ['UndotreeToggle']} " undo tree to visualize vim undo tree
+
 
 " add convenience on top of netrw for file navigation. '-' to go up. 
 " disable info bar on top. 'I' to reenabled
