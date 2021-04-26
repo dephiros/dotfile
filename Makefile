@@ -19,12 +19,6 @@ install.log: Brewfile install.bash
 	# |& redirect both standard and error and still visible in the terminal: https://askubuntu.com/a/731237
 	./install.bash |& tee install.log
 
-${HOME}/.emacs.d:
-	@echo installing doom
-	rm -rf ~/.emacs ~/.emacs.d \ #otherwise this will conflict
-	git clone https://github.com/hlissner/doom-emacs ~/.emacs.d \
-	~/.emacs.d/bin/doom install -y \
-
 ${HOME}/liquidprompt:
 	@echo - set up liquidprompt
 	rm -rf ~/liquidprompt \
