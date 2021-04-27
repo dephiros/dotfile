@@ -7,6 +7,8 @@
 ;; default theme
 (load-theme 'adwaita t)
 (set-frame-font "FiraCode Nerd Font Mono-13" nil t)
+(when (eq system-type 'darwin)
+  (setq mac-option-modifier 'meta))
 
 ; straight.el
 (defvar bootstrap-version)
@@ -38,15 +40,59 @@
   :ensure t
   :config
   (editorconfig-mode 1))
-
+;; package to manage git
 (use-package magit)
+;; autocomplete engine
 (use-package company-mode
   :hook (after-init . global-company-mode))
+(use-package company-prescient
+  :hook (company-mode . company-prescient-mode))
+;; interactive selection of time
 (use-package selectrum
   :config
   (selectrum-mode +1))
+;; sort and filter selection of items based on last used
 (use-package selectrum-prescient
+  :init
+  (setq prescient-filter-method '(literal regexp initialism fuzzy))
   :hook (selectrum-mode . selectrum-prescient-mode))
+;; handy command based on emacs completion function, yank, buffer, gotolink, mark, search...
+(use-package consult)
+;; Emacs Mini-Buffer Actions Rooted in Keymaps
+;; This package provides a sort of right-click contextual menu for Emacs, accessed through the embark-act command
+(use-package embark)
+(use-package embark-consult
+  :ensure t
+  :after (embark consult)
+  :bind (("C-," . 'embark-act)
+         ("C-." . 'embark-become))
+  :demand t ; only necessary if you have the hook below
+  ;; if you want to have consult previews as you move around an
+  ;; auto-updating embark collect buffer
+  :hook
+  (embark-collect-mode . embark-consult-preview-minor-mode))
+;; Enable richer annotations using the Marginalia package
+(use-package marginalia
+  ;; Either bind `marginalia-cycle` globally or only in the minibuffer
+  :bind (("M-A" . marginalia-cycle)
+         :map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+
+  ;; The :init configuration is always executed (Not lazy!)
+  :init
+
+  ;; Must be in the :init section of use-package such that the mode gets
+  ;; enabled right away. Note that this forces loading the package.
+  (marginalia-mode)
+
+  ;; Prefer richer, more heavy, annotations over the lighter default variant.
+  ;; E.g. M-x will show the documentation string additional to the keybinding.
+  ;; By default only the keybinding is shown as annotation.
+  ;; Note that there is the command `marginalia-cycle' to
+  ;; switch between the annotators.
+  (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+)
+;; display popup for keyboard shortcuts for emacs
 (use-package which-key
   :config
   (which-key-mode 1))
