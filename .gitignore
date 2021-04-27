@@ -24,4 +24,4 @@ config/nvim/*
 network-security.data
 
 *.log
-emacs.d
+dots/emacs.d/straight/
