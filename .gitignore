@@ -25,3 +25,4 @@ network-security.data
 
 *.log
 dots/emacs.d/straight/
+dots/emacs.d/transient/
