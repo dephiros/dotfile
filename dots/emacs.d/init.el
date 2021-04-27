@@ -66,12 +66,18 @@
 (use-package consult)
 ;; Emacs Mini-Buffer Actions Rooted in Keymaps
 ;; This package provides a sort of right-click contextual menu for Emacs, accessed through the embark-act command
-(use-package embark)
+(use-package embark
+  :init
+  (setq embark-action-indicator
+    (lambda (map _target)
+      (which-key--show-keymap "Embark" map nil nil 'no-paging)
+      #'which-key--hide-popup-ignore-command)
+    embark-become-indicator embark-action-indicator)
+  )
 (use-package embark-consult
   :ensure t
   :after (embark consult)
-  :bind (("C-," . 'embark-act)
-         ("C-." . 'embark-become))
+  :bind (("C-," . 'embark-act))
   :demand t ; only necessary if you have the hook below
   ;; if you want to have consult previews as you move around an
   ;; auto-updating embark collect buffer
