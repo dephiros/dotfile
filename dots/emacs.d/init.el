@@ -41,6 +41,13 @@
 (use-package magit)
 (use-package company-mode
   :hook (after-init . global-company-mode))
-
+(use-package selectrum
+  :config
+  (selectrum-mode +1))
+(use-package selectrum-prescient
+  :hook (selectrum-mode . selectrum-prescient-mode))
+(use-package which-key
+  :config
+  (which-key-mode 1))
 ;; Start emacs server in the background
 (server-start)
