@@ -6,6 +6,7 @@
 (setq lisp-indent-offset 2)
 ;; default theme
 (load-theme 'adwaita t)
+(set-frame-font "FiraCode Nerd Font Mono-13" nil t)
 
 ; straight.el
 (defvar bootstrap-version)
