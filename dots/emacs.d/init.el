@@ -33,6 +33,13 @@
 (use-package gruvbox-theme
   :config (load-theme 'gruvbox-dark-medium))
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+(use-package magit)
+
 ;; Start emacs server in the background
 (server-start)
 
