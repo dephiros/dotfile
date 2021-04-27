@@ -39,6 +39,8 @@
   (editorconfig-mode 1))
 
 (use-package magit)
+(use-package company-mode
+  :hook (after-init . global-company-mode))
 
 ;; Start emacs server in the background
 (server-start)
