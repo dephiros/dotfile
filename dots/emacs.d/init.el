@@ -9,6 +9,8 @@
 (set-frame-font "FiraCode Nerd Font Mono-13" nil t)
 (when (eq system-type 'darwin)
   (setq mac-option-modifier 'meta))
+;; auto complete paren and bracket
+(electric-pair-mode 1)
 
 ; straight.el
 (defvar bootstrap-version)
@@ -42,6 +44,9 @@
   (editorconfig-mode 1))
 ;; package to manage git
 (use-package magit)
+(use-package prescient
+  :config
+  (prescient-persist-mode +1))
 ;; autocomplete engine
 (use-package company-mode
   :hook (after-init . global-company-mode))
@@ -53,9 +58,10 @@
   (selectrum-mode +1))
 ;; sort and filter selection of items based on last used
 (use-package selectrum-prescient
+  :after selectrum
   :init
-  (setq prescient-filter-method '(literal regexp initialism fuzzy))
-  :hook (selectrum-mode . selectrum-prescient-mode))
+  (selectrum-prescient-mode +1)
+  (setq prescient-filter-method '(literal regexp initialism fuzzy)))
 ;; handy command based on emacs completion function, yank, buffer, gotolink, mark, search...
 (use-package consult)
 ;; Emacs Mini-Buffer Actions Rooted in Keymaps
