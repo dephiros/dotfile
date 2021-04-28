@@ -24,5 +24,6 @@ config/nvim/*
 network-security.data
 
 *.log
+dots/emacs.d/
 dots/emacs.d/straight/
 dots/emacs.d/transient/
