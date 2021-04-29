@@ -11,6 +11,7 @@ brew "jq"
 brew "mas" if OS.mac?
 brew "neovim", args: ["HEAD"]
 brew "pandoc"
+brew "luarocks"
 brew "pinentry-mac" if OS.mac?
 brew "pyenv-virtualenv"
 brew "ripgrep"

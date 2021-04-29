@@ -650,6 +650,35 @@
           ],
           "restart_service": "changed"
         }
+      },
+      "luarocks": {
+        "version": "3.7.0",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_big_sur": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/luarocks/blobs/sha256:884ff51dc8c4b1009ce40d3a6f4a1306566ff9da8417ea4c03dce4c38a136807",
+              "sha256": "884ff51dc8c4b1009ce40d3a6f4a1306566ff9da8417ea4c03dce4c38a136807"
+            },
+            "big_sur": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/luarocks/blobs/sha256:631971f2bc3585dc67d7b5c7b07391489442564a0f111ae358008a02e3b8d73d",
+              "sha256": "631971f2bc3585dc67d7b5c7b07391489442564a0f111ae358008a02e3b8d73d"
+            },
+            "catalina": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/luarocks/blobs/sha256:b7d91bbc4ec33e19953bc1ed4127557c530b66c0e0ff7eec1a188268b486b594",
+              "sha256": "b7d91bbc4ec33e19953bc1ed4127557c530b66c0e0ff7eec1a188268b486b594"
+            },
+            "mojave": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/luarocks/blobs/sha256:bcd1442f092e25f04eac3270b5a468d911716a50a3af716ce3f4f9c44a46920e",
+              "sha256": "bcd1442f092e25f04eac3270b5a468d911716a50a3af716ce3f4f9c44a46920e"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -827,7 +856,7 @@
       },
       "Spark": {
         "id": "1176895641",
-        "version": "2.9.20"
+        "version": "2.9.21"
       },
       "Todoist": {
         "id": "585829637",
@@ -835,7 +864,7 @@
       },
       "Xcode": {
         "id": "497799835",
-        "version": "12.4"
+        "version": "12.5"
       },
       "Microsoft OneNote": {
         "id": "784801555",
@@ -857,9 +886,9 @@
         "HOMEBREW_VERSION": "3.1.3",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "61548debfe2c4dabd0dacae57caeb16110c0eb76",
-        "CLT": "12.4.0.0.1.1610135815",
-        "Xcode": "12.4",
-        "macOS": "11.2.3"
+        "CLT": "12.5.0.22.9",
+        "Xcode": "12.5",
+        "macOS": "11.3"
       }
     }
   }
