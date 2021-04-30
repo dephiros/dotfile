@@ -26,6 +26,12 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin/:$PATH"
 # node_modules
 PATH="node_modules/.bin:$PATH"
+# less
+# -e quit at eof
+# -F quit if one screen
+# -X no init
+# -x2 should display tab as 2 space
+export LESS="eFRXx2"
 
 # alias
 alias dc="docker-compose"

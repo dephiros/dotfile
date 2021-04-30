@@ -20,33 +20,61 @@ function plugins()
 
 	local use = require('packer').use
 	require('packer').startup(function()
-		use 'wbthomason/packer.nvim'       -- Package manager
-		use 'tpope/vim-fugitive'           -- Git commands in nvim
+		-- Package manager
+		use 'wbthomason/packer.nvim'
+		-- language supports
+		use 'sheerun/vim-polyglot'
+		-- edit quote/paren/tag
+		use 'tpope/vim-surround'
+		-- helpful command :Delete :Move :Chmod :Sudo SudoEdit :Rename :Wall
+		use 'tpope/vim-eunuch'
+		-- add convenience on top of netrw for file navigation. '-' to go up, '~' to go home
+		-- Remove info bar and hit I to reenable
+		use 'tpope/vim-vinegar'
+		-- Git commands in nvim
+		use {
+			'tpope/vim-fugitive',
+			cmd={"Git", 'Gstatus', 'Gblame', 'Gpush', 'Gpull'},
+			setup=require'p/fugitive'.setup
+		}
+		use {"editorconfig/editorconfig-vim"}
 		-- UI to select things (files, grep results, open buffers...)
-		use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
+		use {
+			'nvim-telescope/telescope.nvim',
+			requires={{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+			cmd='Telescope',
+			setup=require'p.telescope'.setup
+		}
 		-- Theme inspired by Atom
 		use {
 			'joshdick/onedark.vim',
-			config = function()
+			config=function()
 				vim.cmd[[colorscheme onedark]]
 			end
 		}
-		use 'itchyny/lightline.vim'        -- Fancier statusline
+		use {
+			'glepnir/galaxyline.nvim',
+			branch='main',
+			-- some optional icons
+			requires={'kyazdani42/nvim-web-devicons', opt = true}
+		}
 		-- Add indentation guides even on blank lines
 		use { 'lukas-reineke/indent-blankline.nvim', branch="lua" }
 		-- Add git related info in the signs columns and popups
 		use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
-		use 'hrsh7th/nvim-compe'           -- Autocompletion plugin
+		-- autocomplete from the guy who create vim-snip
+		use {
+			'hrsh7th/nvim-compe',
+			setup = require("p/compe").setup,
+			config = require("p/compe").config,
+			event="InsertEnter *"
+		}
 		use {
 			"folke/which-key.nvim",
-			config = function()
-				require("which-key").setup {
-					-- your configuration comes here
-					-- or leave it empty to use the default settings
-					-- refer to the configuration section below
-				}
-			end
+			config=require("p/which-key").config
 		}
+		use {"mbbill/undotree", cmd={"UndotreeToggle"}}
+		use {"neovim/nvim-lspconfig", config=require("p/lspconfig").config}
 	end)
 end
 
