@@ -14,12 +14,6 @@ dots/vim/pack
 dots/vim/autoload/plug.vim.old
 dots/vim/undodir
 
-# nvim
-config/nvim/*
-!config/nvim/init.vim
-!config/nvim/colors
-!config/nvim/autoload
-
 # ignore network security file from marmalade
 network-security.data
 
