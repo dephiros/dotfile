@@ -54,7 +54,15 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 "" basic keymap
 """ remove search highlight
-nmap <leader>q :nohlsearch<CR>
+nmap <leader>q <cmd>nohlsearch<CR>
+
+"" quickfix
+nnoremap <C-k> :cnext<CR>zz
+nnoremap <C-j> :cprev<CR>zz
+nnoremap <leader>k :lnext<CR>zz
+nnoremap <leader>j :lprev<CR>zz
+nnoremap <C-q> :call ToggleQFList(1)<CR>
+nnoremap <leader>q :call ToggleQFList(0)<CR>
 
 """ window navigation with M-hjkl
 """" Terminal mode:
