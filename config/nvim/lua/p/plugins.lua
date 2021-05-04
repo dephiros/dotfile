@@ -34,7 +34,7 @@ function plugins()
 		-- Git commands in nvim
 		use {
 			'tpope/vim-fugitive',
-			cmd={"Git", 'Gstatus', 'Gblame', 'Gpush', 'Gpull'},
+			cmd={"Git", "Gwrite", 'Gstatus', 'Gblame', 'Gpush', 'Gpull'},
 			setup=require'p/fugitive'.setup
 		}
 		use {"editorconfig/editorconfig-vim"}
