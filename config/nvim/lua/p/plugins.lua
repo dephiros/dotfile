@@ -42,7 +42,6 @@ function plugins()
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires={{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-			cmd='Telescope',
 			setup=require'p.telescope'.setup
 		}
 		-- Theme inspired by Atom
