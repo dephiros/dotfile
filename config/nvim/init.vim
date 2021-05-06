@@ -56,6 +56,31 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 """ remove search highlight
 nmap <leader>q <cmd>nohlsearch<CR>
 
+""" quickfix borrow from
+""" https://github.com/awesome-streamers/awesome-streamerrc/blob/8f93c5d5a0b7d1c333166fec1f1d28aeee02933d/ThePrimeagen/plugin/navigation.vim
+let g:dephiros_qf_l = 0
+let g:dephiros_qf_g = 0
+
+fun! ToggleQFList(global)
+  if a:global
+    if g:dephiros_qf_g == 1
+      let g:dephiros_qf_g = 0
+      cclose
+    else
+      let g:dephiros_qf_g = 1
+      copen
+    end
+  else
+    if g:dephiros_qf_l == 1
+      let g:dephiros_qf_l = 0
+      lclose
+    else
+      let g:dephiros_qf_l = 1
+      lopen
+    end
+  endif
+endfun
+
 "" quickfix
 nnoremap <C-k> :cnext<CR>zz
 nnoremap <C-j> :cprev<CR>zz
@@ -93,6 +118,8 @@ tnoremap <M-[> <Esc>
 """ jk for exiting normal mode
 tnoremap jk <C-\><C-n>
 inoremap jk <esc>
+
+nnoremap <leader>w <cmd>w<cr>
 
 "" abbrv
 iabbrev tmorrow tomorrow
