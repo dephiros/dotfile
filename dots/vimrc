@@ -58,6 +58,7 @@ set autoread  " when running external command with vim, autoreload buffer
 set autoindent                                     "always set autoindenting on
 set smartindent
 set tabstop=8 shiftwidth=2 softtabstop=2 "use two spaces for indentation
+set expandtab " always convert tab to space
 set incsearch                                      "incremental search highlight
 set ignorecase                                     "searches are case insensitive...
 set smartcase                                      " ..unless they contain at least one capital letter

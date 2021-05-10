@@ -19,8 +19,8 @@ set relativenumber
 
 """ indentation
 set autoindent "always set autoindenting on
-set smartindent " use tab for indentation and space for alignment
 set tabstop=2 shiftwidth=2 softtabstop=2 " tab and space indentation should be 2
+set expandtab  " always expand tab to space
 
 """ menu
 set wildmenu                                       "better menu with completion in command mode
