@@ -125,6 +125,12 @@ nnoremap <leader>w <cmd>w<cr>
 iabbrev tmorrow tomorrow
 iabbrev tmrrow tomorrow
 
+""" load lsp
+augroup THE_PRIMEAGEN_LSP
+    autocmd!
+    autocmd! BufWrite,BufEnter,InsertLeave * lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
+augroup END
+
 "" Plugins
 lua require('p/plugins')()
 
