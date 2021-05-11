@@ -25,8 +25,13 @@ set expandtab  " always expand tab to space
 """ menu
 set wildmenu                                       "better menu with completion in command mode
 set wildmode=longest:full,full
-"""" autocomplete display menu for one item and do not select a match from menu
-set completeopt=menuone,noselect
+
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
 
 """always show n lines above/below the cursor
 set scrolloff=8

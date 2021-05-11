@@ -9,7 +9,7 @@ M.find_dots = function()
 end
 
 M.setup = function ()
-	utils = require('p/utils')
+	local utils = require('p/utils')
 	utils.map("n", "<leader>ff", [[<cmd>Telescope find_files<cr>]])
 	utils.map("n", "<leader>fr", [[<cmd>Telescope registers<cr>]])
 	utils.map("n", "<leader>fd", [[<cmd>lua require('p/telescope').find_dots()<cr>]])
