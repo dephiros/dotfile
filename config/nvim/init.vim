@@ -15,7 +15,6 @@ set ignorecase "" caseinsensitive
 
 """ line number
 set number
-set relativenumber
 
 """ indentation
 set autoindent "always set autoindenting on
@@ -40,6 +39,10 @@ set scrolloff=8
 set textwidth=0 wrapmargin=0
 """ display text width column
 set colorcolumn=121
+
+" have a fixed column for the diagnostics to appear in
+" this removes the jitter when warnings/errors flow in
+set signcolumn=yes
 
 " The length of time Vim waits after you stop typing before it triggers the
 "plugin is governed by the setting updatetime. Default is 4000 which is very
