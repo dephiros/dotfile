@@ -22,6 +22,16 @@ function plugins()
 	require('packer').startup(function()
 		-- Package manager
 		use 'wbthomason/packer.nvim'
+		-- statusline
+		use { 
+			'vim-airline/vim-airline',
+			requires={{'vim-airline/vim-airline-themes'}},
+			setup=function()
+				vim.g.airline_theme="molokai"
+			end,
+			config=function()
+			end,
+		}
 		-- language supports
 		use 'sheerun/vim-polyglot'
 		-- svelte supports
@@ -65,12 +75,6 @@ function plugins()
 				vim.cmd[[colorscheme onedark]]
 			end
 		}
-		-- use {
-		--	'glepnir/galaxyline.nvim',
-		--	branch='main',
-		--	-- some optional icons
-		--	requires={'kyazdani42/nvim-web-devicons', opt = true}
-		--}
 		-- Add indentation guides even on blank lines
 		use { 'lukas-reineke/indent-blankline.nvim', branch="lua" }
 		-- Add git related info in the signs columns and popups
@@ -81,6 +85,9 @@ function plugins()
 			setup = require("p/compe").setup,
 			config = require("p/compe").config,
 			event="InsertEnter *"
+		}
+		use {
+			'hrsh7th/vim-vsnip'
 		}
 		use {
 			"folke/which-key.nvim",
