@@ -6,6 +6,9 @@ let mapleader=" "
 """ allow switch hidden
 set hidden
 
+""" terminal use 256 colorspace
+set termguicolors
+
 """ autoreload buffer when running external command
 set autoread
 

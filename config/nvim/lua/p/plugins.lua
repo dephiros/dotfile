@@ -70,9 +70,9 @@ function plugins()
 		}
 		-- Theme inspired by Atom
 		use {
-			'joshdick/onedark.vim',
+			'chriskempson/base16-vim',
 			config=function()
-				vim.cmd[[colorscheme onedark]]
+				vim.cmd[[colorscheme base16-atelier-dune]]
 			end
 		}
 		-- Add indentation guides even on blank lines
