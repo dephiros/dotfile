@@ -51,6 +51,12 @@ function plugins()
 		-- auto save vim session
 		use 'tpope/vim-obsession'
 		-- auto end certain structure like if/end
+		use { 
+			'airblade/vim-rooter',
+			setup=function()
+				vim.g.rooter_patterns = {'.git', 'Makefile'}
+			end
+		}
 		use {
       "steelsojka/pears.nvim",
 			setup=require'p/pears'.setup,
