@@ -13,10 +13,6 @@
 [merge]
 	tool = vimdiff3
 	conflictstyle = diff3
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
