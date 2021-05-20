@@ -24,10 +24,9 @@ function plugins()
 		use 'wbthomason/packer.nvim'
 		-- statusline
 		use { 
-			'vim-airline/vim-airline',
-			requires={{'vim-airline/vim-airline-themes'}},
+			'itchyny/lightline.vim',
 			setup=function()
-				vim.g.airline_theme="molokai"
+				vim.g.lightline = {colorscheme="wombat"}
 			end,
 			config=function()
 			end,
