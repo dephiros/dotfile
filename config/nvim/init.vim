@@ -130,7 +130,8 @@ tnoremap <M-[> <Esc>
 tnoremap jk <C-\><C-n>
 inoremap jk <esc>
 
-nnoremap <leader>w <cmd>w<cr>
+""" quick write
+nnoremap <leader>bs <cmd>w<cr>
 
 "" abbrv
 iabbrev tmorrow tomorrow
@@ -141,6 +142,16 @@ augroup THE_PRIMEAGEN_LSP
     autocmd!
     autocmd! BufWrite,BufEnter,InsertLeave * lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 augroup END
+
+function DetectGoHtmlTmpl()
+    if expand('%:e') == "html" && search("{{") != 0
+        set filetype=gohtmltmpl 
+    endif
+endfunction
+
+augroup filetypedetect
+    au! BufRead,BufNewFile * call DetectGoHtmlTmpl()
+  augroup END
 
 "" Plugins
 lua require('p/plugins')()
