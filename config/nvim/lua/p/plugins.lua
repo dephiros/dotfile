@@ -36,7 +36,7 @@ function plugins()
 		-- svelte supports
 		use 'evanleck/vim-svelte'
 		-- edit quote/paren/tag
-		use 'machakann/vim-sandwich'
+		use 'tpope/vim-surround'
 		-- helpful command :Delete :Move :Chmod :Sudo SudoEdit :Rename :Wall
 		use 'tpope/vim-eunuch'
 		-- add convenience on top of netrw for file navigation. '-' to go up, '~' to go home
@@ -56,11 +56,6 @@ function plugins()
 			setup=function()
 				vim.g.rooter_patterns = {'.git', 'Makefile'}
 			end
-		}
-		use {
-      "steelsojka/pears.nvim",
-			setup=require'p/pears'.setup,
-			config=require'p/pears'.config,
 		}
 		use {
 			'preservim/nerdcommenter',
