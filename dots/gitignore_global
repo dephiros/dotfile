@@ -62,3 +62,6 @@ composer.phar
 
 *.patch
 backup/
+
+# ignore package.json in web dir
+**/web/package.json
