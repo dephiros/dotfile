@@ -22,3 +22,18 @@ include () {
   end=`date +%s`
   # echo "Source $1 in $((end-start))s"
 }
+
+# From Red Hat .profile. Idempotently modify path
+pathmunge () {
+  if [[ ":$PATH:" != *":${1}:"* ]]; ; then
+    if [ "$2" = "after" ] ; then
+      export PATH=$PATH:$1
+    else
+      export PATH=$1:$PATH
+    fi
+  else
+    echo "Duplicate path munge for ${1}"
+    echo $(ps -o comm= $PPID)
+  fi
+}
+

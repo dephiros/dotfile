@@ -1,4 +1,5 @@
 # set info for multi-term zsh
+source $DOTHOME/scripts/utils.sh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
@@ -6,26 +7,29 @@ export TERM=xterm-256color
 export KEYTIMEOUT=1
 
 export DOTHOME=$HOME/dotfiles
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-source $DOTHOME/scripts/utils.sh
+pathmunge "/usr/local/sbin:/usr/local/bin"
 # set up localpath
-export PATH=$PATH:~/bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+pathmunge "$HOME/bin"
 # this is for setting up emacs
 export ALTERNATE_EDITOR=""
-export PATH=$PATH:$HOME/.emacs.d/bin
+pathmunge "$HOME/.emacs.d/bin" "after"
 # setup go path
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+pathmunge "$GOPATH/bin" "after"
 # set up path for script
-export PATH=$PATH:$DOTHOME/scripts
-export PATH=$HOME/.local/bin:$PATH
-# python homebrew path
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# linux homebrew path
-export PATH="/home/linuxbrew/.linuxbrew/bin/:$PATH"
+pathmunge "$DOTHOME/scripts" "after"
+pathmunge "$HOME/.local/bin" "after"
 # node_modules
-PATH="node_modules/.bin:$PATH"
+pathmunge "node_modules/.bin"
+pathmunge "$HOME/.yarn/bin"
+pathmunge "$HOME/.config/yarn/global/node_modules/.bin"
+
+export VOLTA_HOME="$HOME/.volta"
+pathmunge "$VOLTA_HOME/bin"
+
+pathmunge "$HOME/lib/flutter/bin"
+
+
 # less
 # -e quit at eof
 # -F quit if one screen
@@ -59,9 +63,6 @@ makefile() {
   echo "Makefile initialized!"
 }
 
-include "$HOME/.localenv.bash" || true
-export DOTHOME=$HOME/dotfiles
-#
 # User configuration sourced by interactive shells
 
 # set up emacs
@@ -110,27 +111,12 @@ grreset() {
 }
 alias cddot="cd $DOTHOME"
 
-# set info for multi-term zsh
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export TERM=xterm-256color
-
 include ~/.local.bash || true
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # rust
 source "$HOME/.cargo/env"
 
-export VOLTA_HOME="$HOME/.volta"
 include "$VOLTA_HOME/load.sh"
-
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH=$PATH:$HOME/lib/flutter/bin/
 
 # GPG
 export GPG_TTY=`tty`
-
-# pyenv just slow everything down
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
