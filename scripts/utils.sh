@@ -32,8 +32,8 @@ pathmunge () {
       export PATH=$1:$PATH
     fi
   else
-    echo "Duplicate path munge for ${1}"
-    echo $(ps -o comm= $PPID)
+    # echo "Duplicate path munge for ${1}"
+    # echo $(ps -o comm= $PPID)
   fi
 }
 
